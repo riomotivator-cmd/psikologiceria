@@ -428,7 +428,7 @@
       <p class="sec-sub">Setiap psikolog tersertifikasi dan berkomitmen memberikan layanan empatik berbasis bukti ilmiah.</p>
       <div class="psi-grid">
         <div class="pcard">
-          <div class="pcard-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80&fit=crop" alt="Dr. Sari Andini" loading="lazy"></div>
+          <div class="pcard-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80&fit=crop" alt="Dr. Deta Nurfianti" loading="lazy"></div>
           <div class="pcard-body">
             <h3>Deta Nurfianti, M.Psi., Psikolog</h3>
             <div class="role">Psikolog Klinis</div>
@@ -550,7 +550,7 @@
       <div class="fcard">
         <div class="fcard-title">Pilih Psikolog</div>
         <div class="psi-picks">
-          <div class="ppick" onclick="pickP(this,'SA')"><div class="ppick-av"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&q=80&fit=crop" alt="Sari"></div><h4>Dr. Sari Andini</h4><p>Kecemasan &amp; Depresi</p></div>
+          <div class="ppick" onclick="pickP(this,'SA')"><div class="ppick-av"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&q=80&fit=crop" alt="Sari"></div><h4>Deta Nurfianti</h4><p>Kecemasan &amp; Depresi</p></div>
           <div class="ppick" onclick="pickP(this,'BR')"><div class="ppick-av"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&q=80&fit=crop" alt="Budi"></div><h4>Budi Raharjo</h4><p>Hubungan &amp; Keluarga</p></div>
           <div class="ppick" onclick="pickP(this,'NP')"><div class="ppick-av"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&q=80&fit=crop" alt="Nisa"></div><h4>Nisa Putri</h4><p>Remaja &amp; Anak</p></div>
         </div>
@@ -662,7 +662,7 @@
   function submitBk(){
     const n=document.getElementById('fn').value.trim(),w=document.getElementById('fw').value.trim(),t=document.getElementById('ft').value,m=document.getElementById('fm').value;
     if(!n||!w||!t||!m||!sP||!sS){alert('Mohon lengkapi semua data: nama, nomor WA, tanggal, metode, pilih psikolog, dan jam sesi.');return}
-    const names={SA:'Dr. Sari Andini',BR:'Budi Raharjo',NP:'Nisa Putri'};
+    const names={SA:'Dr. Deta ',BR:'Budi Raharjo',NP:'Nisa Putri'};
     const tgl=new Date(t).toLocaleDateString('id-ID',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
     document.getElementById('smsg').textContent='Terima kasih, '+n+'! Janji Anda dengan '+names[sP]+' pada '+tgl+' pukul '+sS+' ('+m+') telah tercatat. Kami akan menghubungi '+w+' via WhatsApp dalam 1×24 jam.';
     document.getElementById('bk-form').style.display='none';document.getElementById('bk-ok').style.display='block';
