@@ -3,636 +3,522 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Psikologi Ceria — Konseling & Terapi Profesional</title>
-  <meta name="description" content="Layanan konseling dan terapi psikologi profesional di Bengkulu. Ruang aman untuk jiwa yang lebih sehat.">
-  <meta property="og:title" content="Psikologi Ceria">
-  <meta property="og:description" content="Layanan konseling dan terapi psikologi profesional di Bengkulu.">
+  <title>Psikologi Ceria — Konseling &amp; Terapi Profesional di Bengkulu</title>
+  <meta name="description" content="Layanan konseling dan terapi psikologi profesional di Bengkulu. Ruang aman untuk jiwa yang lebih sehat bersama psikolog berpengalaman.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!--
+  ============================================================
+  PSIKOLOGI CERIA — WEBSITE LENGKAP v2 (dengan foto)
+  ============================================================
+  PANDUAN GANTI FOTO:
+  Cari teks "images.unsplash.com" dan ganti dengan URL foto Anda.
+  Upload foto ke Google Drive/Imgur/Cloudinary lalu pakai link-nya.
+
+  PANDUAN EDIT DATA:
+  - Nomor WA   → cari: 6285384847854
+  - Email      → cari: ceriapsikologi@gmail.com
+  - Instagram  → cari: psikologicceria
+  - Alamat     → cari: Jl. Bumi Ayu
+  ============================================================
+  -->
   <style>
-    /* ============================================================
-       PSIKOLOGI CERIA — WEBSITE
-       ============================================================
-       PANDUAN EDIT CEPAT:
-       - Nomor WA     → cari: 6285384847854
-       - Email        → cari: ceriapsikologi@gmail.com
-       - Instagram    → cari: psikologicceria
-       - Alamat       → cari: Jl. Bumi Ayu
-       - Nama dokter  → cari: Dr. Sari / Budi / Nisa
-       ============================================================ */
-
     :root {
-      --green: #1D9E75;
-      --green-dark: #0F6E56;
-      --green-deeper: #085041;
-      --green-light: #E1F5EE;
-      --green-mid: #9FE1CB;
-      --text: #1a1a1a;
-      --text-muted: #6b7280;
-      --text-faint: #9ca3af;
-      --border: rgba(0,0,0,0.08);
-      --border-mid: rgba(0,0,0,0.13);
-      --bg: #ffffff;
-      --bg-soft: #f9faf8;
-      --radius: 12px;
-      --radius-sm: 8px;
-      --font-display: 'DM Serif Display', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
+      --sage:       #4a7c6f;
+      --sage-dark:  #2f5a50;
+      --sage-deep:  #1a3830;
+      --sage-light: #e8f0ee;
+      --sage-mid:   #a8c5bc;
+      --cream:      #faf8f4;
+      --warm:       #f5f0e8;
+      --text:       #1c1c1c;
+      --text-muted: #6b7068;
+      --text-faint: #a8a8a2;
+      --border:     rgba(0,0,0,0.07);
+      --border-mid: rgba(0,0,0,0.12);
+      --white:      #ffffff;
+      --radius:     14px;
+      --radius-sm:  8px;
+      --radius-lg:  24px;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans:  'Plus Jakarta Sans', system-ui, sans-serif;
+      --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md:  0 8px 28px rgba(0,0,0,0.10);
     }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-sans);color:var(--text);background:var(--white);line-height:1.7}
+    a{text-decoration:none;color:inherit}
+    button{font-family:var(--font-sans);cursor:pointer;border:none}
+    input,select,textarea{font-family:var(--font-sans)}
+    img{display:block}
+    .page{display:none}
+    .page.active{display:block}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:0 3rem;height:68px;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .logo{display:flex;align-items:center;gap:11px;cursor:pointer}
+    .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center}
+    .logo-mark svg{width:18px;height:18px}
+    .logo-name{font-size:15.5px;font-weight:600}
+    .logo-name span{color:var(--sage)}
+    .nav-links{display:flex;gap:2rem}
+    .nav-links a{font-size:13.5px;font-weight:400;color:var(--text-muted);cursor:pointer;transition:color .2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{font-size:13.5px;font-weight:600;padding:9px 20px;background:var(--sage);color:#fff;border-radius:var(--radius-sm);transition:background .2s}
+    .nav-cta:hover{background:var(--sage-dark)}
 
-    html { scroll-behavior: smooth; }
+    /* HERO */
+    .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1a3830 0%,#2f5a50 60%,#4a7c6f 100%)}
+    .hero-bg-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=1600&q=80&fit=crop') center/cover no-repeat;opacity:.18;mix-blend-mode:luminosity}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(26,56,48,.92) 0%,rgba(26,56,48,.5) 60%,rgba(26,56,48,.1) 100%)}
+    .hero-content{position:relative;z-index:2;padding:4rem 3rem;max-width:680px;animation:fadeInLeft .9s ease both}
+    @keyframes fadeInLeft{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.9);font-size:12.5px;font-weight:500;padding:5px 14px;border-radius:99px;margin-bottom:1.5rem}
+    .hero-badge span{width:6px;height:6px;background:#7dd3b8;border-radius:50%;display:inline-block}
+    .hero h1{font-family:var(--font-serif);font-size:56px;font-weight:400;line-height:1.1;color:#fff;margin-bottom:1.5rem}
+    .hero h1 em{font-style:italic;color:#7dd3b8}
+    .hero p{font-size:17px;color:rgba(255,255,255,.75);max-width:460px;margin-bottom:2.5rem;font-weight:300}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-hero{padding:13px 28px;font-size:15px;font-weight:600;background:#fff;color:var(--sage-dark);border-radius:var(--radius-sm);transition:all .2s}
+    .btn-hero:hover{background:var(--sage-light)}
+    .btn-hero-outline{padding:13px 28px;font-size:15px;font-weight:400;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);border-radius:var(--radius-sm);transition:border-color .2s}
+    .btn-hero-outline:hover{border-color:rgba(255,255,255,.8)}
+    .hero-stats{position:absolute;bottom:2.5rem;right:3rem;z-index:2;display:flex;gap:16px;animation:fadeInLeft .9s .3s ease both}
+    .hero-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:var(--radius);padding:1.1rem 1.5rem;text-align:center}
+    .hero-stat-num{font-family:var(--font-serif);font-size:30px;color:#fff;display:block;font-weight:400}
+    .hero-stat-label{font-size:12px;color:rgba(255,255,255,.6);margin-top:2px}
 
-    body {
-      font-family: var(--font-body);
-      color: var(--text);
-      background: var(--bg);
-      font-size: 16px;
-      line-height: 1.7;
-    }
+    /* GALLERY */
+    .gallery-section{background:var(--cream);padding:5rem 3rem}
+    .gallery-section h2{font-family:var(--font-serif);font-size:36px;font-weight:400;text-align:center;margin-bottom:.5rem}
+    .gallery-sub{text-align:center;color:var(--text-muted);font-size:15px;font-weight:300;margin-bottom:2.5rem}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:240px 240px;gap:14px;max-width:1100px;margin:0 auto}
+    .g-item{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer}
+    .g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .g-item:hover img{transform:scale(1.05)}
+    .g-item.tall{grid-row:span 2}
+    .g-item .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,56,48,.65) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:1rem}
+    .g-item:hover .ov{opacity:1}
+    .ov span{color:#fff;font-size:13px;font-weight:500}
 
-    a { text-decoration: none; color: inherit; }
-    button { font-family: var(--font-body); cursor: pointer; }
-    input, select, textarea { font-family: var(--font-body); }
+    /* SECTIONS */
+    .sec{padding:5rem 3rem;max-width:1140px;margin:0 auto}
+    .eyebrow{font-size:12px;font-weight:600;color:var(--sage);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem}
+    .sec h2{font-family:var(--font-serif);font-size:36px;font-weight:400;margin-bottom:.85rem;line-height:1.2}
+    .sec-sub{font-size:16px;color:var(--text-muted);font-weight:300;max-width:520px;margin-bottom:3rem;line-height:1.75}
+    .divider{border:none;border-top:1px solid var(--border)}
 
-    /* ---- PAGES ---- */
-    .page { display: none; }
-    .page.active { display: block; }
+    /* LAYANAN */
+    .layanan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .lcard{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:transform .25s,box-shadow .25s}
+    .lcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .lcard-img{height:200px;overflow:hidden}
+    .lcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .lcard:hover .lcard-img img{transform:scale(1.06)}
+    .lcard-body{padding:1.5rem}
+    .lcard-body h3{font-family:var(--font-serif);font-size:20px;font-weight:400;margin-bottom:.6rem}
+    .lcard-body p{font-size:13.5px;color:var(--text-muted);line-height:1.7;font-weight:300}
+    .lcard-link{display:inline-flex;align-items:center;gap:5px;margin-top:1rem;font-size:13.5px;font-weight:600;color:var(--sage);cursor:pointer}
+    .lcard-link svg{width:14px;height:14px;transition:transform .2s}
+    .lcard:hover .lcard-link svg{transform:translateX(3px)}
 
-    /* ---- NAV ---- */
-    .nav {
-      position: sticky; top: 0; z-index: 200;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 2rem; height: 64px;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-    .logo { display: flex; align-items: center; gap: 10px; cursor: pointer; }
-    .logo-icon {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--green);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .logo-icon svg { width: 17px; height: 17px; }
-    .logo-name { font-size: 15px; font-weight: 500; }
-    .logo-name em { font-style: normal; color: var(--green); }
-    .nav-links { display: flex; gap: 1.75rem; }
-    .nav-links a {
-      font-size: 13.5px; color: var(--text-muted);
-      cursor: pointer; transition: color 0.2s;
-      font-weight: 400;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta {
-      font-size: 13.5px; padding: 8px 18px;
-      background: var(--green); color: #fff;
-      border: none; border-radius: var(--radius-sm);
-      font-weight: 500; transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--green-dark); }
-    .nav-mobile { display: none; }
+    /* PSIKOLOG */
+    .psikolog-bg{background:var(--cream)}
+    .psi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .pcard{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);transition:transform .25s,box-shadow .25s}
+    .pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .pcard-img{height:280px;overflow:hidden;background:var(--sage-light)}
+    .pcard-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .pcard-body{padding:1.35rem}
+    .pcard-body h3{font-family:var(--font-serif);font-size:17px;font-weight:600;margin-bottom:3px}
+    .pcard-body .role{font-size:12.5px;color:var(--text-muted);font-weight:300}
+    .ptags{display:flex;flex-wrap:wrap;gap:6px;margin-top:.85rem}
+    .ptag{font-size:11.5px;padding:4px 11px;background:var(--sage-light);color:var(--sage-dark);border-radius:99px;font-weight:500}
 
-    /* ---- HERO ---- */
-    .hero {
-      padding: 6rem 2rem 5rem;
-      max-width: 780px; margin: 0 auto;
-      text-align: center;
-      animation: fadeUp 0.7s ease both;
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-bottom: 1.75rem;
-      font-size: 12.5px; padding: 5px 14px;
-      background: var(--green-light); color: var(--green-dark);
-      border-radius: 99px; font-weight: 500;
-    }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: 48px; line-height: 1.15;
-      margin-bottom: 1.25rem; font-weight: 400;
-    }
-    .hero h1 em { font-style: italic; color: var(--green); }
-    .hero p {
-      font-size: 17px; color: var(--text-muted);
-      max-width: 500px; margin: 0 auto 2.25rem;
-      font-weight: 300;
-    }
-    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      padding: 12px 26px; background: var(--green); color: #fff;
-      border: none; border-radius: var(--radius-sm);
-      font-size: 14.5px; font-weight: 500; transition: background 0.2s;
-    }
-    .btn-primary:hover { background: var(--green-dark); }
-    .btn-outline {
-      padding: 12px 26px; background: transparent;
-      border: 1px solid var(--border-mid);
-      color: var(--text); border-radius: var(--radius-sm);
-      font-size: 14.5px; font-weight: 400; transition: border-color 0.2s;
-    }
-    .btn-outline:hover { border-color: rgba(0,0,0,0.25); }
+    /* MASALAH */
+    .masalah-bg{background:var(--sage-deep);padding:5rem 3rem}
+    .masalah-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .masalah-in h2{font-family:var(--font-serif);font-size:36px;font-weight:400;color:#fff;margin-bottom:1rem;line-height:1.2}
+    .masalah-in p{font-size:15px;color:rgba(255,255,255,.65);font-weight:300;line-height:1.8;margin-bottom:2rem}
+    .mtags{display:flex;flex-wrap:wrap;gap:8px}
+    .mtag{font-size:13px;padding:7px 16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.85);border-radius:99px;font-weight:400;transition:background .2s}
+    .mtag:hover{background:rgba(255,255,255,.14)}
+    .masalah-img{border-radius:var(--radius-lg);overflow:hidden;height:400px}
+    .masalah-img img{width:100%;height:100%;object-fit:cover}
 
-    /* ---- STATS ---- */
-    .stats {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      max-width: 620px; margin: 3.5rem auto 0;
-      animation: fadeUp 0.7s 0.15s ease both;
-    }
-    .stat {
-      padding: 1.5rem; text-align: center;
-      border-right: 1px solid var(--border);
-    }
-    .stat:last-child { border-right: none; }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 28px; color: var(--green);
-      display: block; font-weight: 400;
-    }
-    .stat-label { font-size: 12.5px; color: var(--text-muted); margin-top: 3px; }
+    /* TESTIMONI */
+    .testi-bg{background:var(--warm);padding:5rem 3rem}
+    .testi-hdr{text-align:center;max-width:560px;margin:0 auto 3rem}
+    .testi-hdr h2{font-family:var(--font-serif);font-size:36px;font-weight:400;margin-bottom:.75rem}
+    .testi-hdr p{font-size:15px;color:var(--text-muted);font-weight:300}
+    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin:0 auto}
+    .tcard{background:var(--white);border-radius:var(--radius);padding:1.6rem;border:1px solid var(--border);transition:box-shadow .2s}
+    .tcard:hover{box-shadow:var(--shadow-sm)}
+    .tcard .stars{color:#f59e0b;font-size:14px;margin-bottom:.85rem}
+    .tcard blockquote{font-size:14.5px;color:var(--text);line-height:1.75;font-style:italic;font-weight:300;margin-bottom:1.1rem}
+    .tcard-auth{display:flex;align-items:center;gap:10px}
+    .tav{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+    .tname{font-size:13.5px;font-weight:600}
+    .tdate{font-size:12px;color:var(--text-faint)}
 
-    /* ---- DIVIDER ---- */
-    .divider { border: none; border-top: 1px solid var(--border); margin: 0 2rem; }
+    /* PROSES */
+    .proses-sec{padding:5rem 3rem;max-width:1100px;margin:0 auto}
+    .proses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .pstep{text-align:center;padding:1.75rem 1.25rem;border:1px solid var(--border);border-radius:var(--radius-lg);transition:border-color .2s,transform .2s}
+    .pstep:hover{border-color:var(--sage-mid);transform:translateY(-3px)}
+    .pstep-num{width:52px;height:52px;border-radius:50%;background:var(--sage-light);color:var(--sage-dark);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:22px;margin:0 auto 1.1rem}
+    .pstep h3{font-size:15px;font-weight:600;margin-bottom:.5rem}
+    .pstep p{font-size:13.5px;color:var(--text-muted);font-weight:300;line-height:1.6}
 
-    /* ---- SECTIONS ---- */
-    .section { padding: 4.5rem 2rem; max-width: 940px; margin: 0 auto; }
-    .section-label {
-      font-size: 11.5px; color: var(--green); font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem;
-    }
-    .section h2 {
-      font-family: var(--font-display);
-      font-size: 30px; font-weight: 400; margin-bottom: 0.75rem;
-    }
-    .section-sub {
-      font-size: 15.5px; color: var(--text-muted);
-      max-width: 520px; margin-bottom: 2.5rem; font-weight: 300;
-    }
+    /* CTA */
+    .cta-strip{background:linear-gradient(135deg,var(--sage-deep) 0%,var(--sage-dark) 100%);padding:4rem 3rem;text-align:center}
+    .cta-strip h2{font-family:var(--font-serif);font-size:36px;font-weight:400;color:#fff;margin-bottom:.75rem}
+    .cta-strip p{font-size:16px;color:rgba(255,255,255,.7);font-weight:300;margin-bottom:2rem}
 
-    /* ---- SERVICES ---- */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
-    }
-    .service-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .service-card:hover { border-color: var(--green-mid); transform: translateY(-2px); }
-    .service-icon {
-      width: 44px; height: 44px;
-      border-radius: var(--radius-sm);
-      background: var(--green-light);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .service-icon svg { width: 20px; height: 20px; }
-    .service-card h3 { font-size: 14.5px; font-weight: 500; margin-bottom: 7px; }
-    .service-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
+    /* BOOKING */
+    .bk-bg{background:var(--cream);min-height:100vh}
+    .bk-wrap{max-width:700px;margin:0 auto;padding:3rem 2rem 5rem}
+    .bk-wrap h1{font-family:var(--font-serif);font-size:32px;font-weight:400;margin-bottom:.5rem}
+    .bk-wrap .sub{font-size:15px;color:var(--text-muted);font-weight:300;margin-bottom:2.25rem}
+    .fcard{background:var(--white);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--border);margin-bottom:1rem}
+    .fcard-title{font-size:12.5px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:1.25rem}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .fg{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+    .fg:last-child{margin-bottom:0}
+    .fg label{font-size:13.5px;font-weight:500}
+    .fg input,.fg select,.fg textarea{padding:11px 14px;font-size:14px;border:1px solid var(--border-mid);border-radius:var(--radius-sm);background:var(--white);color:var(--text);transition:border-color .2s;font-weight:300}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--sage)}
+    .fg textarea{resize:vertical;min-height:90px}
+    .psi-picks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .ppick{border:1.5px solid var(--border-mid);border-radius:var(--radius);padding:14px 10px;text-align:center;cursor:pointer;transition:all .2s}
+    .ppick:hover{border-color:var(--sage-mid)}
+    .ppick.selected{border-color:var(--sage);background:var(--sage-light)}
+    .ppick-av{width:44px;height:44px;border-radius:50%;margin:0 auto 8px;overflow:hidden;background:var(--sage-light)}
+    .ppick-av img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .ppick h4{font-size:12.5px;font-weight:600}
+    .ppick p{font-size:11.5px;color:var(--text-muted);margin-top:3px;font-weight:300}
+    .slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .slot{border:1px solid var(--border-mid);border-radius:var(--radius-sm);padding:10px;text-align:center;font-size:13px;cursor:pointer;transition:all .15s}
+    .slot:hover{border-color:var(--sage);color:var(--sage)}
+    .slot.selected{background:var(--sage);color:#fff;border-color:var(--sage)}
+    .slot.unavail{opacity:.3;cursor:default;background:var(--cream)}
+    .slot.unavail:hover{border-color:var(--border-mid);color:var(--text)}
+    .sub-btn{width:100%;padding:15px;font-size:15px;font-weight:600;background:var(--sage);color:#fff;border-radius:var(--radius-sm);transition:background .2s}
+    .sub-btn:hover{background:var(--sage-dark)}
+    .sbox{background:var(--sage-light);border-radius:var(--radius-lg);padding:3rem 2rem;text-align:center;display:none}
+    .sicon{width:56px;height:56px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+    .sicon svg{width:26px;height:26px}
+    .sbox h3{font-family:var(--font-serif);font-size:24px;font-weight:400;color:var(--sage-deep);margin-bottom:.75rem}
+    .sbox p{font-size:15px;color:var(--sage-dark);font-weight:300;line-height:1.75}
 
-    /* ---- TEAM ---- */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
-    }
-    .team-card {
-      background: var(--bg-soft);
-      border-radius: var(--radius);
-      padding: 1.5rem; text-align: center;
-      border: 1px solid var(--border);
-      transition: border-color 0.2s;
-    }
-    .team-card:hover { border-color: var(--green-mid); }
-    .avatar {
-      width: 60px; height: 60px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 500; margin: 0 auto 0.85rem;
-    }
-    .team-card h3 { font-size: 14.5px; font-weight: 500; }
-    .team-card .role { font-size: 12.5px; color: var(--text-muted); margin-top: 3px; }
-    .team-tag {
-      display: inline-block; margin-top: 10px;
-      font-size: 11.5px; padding: 4px 12px;
-      background: var(--green-light); color: var(--green-dark);
-      border-radius: 99px; font-weight: 500;
-    }
+    /* BLOG */
+    .bl-bg{background:var(--cream);min-height:100vh}
+    .bl-wrap{max-width:1100px;margin:0 auto;padding:3rem 2rem 5rem}
+    .bl-wrap h1{font-family:var(--font-serif);font-size:32px;font-weight:400;margin-bottom:.5rem}
+    .bl-wrap .sub{font-size:15px;color:var(--text-muted);font-weight:300;margin-bottom:2rem}
+    .cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2.25rem}
+    .cat{font-size:13px;padding:7px 18px;border-radius:99px;border:1px solid var(--border-mid);background:transparent;color:var(--text-muted);cursor:pointer;transition:all .2s}
+    .cat:hover{border-color:var(--sage);color:var(--sage)}
+    .cat.active{background:var(--sage);color:#fff;border-color:var(--sage)}
+    .bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .bcard{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s}
+    .bcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .bcard-img{height:170px;overflow:hidden}
+    .bcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .bcard:hover .bcard-img img{transform:scale(1.06)}
+    .bcard-body{padding:1.25rem 1.4rem 1.4rem}
+    .btag{font-size:11.5px;color:var(--sage);font-weight:600;margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em}
+    .bcard h3{font-family:var(--font-serif);font-size:17px;font-weight:400;line-height:1.45;margin-bottom:7px}
+    .bcard p{font-size:13px;color:var(--text-muted);line-height:1.65;font-weight:300}
+    .bmeta{display:flex;justify-content:space-between;margin-top:14px;font-size:12px;color:var(--text-faint)}
 
-    /* ---- STEPS ---- */
-    .step {
-      display: flex; gap: 1.25rem; align-items: flex-start;
-      padding: 1.35rem 0; border-bottom: 1px solid var(--border);
-    }
-    .step:last-child { border-bottom: none; }
-    .step-num {
-      width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
-      background: var(--green-light); color: var(--green-dark);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 500;
-    }
-    .step h3 { font-size: 14.5px; font-weight: 500; margin-bottom: 5px; }
-    .step p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
+    /* CONTACT */
+    .ct-bg{background:var(--cream);min-height:100vh}
+    .ct-wrap{max-width:1100px;margin:0 auto;padding:3rem 2rem 5rem}
+    .ct-wrap h1{font-family:var(--font-serif);font-size:32px;font-weight:400;margin-bottom:.5rem}
+    .ct-wrap .sub{font-size:15px;color:var(--text-muted);font-weight:300;margin-bottom:2.25rem}
+    .ct-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:28px}
+    .map-box{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);height:380px}
+    .map-box iframe{width:100%;height:100%;border:none;display:block}
+    .ct-info{display:flex;flex-direction:column;gap:14px}
+    .icard{background:var(--white);border-radius:var(--radius);padding:1.25rem 1.4rem;border:1px solid var(--border)}
+    .icard h3{font-size:11px;font-weight:700;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .icard p{font-size:14.5px;line-height:1.7;font-weight:300}
+    .icard a{color:var(--sage)}
+    .wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#25D366;color:#fff;border-radius:var(--radius-sm);font-size:15px;font-weight:600;transition:background .2s}
+    .wa-btn:hover{background:#1ebe5d}
+    .wa-btn svg{width:20px;height:20px}
+    .ig-lnk{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:13px;border:1px solid var(--border-mid);border-radius:var(--radius-sm);font-size:14px;font-weight:500;color:var(--text);transition:border-color .2s}
+    .ig-lnk:hover{border-color:rgba(0,0,0,.25)}
+    .ig-lnk svg{width:18px;height:18px}
 
-    /* ---- CTA BOX ---- */
-    .cta-box {
-      background: var(--green-light);
-      border-radius: var(--radius);
-      padding: 3rem 2rem; text-align: center;
-      margin: 0 2rem 4rem;
-    }
-    .cta-box h2 {
-      font-family: var(--font-display);
-      font-size: 26px; font-weight: 400;
-      color: var(--green-deeper); margin-bottom: 0.75rem;
-    }
-    .cta-box p { font-size: 15px; color: var(--green-dark); margin-bottom: 1.75rem; font-weight: 300; }
+    /* PAGE HDR */
+    .phdr{background:var(--white);border-bottom:1px solid var(--border);padding:2.25rem 3rem 2rem}
+    .phdr h1{font-family:var(--font-serif);font-size:30px;font-weight:400}
+    .phdr p{font-size:15px;color:var(--text-muted);margin-top:5px;font-weight:300}
 
-    /* ---- FOOTER ---- */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.75rem 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 12.5px; color: var(--text-muted);
-      flex-wrap: wrap; gap: 10px;
-    }
-    .footer-links { display: flex; gap: 1.25rem; }
-    .footer-links a { color: var(--text-muted); cursor: pointer; }
-    .footer-links a:hover { color: var(--text); }
-    .footer-social { display: flex; gap: 10px; align-items: center; }
-    .footer-social a {
-      width: 30px; height: 30px; border-radius: 50%;
-      border: 1px solid var(--border-mid);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-muted); transition: border-color 0.2s, color 0.2s;
-    }
-    .footer-social a:hover { border-color: var(--green); color: var(--green); }
-    .footer-social svg { width: 14px; height: 14px; }
+    /* WA FLOAT */
+    .waf{position:fixed;bottom:26px;right:26px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;box-shadow:0 4px 16px rgba(37,211,102,.38);transition:transform .2s}
+    .waf:hover{transform:scale(1.08)}
+    .waf svg{width:28px;height:28px}
+    .wap{position:fixed;bottom:94px;right:20px;background:#fff;border:1px solid var(--border-mid);border-radius:var(--radius-lg);padding:16px 18px;width:250px;z-index:998;display:none;box-shadow:0 8px 28px rgba(0,0,0,.1)}
+    .wap-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .wap-icon{width:36px;height:36px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .wap-icon svg{width:18px;height:18px}
+    .wap-txt p{font-size:14px;font-weight:600}
+    .wap-txt span{font-size:12px;color:var(--text-muted)}
+    .wap hr{border:none;border-top:1px solid var(--border);margin-bottom:12px}
+    .wap .wlabel{font-size:12px;color:var(--text-muted);margin-bottom:8px}
+    .wqbtns{display:flex;flex-direction:column;gap:7px}
+    .wq{background:var(--sage-light);color:var(--sage-deep);border:none;border-radius:var(--radius-sm);padding:9px 12px;font-size:13px;font-weight:400;cursor:pointer;text-align:left;transition:background .15s}
+    .wq:hover{background:#c8e5db}
 
-    /* ---- PAGE HEADER ---- */
-    .page-header {
-      background: var(--bg-soft);
-      border-bottom: 1px solid var(--border);
-      padding: 2rem 2rem 1.75rem;
-    }
-    .page-header h1 {
-      font-family: var(--font-display);
-      font-size: 26px; font-weight: 400;
-    }
-    .page-header p { font-size: 14.5px; color: var(--text-muted); margin-top: 5px; font-weight: 300; }
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text-muted);flex-wrap:wrap;gap:12px}
+    .ft-links{display:flex;gap:1.5rem}
+    .ft-links a{color:var(--text-muted);cursor:pointer;transition:color .2s}
+    .ft-links a:hover{color:var(--text)}
+    .ft-soc{display:flex;gap:10px}
+    .ft-soc a{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-mid);display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all .2s}
+    .ft-soc a:hover{border-color:var(--sage);color:var(--sage)}
+    .ft-soc svg{width:14px;height:14px}
 
-    /* ---- BOOKING ---- */
-    .booking-wrap { max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
-    .form-group label { font-size: 13.5px; font-weight: 500; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%; padding: 10px 14px;
-      font-size: 14px;
-      border: 1px solid var(--border-mid);
-      border-radius: var(--radius-sm);
-      background: var(--bg); color: var(--text);
-      transition: border-color 0.2s;
-      font-weight: 300;
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .nav{padding:0 1.5rem}.nav-links{display:none}
+      .hero h1{font-size:38px}.hero-stats{display:none}
+      .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+      .g-item.tall{grid-row:span 1}
+      .layanan-grid,.psi-grid,.proses-grid,.testi-grid{grid-template-columns:1fr}
+      .masalah-in{grid-template-columns:1fr}.masalah-img{display:none}
+      .ct-grid{grid-template-columns:1fr}
+      .bl-grid{grid-template-columns:1fr 1fr}
+      .frow{grid-template-columns:1fr}
+      .psi-picks{grid-template-columns:repeat(3,1fr)}
+      .hero-content{padding:3rem 1.5rem}
+      footer{padding:1.5rem}
     }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none; border-color: var(--green);
-    }
-    .form-group textarea { resize: vertical; min-height: 90px; }
-    .form-section-title {
-      font-size: 13px; font-weight: 500; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: 0.06em;
-      margin-bottom: 10px;
-    }
-    .psikolog-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
-    .psikolog-pick {
-      border: 1px solid var(--border-mid); border-radius: var(--radius-sm);
-      padding: 14px 10px; text-align: center; cursor: pointer;
-      transition: all 0.2s;
-    }
-    .psikolog-pick:hover { border-color: var(--green-mid); }
-    .psikolog-pick.selected { border-color: var(--green); background: var(--green-light); }
-    .psikolog-pick .av {
-      width: 40px; height: 40px; border-radius: 50%;
-      margin: 0 auto 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 500;
-    }
-    .psikolog-pick h4 { font-size: 12.5px; font-weight: 500; }
-    .psikolog-pick p { font-size: 11.5px; color: var(--text-muted); margin-top: 3px; }
-    .slot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 22px; }
-    .slot {
-      border: 1px solid var(--border-mid); border-radius: var(--radius-sm);
-      padding: 9px; text-align: center; font-size: 13px;
-      cursor: pointer; transition: all 0.15s; font-weight: 400;
-    }
-    .slot:hover { border-color: var(--green); color: var(--green); }
-    .slot.selected { background: var(--green); color: #fff; border-color: var(--green); }
-    .slot.unavail { opacity: 0.3; cursor: default; background: var(--bg-soft); }
-    .slot.unavail:hover { border-color: var(--border-mid); color: var(--text); }
-    .submit-btn {
-      width: 100%; padding: 14px;
-      background: var(--green); color: #fff;
-      border: none; border-radius: var(--radius-sm);
-      font-size: 15px; font-weight: 500;
-      transition: background 0.2s;
-    }
-    .submit-btn:hover { background: var(--green-dark); }
-    .success-box {
-      background: var(--green-light);
-      border-radius: var(--radius);
-      padding: 2.5rem 2rem; text-align: center; display: none;
-    }
-    .success-icon {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--green); display: flex; align-items: center;
-      justify-content: center; margin: 0 auto 1rem;
-    }
-    .success-icon svg { width: 24px; height: 24px; }
-    .success-box h3 {
-      font-family: var(--font-display);
-      font-size: 22px; font-weight: 400;
-      color: var(--green-deeper); margin-bottom: 8px;
-    }
-    .success-box p { font-size: 14.5px; color: var(--green-dark); line-height: 1.7; font-weight: 300; }
-
-    /* ---- BLOG ---- */
-    .blog-wrap { max-width: 940px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-    .blog-cats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
-    .cat-btn {
-      font-size: 13px; padding: 6px 16px; border-radius: 99px;
-      border: 1px solid var(--border-mid);
-      background: transparent; color: var(--text-muted);
-      cursor: pointer; transition: all 0.2s; font-weight: 400;
-    }
-    .cat-btn:hover { border-color: var(--green); color: var(--green); }
-    .cat-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 20px;
-    }
-    .blog-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      cursor: pointer; transition: border-color 0.2s, transform 0.2s;
-    }
-    .blog-card:hover { border-color: var(--green-mid); transform: translateY(-2px); }
-    .blog-img {
-      height: 148px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 44px;
-    }
-    .blog-body { padding: 1.1rem 1.35rem 1.35rem; }
-    .blog-tag { font-size: 11.5px; color: var(--green); font-weight: 500; margin-bottom: 7px; }
-    .blog-card h3 { font-size: 14.5px; font-weight: 500; line-height: 1.5; margin-bottom: 7px; }
-    .blog-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; font-weight: 300; }
-    .blog-meta { display: flex; justify-content: space-between; margin-top: 14px; font-size: 11.5px; color: var(--text-faint); }
-
-    /* ---- CONTACT / MAP ---- */
-    .contact-wrap { max-width: 940px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
-    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .map-box {
-      border-radius: var(--radius); overflow: hidden;
-      border: 1px solid var(--border); height: 340px;
-    }
-    .map-box iframe { width: 100%; height: 100%; border: none; display: block; }
-    .contact-info { display: flex; flex-direction: column; gap: 14px; }
-    .info-card {
-      background: var(--bg-soft);
-      border-radius: var(--radius-sm);
-      padding: 1.1rem 1.25rem;
-      border: 1px solid var(--border);
-    }
-    .info-card h3 {
-      font-size: 11px; font-weight: 500; color: var(--text-muted);
-      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 7px;
-    }
-    .info-card p { font-size: 14px; line-height: 1.65; font-weight: 300; }
-    .info-card a { color: var(--green); }
-    .wa-contact-btn {
-      display: flex; align-items: center; justify-content: center; gap: 9px;
-      width: 100%; padding: 13px;
-      background: #25D366; color: #fff;
-      border: none; border-radius: var(--radius-sm);
-      font-size: 14.5px; font-weight: 500;
-      transition: background 0.2s;
-    }
-    .wa-contact-btn:hover { background: #1ebe5d; }
-    .wa-contact-btn svg { width: 19px; height: 19px; }
-    .ig-btn {
-      display: flex; align-items: center; justify-content: center; gap: 9px;
-      width: 100%; padding: 12px;
-      background: transparent; color: var(--text);
-      border: 1px solid var(--border-mid); border-radius: var(--radius-sm);
-      font-size: 14px; font-weight: 400;
-      transition: border-color 0.2s;
-    }
-    .ig-btn:hover { border-color: rgba(0,0,0,0.25); }
-    .ig-btn svg { width: 18px; height: 18px; }
-
-    /* ---- WA FLOAT ---- */
-    .wa-float {
-      position: fixed; bottom: 24px; right: 24px;
-      width: 54px; height: 54px;
-      background: #25D366; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; z-index: 999;
-      box-shadow: 0 4px 12px rgba(37,211,102,0.35);
-      transition: transform 0.2s;
-    }
-    .wa-float:hover { transform: scale(1.08); }
-    .wa-float svg { width: 27px; height: 27px; }
-    .wa-tooltip {
-      position: fixed; bottom: 88px; right: 20px;
-      background: #fff; border: 1px solid var(--border-mid);
-      border-radius: var(--radius); padding: 14px 16px;
-      width: 236px; z-index: 998; display: none;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      animation: fadeUp 0.2s ease both;
-    }
-    .wa-tooltip-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-    .wa-tooltip-icon { width: 32px; height: 32px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .wa-tooltip-icon svg { width: 16px; height: 16px; }
-    .wa-tooltip p { font-size: 13.5px; font-weight: 500; }
-    .wa-tooltip span { font-size: 12px; color: var(--text-muted); }
-    .wa-msgs { margin-top: 10px; display: flex; flex-direction: column; gap: 7px; }
-    .wa-msg-btn {
-      background: var(--green-light); color: var(--green-deeper);
-      border: none; border-radius: var(--radius-sm);
-      padding: 8px 12px; font-size: 12.5px;
-      cursor: pointer; text-align: left;
-      transition: background 0.15s; font-weight: 400;
-    }
-    .wa-msg-btn:hover { background: #c5ead9; }
-
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 680px) {
-      .nav-links { display: none; }
-      .nav-mobile { display: flex; }
-      .hero h1 { font-size: 32px; }
-      .stats { grid-template-columns: 1fr; }
-      .stat { border-right: none; border-bottom: 1px solid var(--border); }
-      .stat:last-child { border-bottom: none; }
-      .form-row { grid-template-columns: 1fr; }
-      .psikolog-cards { grid-template-columns: repeat(3, 1fr); }
-      .contact-layout { grid-template-columns: 1fr; }
-      .map-box { height: 240px; }
-      .slot-grid { grid-template-columns: repeat(4, 1fr); }
-      .cta-box { margin: 0 1rem 3rem; }
-      .divider { margin: 0 1rem; }
+    @media(max-width:600px){
+      .hero h1{font-size:30px}
+      .gallery-grid{grid-template-columns:1fr;grid-template-rows:auto}
+      .bl-grid{grid-template-columns:1fr}
+      .slots{grid-template-columns:repeat(4,1fr)}
+      .sec,.proses-sec{padding:3rem 1.5rem}
+      .gallery-section,.masalah-bg,.testi-bg,.cta-strip{padding:3rem 1.5rem}
     }
   </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
+<!-- NAV -->
 <nav class="nav">
   <div class="logo" onclick="showPage('home')">
-    <div class="logo-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
     </div>
-    <span class="logo-name">Psikologi <em>Ceria</em></span>
+    <span class="logo-name">Psikologi <span>Ceria</span></span>
   </div>
   <div class="nav-links">
     <a onclick="showPage('home')">Beranda</a>
-    <a onclick="showPage('booking')">Konseling</a>
+    <a onclick="showPage('home');setTimeout(()=>document.getElementById('lay').scrollIntoView({behavior:'smooth'}),100)">Layanan</a>
     <a onclick="showPage('blog')">Artikel</a>
     <a onclick="showPage('contact')">Lokasi</a>
   </div>
   <button class="nav-cta" onclick="showPage('booking')">Buat Janji</button>
 </nav>
 
-<!-- ===== HOME PAGE ===== -->
+<!-- ===== HOME ===== -->
 <div id="page-home" class="page active">
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-badge">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      Konseling &amp; Terapi Profesional — Bengkulu
+    <div class="hero-bg"></div>
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><span></span> Psikolog Klinis Tersertifikasi — Bengkulu</div>
+      <h1>Konseling dengan<br><em>Psikolog Profesional</em></h1>
+      <p>Jadikan kesehatan mentalmu prioritas. Mulai perjalanan menuju jiwa yang lebih sehat bersama kami.</p>
+      <div class="hero-btns">
+        <button class="btn-hero" onclick="showPage('booking')">Buat Janji Sekarang</button>
+        <button class="btn-hero-outline" onclick="showPage('contact')">Lokasi Klinik</button>
+      </div>
     </div>
-    <h1>Ruang Aman untuk<br><em>Jiwa yang Lebih Sehat</em></h1>
-    <p>Kami hadir untuk mendampingi perjalanan kesehatan mental Anda — dengan pendekatan hangat, ilmiah, dan bebas stigma.</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="showPage('booking')">Buat Janji Sekarang</button>
-      <button class="btn-outline" onclick="showPage('blog')">Baca Artikel</button>
-    </div>
-    <div class="stats">
-      <div class="stat"><span class="stat-num">2.000+</span><span class="stat-label">Klien dilayani</span></div>
-      <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Psikolog berpengalaman</span></div>
-      <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Tingkat kepuasan</span></div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">500+</span><span class="hero-stat-label">Klien dilayani</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">5+</span><span class="hero-stat-label">Psikolog berpengalaman</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">98%</span><span class="hero-stat-label">Kepuasan klien</span></div>
     </div>
   </section>
 
-  <hr class="divider">
+  <!-- GALERI RUANG KLINIK -->
+  <!-- ⚠️ Ganti URL foto di bawah dengan foto nyata ruang klinik Anda -->
+  <section class="gallery-section">
+    <h2>Ruang Konseling</h2>
+    <p class="gallery-sub">Suasana yang nyaman dan hangat untuk mendukung proses pemulihan Anda.</p>
+    <div class="gallery-grid">
+      <div class="g-item tall">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80&fit=crop" alt="Ruang konseling utama" loading="lazy">
+        <div class="ov"><span>Ruang Konseling Utama</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80&fit=crop" alt="Ruang tunggu" loading="lazy">
+        <div class="ov"><span>Ruang Tunggu</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=700&q=80&fit=crop" alt="Area lobby" loading="lazy">
+        <div class="ov"><span>Area Lobby</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=700&q=80&fit=crop" alt="Ruang konseling anak" loading="lazy">
+        <div class="ov"><span>Ruang Anak</span></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=700&q=80&fit=crop" alt="Ruang konseling online" loading="lazy">
+        <div class="ov"><span>Ruang Online</span></div>
+      </div>
+    </div>
+  </section>
 
-  <section class="section">
-    <div class="section-label">Layanan Kami</div>
+  <!-- LAYANAN -->
+  <div id="lay"></div>
+  <section class="sec">
+    <div class="eyebrow">Layanan Kami</div>
     <h2>Apa yang bisa kami bantu?</h2>
-    <p class="section-sub">Layanan konseling dirancang untuk semua tahap kehidupan — dari remaja hingga lansia, individu maupun pasangan.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    <p class="sec-sub">Layanan psikologi profesional untuk semua kalangan — individu, pasangan, maupun keluarga.</p>
+    <div class="layanan-grid">
+      <div class="lcard">
+        <div class="lcard-img"><img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=800&q=80&fit=crop" alt="Konseling" loading="lazy"></div>
+        <div class="lcard-body">
+          <h3>Konseling</h3>
+          <p>Untuk individu, pasangan, dan keluarga yang ingin berbagi keluh kesah, memetakan masalah, dan berkolaborasi mencari solusi bersama psikolog.</p>
+          <span class="lcard-link" onclick="showPage('booking')">Buat Janji <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-        <h3>Konseling Individu</h3>
-        <p>Sesi privat satu-satu bersama psikolog untuk membahas tantangan personal, kecemasan, atau depresi.</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="lcard">
+        <div class="lcard-img"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80&fit=crop" alt="Psikotes" loading="lazy"></div>
+        <div class="lcard-body">
+          <h3>Psikotes</h3>
+          <p>Tes kecerdasan, minat-bakat, dan kesiapan sekolah untuk membantu menentukan keputusan pendidikan dan karir yang tepat.</p>
+          <span class="lcard-link" onclick="showPage('booking')">Buat Janji <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-        <h3>Konseling Pasangan</h3>
-        <p>Membantu pasangan membangun komunikasi yang sehat dan mengatasi konflik dalam hubungan.</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      <div class="lcard">
+        <div class="lcard-img"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80&fit=crop" alt="Seminar" loading="lazy"></div>
+        <div class="lcard-body">
+          <h3>Seminar / Workshop</h3>
+          <p>Narasumber ahli psikologi untuk komunitas, organisasi, dan institusi yang ingin mengadakan seminar, workshop, atau training.</p>
+          <span class="lcard-link" onclick="openWA('Halo Psikologi Ceria, saya ingin bertanya tentang layanan seminar/workshop.')">Hubungi Kami <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-        <h3>Konseling Keluarga</h3>
-        <p>Sesi bersama anggota keluarga untuk memperkuat komunikasi dan dinamika keluarga yang positif.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3>Konseling Online</h3>
-        <p>Akses layanan dari mana saja melalui video call — nyaman, fleksibel, dan tetap profesional.</p>
       </div>
     </div>
   </section>
 
   <hr class="divider">
 
-  <section class="section">
-    <div class="section-label">Tim Kami</div>
-    <h2>Psikolog berpengalaman</h2>
-    <p class="section-sub">Setiap psikolog kami tersertifikasi dan berkomitmen pada pendekatan empatik berbasis bukti ilmiah.</p>
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="avatar" style="background:#E1F5EE;color:#0F6E56;">SA</div>
-        <h3>Deta Nurfianti, M.Psi., Psikolog</h3>
-        <p class="role">Psikolog Klinis</p>
-        <span class="team-tag">Kecemasan, Stres, Konseling Pasangan, Konseling Keluarga, Interpersonal, Spiritual Journey, &amp; Depresi</span>
-      </div>
-      <div class="team-card">
-        <div class="avatar" style="background:#E6F1FB;color:#185FA5;">BR</div>
-        <h3>Dita Lestari, M.Psi., Psikolog</h3>
-        <p class="role">Psikolog Klinis</p>
-        <span class="team-tag">Hubungan &amp; Keluarga</span>
-      </div>
-      <div class="team-card">
-        <div class="avatar" style="background:#FAEEDA;color:#854F0B;">NP</div>
-        <h3>Asti Kusuma, M.Psi.</h3>
-        <p class="role">Psikolog Klinis</p>
-        <span class="team-tag">Remaja &amp; Tumbuh Kembang</span>
+  <!-- PSIKOLOG -->
+  <!-- ⚠️ Ganti foto psikolog dengan foto asli tim Anda -->
+  <section class="psikolog-bg" style="padding:5rem 3rem">
+    <div style="max-width:1140px;margin:0 auto">
+      <div class="eyebrow">Tim Psikolog</div>
+      <h2 style="font-family:var(--font-serif);font-size:36px;font-weight:400;margin-bottom:.85rem">Psikolog Kami</h2>
+      <p class="sec-sub">Setiap psikolog tersertifikasi dan berkomitmen memberikan layanan empatik berbasis bukti ilmiah.</p>
+      <div class="psi-grid">
+        <div class="pcard">
+          <div class="pcard-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80&fit=crop" alt="Dr. Sari Andini" loading="lazy"></div>
+          <div class="pcard-body">
+            <h3>Dr. Sari Andini, M.Psi.</h3>
+            <div class="role">Psikolog Klinis</div>
+            <div class="ptags"><span class="ptag">Kecemasan</span><span class="ptag">Depresi</span><span class="ptag">Trauma</span></div>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-img"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80&fit=crop" alt="Budi Raharjo" loading="lazy"></div>
+          <div class="pcard-body">
+            <h3>Budi Raharjo, M.Psi.</h3>
+            <div class="role">Psikolog Klinis</div>
+            <div class="ptags"><span class="ptag">Hubungan</span><span class="ptag">Pernikahan</span><span class="ptag">Keluarga</span></div>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=80&fit=crop" alt="Nisa Putri" loading="lazy"></div>
+          <div class="pcard-body">
+            <h3>Nisa Putri, M.Psi.</h3>
+            <div class="role">Psikolog Klinis</div>
+            <div class="ptags"><span class="ptag">Remaja</span><span class="ptag">Tumbuh Kembang</span><span class="ptag">Parenting</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <hr class="divider">
-
-  <section class="section">
-    <div class="section-label">Cara Kerja</div>
-    <h2>Mulai perjalanan Anda</h2>
-    <p class="section-sub">Proses yang mudah — kami pastikan Anda merasa nyaman sejak langkah pertama.</p>
-    <div class="step"><div class="step-num">1</div><div><h3>Pilih psikolog &amp; jadwal</h3><p>Temukan psikolog yang paling sesuai dengan kebutuhan Anda dan pilih waktu yang cocok.</p></div></div>
-    <div class="step"><div class="step-num">2</div><div><h3>Konfirmasi &amp; persiapan</h3><p>Isi formulir singkat tentang kondisi Anda agar psikolog bisa mempersiapkan sesi terbaik.</p></div></div>
-    <div class="step"><div class="step-num">3</div><div><h3>Sesi konseling</h3><p>Jalani sesi tatap muka atau online dalam suasana aman, rahasia, dan tanpa penghakiman.</p></div></div>
-    <div class="step"><div class="step-num">4</div><div><h3>Tindak lanjut &amp; dukungan</h3><p>Psikolog memberikan rencana tindak lanjut dan Anda bisa menjadwalkan sesi berikutnya kapan saja.</p></div></div>
+  <!-- MASALAH -->
+  <section class="masalah-bg">
+    <div class="masalah-in">
+      <div>
+        <div class="eyebrow" style="color:var(--sage-mid)">Konsultasikan Masalahmu</div>
+        <h2>Kami siap mendengarkan</h2>
+        <p>Tidak ada masalah yang terlalu kecil atau terlalu besar. Tim psikolog kami siap membantu Anda melewati berbagai tantangan hidup.</p>
+        <div class="mtags">
+          <span class="mtag">Depresi</span><span class="mtag">Kecemasan</span><span class="mtag">Trauma</span>
+          <span class="mtag">Relasi romantis</span><span class="mtag">Pernikahan</span><span class="mtag">Isu keluarga</span>
+          <span class="mtag">Regulasi emosi</span><span class="mtag">Perkembangan anak</span><span class="mtag">Masalah remaja</span>
+          <span class="mtag">Bullying</span><span class="mtag">Masalah akademik</span><span class="mtag">Karir &amp; pekerjaan</span>
+          <span class="mtag">Penentuan jurusan</span><span class="mtag">Stres &amp; burnout</span>
+        </div>
+      </div>
+      <div class="masalah-img">
+        <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=700&q=80&fit=crop" alt="Konseling psikologi" loading="lazy">
+      </div>
+    </div>
   </section>
 
-  <div class="cta-box">
-    <h2>Siap memulai?</h2>
-    <p>Langkah pertama adalah yang terberat — tapi Anda tidak perlu melakukannya sendiri.<br>Tim kami siap mendampingi Anda.</p>
-    <button class="btn-primary" onclick="showPage('booking')">Buat Janji Sekarang</button>
+  <!-- PROSES -->
+  <section class="proses-sec">
+    <div style="text-align:center;max-width:560px;margin:0 auto 3rem">
+      <div class="eyebrow">Cara Kerja</div>
+      <h2 style="font-family:var(--font-serif);font-size:36px;font-weight:400">Mulai dalam 4 langkah mudah</h2>
+    </div>
+    <div class="proses-grid">
+      <div class="pstep"><div class="pstep-num">1</div><h3>Pilih psikolog</h3><p>Temukan psikolog yang paling sesuai dengan kebutuhan dan kenyamanan Anda.</p></div>
+      <div class="pstep"><div class="pstep-num">2</div><h3>Tentukan jadwal</h3><p>Pilih tanggal dan jam — tersedia sesi tatap muka maupun online via video call.</p></div>
+      <div class="pstep"><div class="pstep-num">3</div><h3>Konfirmasi via WA</h3><p>Tim kami menghubungi Anda via WhatsApp untuk konfirmasi dan persiapan sesi.</p></div>
+      <div class="pstep"><div class="pstep-num">4</div><h3>Jalani sesi</h3><p>Ceritakan dengan bebas dalam ruang yang aman, rahasia, dan tanpa penghakiman.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section class="testi-bg">
+    <div class="testi-hdr">
+      <div class="eyebrow">Klien Kami</div>
+      <h2>Apa kata mereka</h2>
+      <p>Pengalaman nyata dari klien yang telah mempercayai Psikologi Ceria.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Psikolognya sangat sabar dan membuat saya merasa didengar sepenuhnya. Saya merasa lebih ringan setelah sesi pertama."</blockquote><div class="tcard-auth"><div class="tav" style="background:#E1F5EE;color:#0F6E56;">AN</div><div><div class="tname">Anita N.</div><div class="tdate">Klien Individu</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Tempatnya nyaman sekali, suasananya hangat dan tidak terasa seperti klinik. Psikolognya profesional tapi tetap ramah."</blockquote><div class="tcard-auth"><div class="tav" style="background:#E6F1FB;color:#185FA5;">RD</div><div><div class="tname">Rudi D.</div><div class="tdate">Klien Pasangan</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sudah merasakan perubahan yang signifikan. Psikolog membantu saya melihat masalah dari sudut pandang yang lebih positif."</blockquote><div class="tcard-auth"><div class="tav" style="background:#FAEEDA;color:#854F0B;">SR</div><div><div class="tname">Sinta R.</div><div class="tdate">Klien Individu</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sangat membantu anak saya yang bermasalah di sekolah. Anak kami jauh lebih percaya diri sekarang."</blockquote><div class="tcard-auth"><div class="tav" style="background:#F3E8FF;color:#7C3AED;">LH</div><div><div class="tname">Lina H.</div><div class="tdate">Orang Tua Klien</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Psikolognya ngevalidasi banget dan membantu membuka sudut pandang baru yang bikin saya bisa melihat masalah lebih positif."</blockquote><div class="tcard-auth"><div class="tav" style="background:#FEF3C7;color:#92400E;">MF</div><div><div class="tname">M. Fauzan</div><div class="tdate">Klien Online</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Very helpful. Psikolog dengan telaten dan sabar mendengarkan, dan memberikan insight yang benar-benar berguna."</blockquote><div class="tcard-auth"><div class="tav" style="background:#DCFCE7;color:#166534;">YP</div><div><div class="tname">Yuli P.</div><div class="tdate">Klien Individu</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2>Siap memulai perjalanan Anda?</h2>
+    <p>Langkah pertama adalah yang terberat — tapi Anda tidak perlu melakukannya sendiri.</p>
+    <button class="btn-hero" onclick="showPage('booking')">Buat Janji Sekarang</button>
   </div>
 
   <footer>
-    <span>© 2025 CV. Psikologi Ceria. Semua hak dilindungi.</span>
-    <div class="footer-links">
-      <a onclick="showPage('contact')">Lokasi</a>
-      <a href="mailto:ceriapsikologi@gmail.com">Email</a>
-    </div>
-    <div class="footer-social">
-      <a href="https://www.instagram.com/psikologicceria" target="_blank" title="Instagram @psikologicceria">
+    <span>© 2025 CV. Psikologi Ceria, Bengkulu.</span>
+    <div class="ft-links"><a onclick="showPage('home')">Beranda</a><a onclick="showPage('blog')">Artikel</a><a onclick="showPage('contact')">Kontak</a></div>
+    <div class="ft-soc">
+      <a href="https://www.instagram.com/psikologicceria" target="_blank" title="Instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </a>
       <a href="https://wa.me/6285384847854" target="_blank" title="WhatsApp">
@@ -642,322 +528,166 @@
   </footer>
 </div>
 
-<!-- ===== BOOKING PAGE ===== -->
-<div id="page-booking" class="page">
-  <div class="page-header">
-    <h1>Buat Janji Konseling</h1>
-    <p>Pilih psikolog, jadwal, dan metode sesi yang sesuai dengan Anda.</p>
-  </div>
-  <div class="booking-wrap">
-    <div id="booking-form">
-      <div class="form-row">
-        <div class="form-group"><label>Nama lengkap</label><input type="text" id="f-nama" placeholder="Masukkan nama Anda"></div>
-        <div class="form-group"><label>Nomor WhatsApp</label><input type="tel" id="f-wa" placeholder="0853-xxxx-xxxx"></div>
-      </div>
-      <div class="form-row">
-        <div class="form-group"><label>Email (opsional)</label><input type="email" id="f-email" placeholder="email@contoh.com"></div>
-        <div class="form-group"><label>Tanggal sesi</label><input type="date" id="f-tanggal"></div>
-      </div>
-      <div class="form-group">
-        <label>Metode sesi</label>
-        <select id="f-metode">
-          <option value="">-- Pilih metode --</option>
-          <option>Tatap muka (di klinik)</option>
-          <option>Online (video call)</option>
-        </select>
-      </div>
-
-      <p class="form-section-title">Pilih psikolog</p>
-      <div class="psikolog-cards">
-        <div class="psikolog-pick" onclick="pickPsikolog(this,'SA')">
-          <div class="av" style="background:#E1F5EE;color:#0F6E56;">SA</div>
-          <h4>Dr. Sari Andini</h4><p>Kecemasan &amp; Depresi</p>
+<!-- ===== BOOKING ===== -->
+<div id="page-booking" class="page bk-bg">
+  <div class="phdr"><h1>Buat Janji Konseling</h1><p>Pilih psikolog, jadwal, dan metode sesi yang paling nyaman untuk Anda.</p></div>
+  <div class="bk-wrap">
+    <div id="bk-form">
+      <div class="fcard">
+        <div class="fcard-title">Data Diri</div>
+        <div class="frow">
+          <div class="fg"><label>Nama lengkap</label><input type="text" id="fn" placeholder="Masukkan nama Anda"></div>
+          <div class="fg"><label>Nomor WhatsApp</label><input type="tel" id="fw" placeholder="0853-xxxx-xxxx"></div>
         </div>
-        <div class="psikolog-pick" onclick="pickPsikolog(this,'BR')">
-          <div class="av" style="background:#E6F1FB;color:#185FA5;">BR</div>
-          <h4>Budi Raharjo</h4><p>Hubungan &amp; Keluarga</p>
+        <div class="frow">
+          <div class="fg"><label>Email (opsional)</label><input type="email" id="fe" placeholder="email@contoh.com"></div>
+          <div class="fg"><label>Tanggal sesi</label><input type="date" id="ft"></div>
         </div>
-        <div class="psikolog-pick" onclick="pickPsikolog(this,'NP')">
-          <div class="av" style="background:#FAEEDA;color:#854F0B;">NP</div>
-          <h4>Nisa Putri</h4><p>Remaja &amp; Anak</p>
+        <div class="fg" style="margin-bottom:0"><label>Metode sesi</label>
+          <select id="fm"><option value="">-- Pilih metode --</option><option>Tatap muka (di klinik)</option><option>Online (video call)</option></select>
         </div>
       </div>
-
-      <p class="form-section-title">Pilih jam sesi <span style="font-weight:300;color:#9ca3af;">(abu-abu = penuh)</span></p>
-      <div class="slot-grid">
-        <div class="slot" onclick="pickSlot(this)">08.00</div>
-        <div class="slot" onclick="pickSlot(this)">09.00</div>
-        <div class="slot unavail">10.00</div>
-        <div class="slot" onclick="pickSlot(this)">11.00</div>
-        <div class="slot unavail">13.00</div>
-        <div class="slot" onclick="pickSlot(this)">14.00</div>
-        <div class="slot" onclick="pickSlot(this)">15.00</div>
-        <div class="slot unavail">16.00</div>
+      <div class="fcard">
+        <div class="fcard-title">Pilih Psikolog</div>
+        <div class="psi-picks">
+          <div class="ppick" onclick="pickP(this,'SA')"><div class="ppick-av"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&q=80&fit=crop" alt="Sari"></div><h4>Dr. Sari Andini</h4><p>Kecemasan &amp; Depresi</p></div>
+          <div class="ppick" onclick="pickP(this,'BR')"><div class="ppick-av"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&q=80&fit=crop" alt="Budi"></div><h4>Budi Raharjo</h4><p>Hubungan &amp; Keluarga</p></div>
+          <div class="ppick" onclick="pickP(this,'NP')"><div class="ppick-av"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&q=80&fit=crop" alt="Nisa"></div><h4>Nisa Putri</h4><p>Remaja &amp; Anak</p></div>
+        </div>
       </div>
-
-      <div class="form-group">
-        <label>Ceritakan kondisi Anda (opsional)</label>
-        <textarea id="f-catatan" placeholder="Tuliskan secara singkat apa yang ingin Anda diskusikan. Informasi ini bersifat rahasia."></textarea>
+      <div class="fcard">
+        <div class="fcard-title">Pilih Jam Sesi <span style="font-weight:300;color:#a8a8a2;text-transform:none;letter-spacing:0">(abu-abu = penuh)</span></div>
+        <div class="slots">
+          <div class="slot" onclick="pickS(this)">08.00</div>
+          <div class="slot" onclick="pickS(this)">09.00</div>
+          <div class="slot unavail">10.00</div>
+          <div class="slot" onclick="pickS(this)">11.00</div>
+          <div class="slot unavail">13.00</div>
+          <div class="slot" onclick="pickS(this)">14.00</div>
+          <div class="slot" onclick="pickS(this)">15.00</div>
+          <div class="slot unavail">16.00</div>
+        </div>
       </div>
-      <button class="submit-btn" onclick="submitBooking()">Konfirmasi Janji →</button>
+      <div class="fcard">
+        <div class="fcard-title">Ceritakan Kondisi Anda (Opsional)</div>
+        <div class="fg" style="margin-bottom:0"><textarea id="fc" placeholder="Tuliskan secara singkat apa yang ingin Anda diskusikan. Semua informasi bersifat rahasia."></textarea></div>
+      </div>
+      <button class="sub-btn" onclick="submitBk()">Konfirmasi Janji &rarr;</button>
     </div>
-
-    <div class="success-box" id="booking-success">
-      <div class="success-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
+    <div class="sbox" id="bk-ok">
+      <div class="sicon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>Janji berhasil dibuat!</h3>
-      <p id="success-msg">Kami akan segera menghubungi Anda melalui WhatsApp.</p>
-      <button class="btn-primary" style="margin-top:1.5rem;" onclick="resetBooking()">Buat Janji Lain</button>
+      <p id="smsg">Kami akan segera menghubungi Anda via WhatsApp.</p>
+      <button class="btn-hero" style="margin-top:1.75rem;color:var(--sage-deep)" onclick="resetBk()">Buat Janji Lain</button>
     </div>
   </div>
-  <footer>
-    <span>© 2025 CV. Psikologi Ceria.</span>
-    <div class="footer-links"><a onclick="showPage('home')">Beranda</a></div>
-  </footer>
+  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
 </div>
 
-<!-- ===== BLOG PAGE ===== -->
-<div id="page-blog" class="page">
-  <div class="page-header">
-    <h1>Artikel &amp; Edukasi</h1>
-    <p>Informasi kesehatan mental yang mudah dipahami untuk semua kalangan.</p>
-  </div>
-  <div class="blog-wrap">
-    <div class="blog-cats">
-      <button class="cat-btn active" onclick="filterBlog(this,'semua')">Semua</button>
-      <button class="cat-btn" onclick="filterBlog(this,'kecemasan')">Kecemasan</button>
-      <button class="cat-btn" onclick="filterBlog(this,'hubungan')">Hubungan</button>
-      <button class="cat-btn" onclick="filterBlog(this,'remaja')">Remaja</button>
-      <button class="cat-btn" onclick="filterBlog(this,'self-care')">Self-care</button>
+<!-- ===== BLOG ===== -->
+<div id="page-blog" class="page bl-bg">
+  <div class="phdr"><h1>Artikel &amp; Edukasi</h1><p>Informasi kesehatan mental yang mudah dipahami untuk semua kalangan.</p></div>
+  <div class="bl-wrap">
+    <div class="cats">
+      <button class="cat active" onclick="filterB(this,'semua')">Semua</button>
+      <button class="cat" onclick="filterB(this,'kecemasan')">Kecemasan</button>
+      <button class="cat" onclick="filterB(this,'hubungan')">Hubungan</button>
+      <button class="cat" onclick="filterB(this,'remaja')">Remaja</button>
+      <button class="cat" onclick="filterB(this,'self-care')">Self-care</button>
     </div>
-    <div class="blog-grid" id="blog-grid">
-      <div class="blog-card" data-cat="kecemasan">
-        <div class="blog-img" style="background:#E1F5EE;">🧠</div>
-        <div class="blog-body">
-          <div class="blog-tag">Kecemasan</div>
-          <h3>5 Tanda Kecemasan yang Sering Diabaikan</h3>
-          <p>Kecemasan tidak selalu terasa seperti serangan panik. Kenali tanda-tanda yang lebih halus namun sama berbahayanya.</p>
-          <div class="blog-meta"><span>Dr. Sari Andini</span><span>5 menit baca</span></div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="hubungan">
-        <div class="blog-img" style="background:#E6F1FB;">💬</div>
-        <div class="blog-body">
-          <div class="blog-tag">Hubungan</div>
-          <h3>Cara Berkomunikasi Efektif dengan Pasangan</h3>
-          <p>Komunikasi yang baik adalah fondasi hubungan yang sehat. Pelajari teknik yang terbukti efektif secara ilmiah.</p>
-          <div class="blog-meta"><span>Budi Raharjo</span><span>7 menit baca</span></div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="remaja">
-        <div class="blog-img" style="background:#FAEEDA;">🌱</div>
-        <div class="blog-body">
-          <div class="blog-tag">Remaja</div>
-          <h3>Mengenali Tekanan Akademik pada Pelajar</h3>
-          <p>Tekanan belajar bisa berdampak besar pada kesehatan mental remaja. Berikut cara mengenali dan mengatasinya.</p>
-          <div class="blog-meta"><span>Nisa Putri</span><span>6 menit baca</span></div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="self-care">
-        <div class="blog-img" style="background:#EEEDFE;">🌿</div>
-        <div class="blog-body">
-          <div class="blog-tag">Self-care</div>
-          <h3>Rutinitas Pagi untuk Kesehatan Mental yang Lebih Baik</h3>
-          <p>Cara memulai hari dengan aktivitas sederhana yang terbukti meningkatkan mood dan produktivitas.</p>
-          <div class="blog-meta"><span>Dr. Sari Andini</span><span>4 menit baca</span></div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="kecemasan">
-        <div class="blog-img" style="background:#FAECE7;">😮‍💨</div>
-        <div class="blog-body">
-          <div class="blog-tag">Kecemasan</div>
-          <h3>Teknik Pernapasan untuk Meredakan Stres</h3>
-          <p>Latihan pernapasan yang bisa Anda lakukan kapan saja untuk menenangkan pikiran dalam hitungan menit.</p>
-          <div class="blog-meta"><span>Budi Raharjo</span><span>3 menit baca</span></div>
-        </div>
-      </div>
-      <div class="blog-card" data-cat="hubungan">
-        <div class="blog-img" style="background:#EAF3DE;">❤️</div>
-        <div class="blog-body">
-          <div class="blog-tag">Hubungan</div>
-          <h3>Mengenal Love Language dan Manfaatnya</h3>
-          <p>Memahami bahasa cinta pasangan bisa mengubah cara Anda mengekspresikan kasih sayang secara tepat sasaran.</p>
-          <div class="blog-meta"><span>Nisa Putri</span><span>8 menit baca</span></div>
-        </div>
-      </div>
+    <div class="bl-grid" id="bl-grid">
+      <div class="bcard" data-cat="kecemasan"><div class="bcard-img"><img src="https://images.unsplash.com/photo-1620147461831-a97b99ade1d3?w=700&q=80&fit=crop" alt="" loading="lazy"></div><div class="bcard-body"><div class="btag">Kecemasan</div><h3>5 Tanda Kecemasan yang Sering Diabaikan</h3><p>Kecemasan tidak selalu terasa seperti serangan panik. Kenali tanda-tanda yang lebih halus namun sama berbahayanya.</p><div class="bmeta"><span>Dr. Sari Andini</span><span>5 menit baca</span></div></div></div>
+      <div class="bcard" data-cat="hubungan"><div class="bcard-img"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&q=80&fit=crop" alt="" loading="lazy"></div><div class="bcard-body"><div class="btag">Hubungan</div><h3>Cara Berkomunikasi Efektif dengan Pasangan</h3><p>Komunikasi yang baik adalah fondasi hubungan sehat. Pelajari teknik yang terbukti efektif secara ilmiah.</p><div class="bmeta"><span>Budi Raharjo</span><span>7 menit baca</span></div></div></div>
+      <div class="bcard" data-cat="remaja"><div class="bcard-img"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80&fit=crop" alt="" loading="lazy"></div><div class="bcard-body"><div class="btag">Remaja</div><h3>Mengenali Tekanan Akademik pada Pelajar</h3><p>Tekanan belajar bisa berdampak besar pada kesehatan mental remaja. Berikut cara mengenali dan mengatasinya.</p><div class="bmeta"><span>Nisa Putri</span><span>6 menit baca</span></div></div></div>
+      <div class="bcard" data-cat="self-care"><div class="bcard-img"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80&fit=crop" alt="" loading="lazy"></div><div class="bcard-body"><div class="btag">Self-care</div><h3>Rutinitas Pagi untuk Kesehatan Mental yang Lebih Baik</h3><p>Aktivitas sederhana di pagi hari yang terbukti meningkatkan mood dan produktivitas.</p><div class="bmeta"><span>Dr. Sari Andini</span><span>4 menit baca</span></div></div></div>
+      <div class="bcard" data-cat="kecemasan"><div class="bcard-img"><img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=700&q=80&fit=crop" alt="" loading="lazy"></div><div class="bcard-body"><div class="btag">Kecemasan</div><h3>Teknik Pernapasan untuk Meredakan Stres</h3><p>Latihan pernapasan yang bisa dilakukan kapan saja untuk menenangkan pikiran dalam menit.</p><div class="bmeta"><span>Budi Raharjo</span><span>3 menit baca</span></div></div></div>
+      <div class="bcard" data-cat="hubungan"><div class="bcard-img"><img src="https://images.unsplash.com/photo-1516589091380-5d8e87df6999?w=700&q=80&fit=crop" alt="" loading="lazy"></div><div class="bcard-body"><div class="btag">Hubungan</div><h3>Mengenal Love Language dan Manfaatnya</h3><p>Memahami bahasa cinta pasangan bisa mengubah cara mengekspresikan kasih sayang secara tepat.</p><div class="bmeta"><span>Nisa Putri</span><span>8 menit baca</span></div></div></div>
     </div>
   </div>
-  <footer>
-    <span>© 2025 CV. Psikologi Ceria.</span>
-    <div class="footer-links"><a onclick="showPage('home')">Beranda</a></div>
-  </footer>
+  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
 </div>
 
-<!-- ===== CONTACT PAGE ===== -->
-<div id="page-contact" class="page">
-  <div class="page-header">
-    <h1>Lokasi &amp; Kontak</h1>
-    <p>Temukan kami di Bengkulu atau hubungi langsung via WhatsApp.</p>
-  </div>
-  <div class="contact-wrap">
-    <div class="contact-layout">
+<!-- ===== KONTAK ===== -->
+<div id="page-contact" class="page ct-bg">
+  <div class="phdr"><h1>Lokasi &amp; Kontak</h1><p>Temukan kami di Bengkulu atau hubungi langsung via WhatsApp.</p></div>
+  <div class="ct-wrap">
+    <div class="ct-grid">
       <div class="map-box">
-        <!-- Peta CV. Psikologi Ceria, Bengkulu -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.15!2d102.3178996!3d-3.8554899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36bbe0bc819ae7%3A0x2db10cef98d9882f!2sCV.%20Psikologi%20Ceria!5e0!3m2!1sid!2sid!4v1"
-          allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.15!2d102.3178996!3d-3.8554899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36bbe0bc819ae7%3A0x2db10cef98d9882f!2sCV.%20Psikologi%20Ceria!5e0!3m2!1sid!2sid!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div class="contact-info">
-        <div class="info-card">
-          <h3>Alamat Klinik</h3>
-          <p>Jl. Bumi Ayu Raya No.5, RT.006/RW.005<br>Bumiayu, Kec. Selebar<br>Kota Bengkulu, Bengkulu 38212</p>
-          <a href="https://maps.app.goo.gl/5BXmLwKw4B2at2Z89" target="_blank" style="display:inline-block;margin-top:8px;font-size:13px;">Buka di Google Maps →</a>
-        </div>
-        <div class="info-card">
-          <h3>Jam Operasional</h3>
-          <p>Senin – Jumat: 08.00 – 17.00<br>Sabtu: 08.00 – 13.00<br><span style="color:#9ca3af;font-size:13px;">Minggu &amp; Hari Libur: Tutup</span></p>
-        </div>
-        <div class="info-card">
-          <h3>Email</h3>
-          <p><a href="mailto:ceriapsikologi@gmail.com">ceriapsikologi@gmail.com</a></p>
-        </div>
-        <button class="wa-contact-btn" onclick="openWhatsApp('Halo, saya ingin bertanya tentang layanan Psikologi Ceria.')">
+      <div class="ct-info">
+        <div class="icard"><h3>Alamat Klinik</h3><p>Jl. Bumi Ayu Raya No.5, RT.006/RW.005<br>Bumiayu, Kec. Selebar<br>Kota Bengkulu, Bengkulu 38212</p><a href="https://maps.app.goo.gl/5BXmLwKw4B2at2Z89" target="_blank" style="display:inline-block;margin-top:10px;font-size:13.5px;">Buka di Google Maps &rarr;</a></div>
+        <div class="icard"><h3>Jam Operasional</h3><p>Senin – Jumat: 08.00 – 17.00<br>Sabtu: 08.00 – 13.00<br><span style="color:var(--text-faint);font-size:13px;">Minggu &amp; Hari Libur: Tutup</span></p></div>
+        <div class="icard"><h3>Email</h3><p><a href="mailto:ceriapsikologi@gmail.com">ceriapsikologi@gmail.com</a></p></div>
+        <button class="wa-btn" onclick="openWA('Halo Psikologi Ceria, saya ingin bertanya tentang layanan konseling.')">
           <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Chat via WhatsApp
         </button>
-        <a class="ig-btn" href="https://www.instagram.com/psikologicceria" target="_blank">
+        <a class="ig-lnk" href="https://www.instagram.com/psikologicceria" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           @psikologicceria di Instagram
         </a>
       </div>
     </div>
   </div>
-  <footer>
-    <span>© 2025 CV. Psikologi Ceria.</span>
-    <div class="footer-links"><a onclick="showPage('home')">Beranda</a></div>
-  </footer>
+  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
 </div>
 
-<!-- ===== WA FLOAT BUTTON ===== -->
-<div class="wa-float" onclick="toggleWaTooltip()" title="Chat WhatsApp">
+<!-- WA FLOAT -->
+<div class="waf" onclick="toggleWap()" title="Chat WhatsApp">
   <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </div>
-<div class="wa-tooltip" id="wa-tooltip">
-  <div class="wa-tooltip-header">
-    <div class="wa-tooltip-icon">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </div>
-    <div><p>Psikologi Ceria</p><span>Biasanya balas dalam 1 jam</span></div>
+<div class="wap" id="wap">
+  <div class="wap-hdr">
+    <div class="wap-icon"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+    <div class="wap-txt"><p>Psikologi Ceria</p><span>Biasanya balas dalam 1 jam</span></div>
   </div>
-  <span style="font-size:12.5px;color:#6b7280;">Pilih topik pesan Anda:</span>
-  <div class="wa-msgs">
-    <button class="wa-msg-btn" onclick="openWhatsApp('Halo, saya ingin membuat janji konseling.')">📅 Buat janji konseling</button>
-    <button class="wa-msg-btn" onclick="openWhatsApp('Halo, saya ingin bertanya soal biaya dan paket konseling.')">💰 Tanya biaya &amp; paket</button>
-    <button class="wa-msg-btn" onclick="openWhatsApp('Halo, saya ingin tahu lebih lanjut tentang layanan Psikologi Ceria.')">ℹ️ Informasi layanan</button>
+  <hr>
+  <div class="wlabel">Pilih topik pesan:</div>
+  <div class="wqbtns">
+    <button class="wq" onclick="openWA('Halo Psikologi Ceria, saya ingin membuat janji konseling.')">📅 Buat janji konseling</button>
+    <button class="wq" onclick="openWA('Halo Psikologi Ceria, saya ingin bertanya soal biaya dan paket konseling.')">💰 Tanya biaya &amp; paket</button>
+    <button class="wq" onclick="openWA('Halo Psikologi Ceria, saya ingin tahu lebih lanjut tentang layanan yang tersedia.')">ℹ️ Informasi layanan</button>
   </div>
 </div>
 
 <script>
-  /* ===== NAVIGASI ===== */
-  function showPage(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + name).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.getElementById('wa-tooltip').style.display = 'none';
+  /* PAGE */
+  function showPage(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+n).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});document.getElementById('wap').style.display='none'}
+
+  /* BOOKING */
+  let sP='',sS='';
+  function pickP(el,id){document.querySelectorAll('.ppick').forEach(c=>c.classList.remove('selected'));el.classList.add('selected');sP=id}
+  function pickS(el){if(el.classList.contains('unavail'))return;document.querySelectorAll('.slot').forEach(s=>s.classList.remove('selected'));el.classList.add('selected');sS=el.textContent}
+  function submitBk(){
+    const n=document.getElementById('fn').value.trim(),w=document.getElementById('fw').value.trim(),t=document.getElementById('ft').value,m=document.getElementById('fm').value;
+    if(!n||!w||!t||!m||!sP||!sS){alert('Mohon lengkapi semua data: nama, nomor WA, tanggal, metode, pilih psikolog, dan jam sesi.');return}
+    const names={SA:'Dr. Sari Andini',BR:'Budi Raharjo',NP:'Nisa Putri'};
+    const tgl=new Date(t).toLocaleDateString('id-ID',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('smsg').textContent='Terima kasih, '+n+'! Janji Anda dengan '+names[sP]+' pada '+tgl+' pukul '+sS+' ('+m+') telah tercatat. Kami akan menghubungi '+w+' via WhatsApp dalam 1×24 jam.';
+    document.getElementById('bk-form').style.display='none';document.getElementById('bk-ok').style.display='block';
+    setTimeout(()=>openWA('Halo Psikologi Ceria, saya '+n+' ingin konfirmasi janji konseling dengan '+names[sP]+' pada '+tgl+' pukul '+sS+' ('+m+'). WA saya: '+w),800)
+  }
+  function resetBk(){
+    document.getElementById('bk-form').style.display='block';document.getElementById('bk-ok').style.display='none';
+    ['fn','fw','fe','fc'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('ft').value='';document.getElementById('fm').value='';
+    document.querySelectorAll('.ppick').forEach(c=>c.classList.remove('selected'));
+    document.querySelectorAll('.slot').forEach(s=>s.classList.remove('selected'));
+    sP='';sS='';
   }
 
-  /* ===== BOOKING ===== */
-  let selectedPsikolog = '';
-  let selectedSlot = '';
+  /* BLOG */
+  function filterB(el,cat){document.querySelectorAll('.cat').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.querySelectorAll('.bcard').forEach(c=>{c.style.display=(cat==='semua'||c.dataset.cat===cat)?'block':'none'})}
 
-  function pickPsikolog(el, id) {
-    document.querySelectorAll('.psikolog-pick').forEach(c => c.classList.remove('selected'));
-    el.classList.add('selected');
-    selectedPsikolog = id;
-  }
+  /* WA */
+  // ⚠️ Ganti nomor WA jika berubah: 6285384847854
+  function openWA(msg){window.open('https://wa.me/6285384847854?text='+encodeURIComponent(msg),'_blank')}
+  function toggleWap(){const p=document.getElementById('wap');p.style.display=p.style.display==='block'?'none':'block'}
+  document.addEventListener('click',function(e){const p=document.getElementById('wap'),f=document.querySelector('.waf');if(!p.contains(e.target)&&!f.contains(e.target))p.style.display='none'});
 
-  function pickSlot(el) {
-    if (el.classList.contains('unavail')) return;
-    document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
-    el.classList.add('selected');
-    selectedSlot = el.textContent;
-  }
-
-  function submitBooking() {
-    const nama    = document.getElementById('f-nama').value.trim();
-    const wa      = document.getElementById('f-wa').value.trim();
-    const tanggal = document.getElementById('f-tanggal').value;
-    const metode  = document.getElementById('f-metode').value;
-
-    if (!nama || !wa || !tanggal || !metode || !selectedPsikolog || !selectedSlot) {
-      alert('Mohon lengkapi semua data: nama, nomor WA, tanggal, metode, pilih psikolog, dan jam sesi.');
-      return;
-    }
-
-    const names = { SA: 'Dr. Sari Andini', BR: 'Budi Raharjo', NP: 'Nisa Putri' };
-    const tgl   = new Date(tanggal).toLocaleDateString('id-ID', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-
-    document.getElementById('success-msg').textContent =
-      'Terima kasih, ' + nama + '! Janji Anda dengan ' + names[selectedPsikolog] +
-      ' pada ' + tgl + ' pukul ' + selectedSlot + ' (' + metode + ') telah tercatat. ' +
-      'Kami akan menghubungi ' + wa + ' via WhatsApp untuk konfirmasi dalam 1×24 jam.';
-
-    document.getElementById('booking-form').style.display = 'none';
-    document.getElementById('booking-success').style.display = 'block';
-
-    // Otomatis kirim notif ke WA klinik
-    const msg = 'Halo Psikologi Ceria, saya ' + nama + ' ingin konfirmasi janji konseling dengan ' +
-      names[selectedPsikolog] + ' pada ' + tgl + ' pukul ' + selectedSlot + ' (' + metode + '). ' +
-      'Nomor WA saya: ' + wa;
-    openWhatsApp(msg);
-  }
-
-  function resetBooking() {
-    document.getElementById('booking-form').style.display = 'block';
-    document.getElementById('booking-success').style.display = 'none';
-    ['f-nama','f-wa','f-email','f-catatan'].forEach(id => document.getElementById(id).value = '');
-    document.getElementById('f-tanggal').value = '';
-    document.getElementById('f-metode').value = '';
-    document.querySelectorAll('.psikolog-pick').forEach(c => c.classList.remove('selected'));
-    document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
-    selectedPsikolog = ''; selectedSlot = '';
-  }
-
-  /* ===== BLOG FILTER ===== */
-  function filterBlog(el, cat) {
-    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-    el.classList.add('active');
-    document.querySelectorAll('.blog-card').forEach(c => {
-      c.style.display = (cat === 'semua' || c.dataset.cat === cat) ? 'block' : 'none';
-    });
-  }
-
-  /* ===== WHATSAPP ===== */
-  // ⚠️ GANTI nomor WA di sini jika berubah: 6285384847854
-  function openWhatsApp(msg) {
-    window.open('https://wa.me/6285384847854?text=' + encodeURIComponent(msg), '_blank');
-  }
-
-  function toggleWaTooltip() {
-    const t = document.getElementById('wa-tooltip');
-    t.style.display = t.style.display === 'block' ? 'none' : 'block';
-  }
-
-  // Tutup tooltip saat klik di luar
-  document.addEventListener('click', function(e) {
-    const tooltip = document.getElementById('wa-tooltip');
-    const floatBtn = document.querySelector('.wa-float');
-    if (!tooltip.contains(e.target) && !floatBtn.contains(e.target)) {
-      tooltip.style.display = 'none';
-    }
-  });
-
-  // Set min date untuk booking = hari ini
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('f-tanggal').setAttribute('min', today);
+  /* MIN DATE */
+  document.getElementById('ft').setAttribute('min',new Date().toISOString().split('T')[0]);
 </script>
 </body>
 </html>
