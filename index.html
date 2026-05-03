@@ -20,7 +20,7 @@
   PANDUAN EDIT DATA:
   - Nomor WA  → cari: 6285384847854
   - Email     → cari: ceriapsikologi@gmail.com
-  - Instagram → cari: psikologicceria
+  - Instagram → cari: psikologiceria
   - Alamat    → cari: Jl. Bumi Ayu
   ============================================================
   -->
@@ -486,6 +486,8 @@
     .pcf-center{display:flex;flex-direction:column}
     .pcf-name{font-family:var(--font-serif);font-size:20px;font-weight:600;margin-bottom:.25rem;line-height:1.3}
     .pcf-title{font-size:13px;color:var(--text-muted);font-style:italic;font-weight:300}
+
+    .pcf-sipp{font-size:11.5px;color:var(--text-faint);font-weight:400;margin-top:3px;letter-spacing:.02em;font-style:normal}
     .pcf-divider{border:none;border-top:2px dashed var(--border-mid);margin:.85rem 0}
     .pcf-desc{font-size:13.5px;color:var(--text-muted);line-height:1.8;font-weight:300}
 
@@ -513,6 +515,37 @@
       .pcf-rates-grid{grid-template-columns:1fr}
     }
 
+
+    /* ===== TESTI SLIDER ===== */
+    .tslider-wrap{overflow:hidden;max-width:1100px;margin:0 auto;position:relative;-webkit-mask:linear-gradient(to right,transparent,black 5%,black 95%,transparent);mask:linear-gradient(to right,transparent,black 5%,black 95%,transparent)}
+    .tslider-track{display:flex;gap:18px;width:max-content;animation:slideLeft 35s linear infinite}
+    .tslider-track:hover{animation-play-state:paused}
+    @keyframes slideLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .tslider-track .tcard{width:300px;flex-shrink:0}
+
+    /* ===== LAYANAN PAGE ===== */
+    .ltab-btn{font-size:13.5px;padding:8px 18px;border-radius:99px;border:1.5px solid var(--border-mid);background:transparent;color:var(--text-muted);cursor:pointer;font-family:var(--font-sans);transition:all .2s;white-space:nowrap}
+    .ltab-btn:hover{border-color:var(--purple);color:var(--purple)}
+    .ltab-btn.active{background:var(--grad);color:#fff;border-color:transparent}
+    .lsec{display:flex;flex-direction:column;gap:1.5rem}
+    .lcard-detail{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow-sm)}
+    .lcard-header{padding:1.25rem 1.75rem;display:flex;align-items:center;gap:1rem;color:#fff}
+    .lcard-icon{font-size:28px;line-height:1}
+    .lcard-header h2{font-family:var(--font-serif);font-size:22px;font-weight:400;margin-bottom:2px}
+    .lcard-header p{font-size:13px;opacity:.85}
+    .lcard-content{padding:1.5rem 1.75rem}
+    .lcard-desc{font-size:14px;color:var(--text-muted);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+    .lcard-desc strong{color:var(--text);font-weight:600}
+    .lcard-rates-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:1rem}
+    .lrate-col{background:var(--cream);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+    .lrate-title{color:#fff;font-size:12.5px;font-weight:700;padding:8px 14px;letter-spacing:.03em}
+    .lrate-row{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;gap:1rem;font-size:13.5px}
+    .lrate-row span{color:var(--text-muted);font-weight:300}
+    .lrate-row strong{color:var(--text);font-weight:700;white-space:nowrap;font-size:13px}
+    .lrate-row.hl{background:rgba(123,94,167,.06)}
+    .lcard-note{font-size:12px;color:var(--text-faint);font-style:italic;padding-top:.75rem;border-top:1px dashed var(--border)}
+    @media(max-width:680px){.lcard-rates-wrap{grid-template-columns:1fr}.lcard-header{padding:1rem 1.25rem}.lcard-content{padding:1.25rem}}
+
   </style>
 </head>
 <body>
@@ -532,6 +565,7 @@
   </div>
   <div class="nav-links">
     <a onclick="showPage('home')">Beranda</a>
+    <a onclick="showPage('layanan')">Layanan</a>
     <a onclick="showPage('psikolog')">Psikolog</a>
     <a onclick="showPage('harga')">Harga</a>
     <a onclick="showPage('blog')">Artikel</a>
@@ -560,9 +594,9 @@
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><span class="hero-stat-num">2.500+</span><span class="hero-stat-label">Klien dilayani</span></div>
+      <div class="hero-stat"><span class="hero-stat-num" id="stat-klien">0</span><span class="hero-stat-label">Klien dilayani</span></div>
       <div class="hero-stat"><span class="hero-stat-num">4</span><span class="hero-stat-label">Psikolog berpengalaman</span></div>
-      <div class="hero-stat"><span class="hero-stat-num">98%</span><span class="hero-stat-label">Kepuasan klien</span></div>
+      <div class="hero-stat"><span class="hero-stat-num" id="stat-kepuasan">0</span><span class="hero-stat-label">Kepuasan klien</span></div>
     </div>
   </section>
 
@@ -623,7 +657,7 @@
         <div class="lcard-body">
           <h3>Seminar / Workshop</h3>
           <p>Narasumber ahli psikologi untuk komunitas, organisasi, dan institusi yang ingin mengadakan seminar, workshop, atau training.</p>
-          <span class="lcard-link" onclick="openWA('Halo Psikologi Ceria, saya ingin bertanya tentang layanan seminar/workshop.')">Hubungi Kami <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <span class="lcard-link" onclick="openWA('Halo Psikologi Ceria, saya ingin bertanya tentang layanan seminar/workshop.')">Selengkapnya <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </div>
     </div>
@@ -647,16 +681,16 @@
           <div class="pcard-body">
             <h3>Deta Nurfianti, M.Psi.</h3>
             <div class="role">Psikolog Klinis</div>
-            <div class="ptags"><span class="ptag">Kecemasan</span><span class="ptag">Depresi</span><span class="ptag">Trauma</span></div>
+            <div class="ptags"><span class="ptag">Depresi</span><span class="ptag">Anxiety</span><span class="ptag">Parenting</span><span class="ptag">Remaja &amp; Dewasa</span></div>
             <div class="pcard-link">Lihat Profil &amp; Harga →</div>
           </div>
         </div>
         <div class="pcard" onclick="showPage('psikolog');setTimeout(()=>document.getElementById('asti').scrollIntoView({behavior:'smooth'}),100)" style="cursor:pointer">
           <div class="pcard-img"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=80&fit=crop" alt="Asti Kusuma" loading="lazy"></div>
           <div class="pcard-body">
-            <h3>Asti Kusuma, M.Psi.</h3>
+            <h3>Asti Kusuma W, M.Psi.</h3>
             <div class="role">Psikolog Klinis</div>
-            <div class="ptags"><span class="ptag">Hubungan</span><span class="ptag">Pernikahan</span><span class="ptag">Keluarga</span></div>
+            <div class="ptags"><span class="ptag">Stres</span><span class="ptag">Depresi</span><span class="ptag">Anxiety</span><span class="ptag">Interpersonal</span></div>
             <div class="pcard-link">Lihat Profil &amp; Harga →</div>
           </div>
         </div>
@@ -665,7 +699,7 @@
           <div class="pcard-body">
             <h3>Atina Okta F, M.Psi.</h3>
             <div class="role">Psikolog Klinis</div>
-            <div class="ptags"><span class="ptag">Remaja</span><span class="ptag">Tumbuh Kembang</span><span class="ptag">Parenting</span></div>
+            <div class="ptags"><span class="ptag">Anxiety</span><span class="ptag">Anak &amp; Remaja</span><span class="ptag">Group Therapy</span></div>
             <div class="pcard-link">Lihat Profil &amp; Harga →</div>
           </div>
         </div>
@@ -674,8 +708,18 @@
           <div class="pcard-body">
             <h3>Dita Lestari, M.Psi.</h3>
             <div class="role">Psikolog Klinis</div>
-            <div class="ptags"><span class="ptag">Stres</span><span class="ptag">Karir</span><span class="ptag">Self-development</span></div>
+            <div class="ptags"><span class="ptag">Spesialis Anak &amp; Remaja</span><span class="ptag">Terapi Bermain</span></div>
             <div class="pcard-link">Lihat Profil &amp; Harga →</div>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="pcard-img" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0ebf8,#fce8fb)">
+            <div style="width:80px;height:80px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff">MA</div>
+          </div>
+          <div class="pcard-body">
+            <h3>Moerli Anggia, S.Psi.</h3>
+            <div class="role">Administrator &amp; Tim Kreatif</div>
+            <div class="ptags"><span class="ptag">Psychological Test</span><span class="ptag">Admin</span><span class="ptag">Creative</span></div>
           </div>
         </div>
       </div>
@@ -718,21 +762,31 @@
     </div>
   </section>
 
-  <!-- TESTIMONI -->
+  <!-- TESTIMONI SLIDER -->
   <section class="testi-bg">
     <div class="testi-hdr">
       <div class="eyebrow">Klien Kami</div>
       <h2>Apa kata mereka</h2>
       <p>Pengalaman nyata dari klien yang telah mempercayai Psikologi Ceria.</p>
     </div>
-    <div class="testi-grid">
-      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Psikolognya sangat sabar dan membuat saya merasa didengar sepenuhnya. Saya merasa lebih ringan setelah sesi pertama."</blockquote><div class="tcard-auth"><div class="tav" style="background:#EEF4FC;color:#4A90D9">AN</div><div><div class="tname">Anita N.</div><div class="tdate">Klien Individu</div></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Tempatnya nyaman sekali, suasananya hangat dan tidak terasa seperti klinik. Psikolognya profesional tapi tetap ramah."</blockquote><div class="tcard-auth"><div class="tav" style="background:#F0EBF8;color:#7B5EA7">RD</div><div><div class="tname">Rudi D.</div><div class="tdate">Klien Pasangan</div></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sudah merasakan perubahan yang signifikan. Psikolog membantu saya melihat masalah dari sudut pandang yang lebih positif."</blockquote><div class="tcard-auth"><div class="tav" style="background:#FCE8FB;color:#C850C0">SR</div><div><div class="tname">Sinta R.</div><div class="tdate">Klien Individu</div></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sangat membantu anak saya yang bermasalah di sekolah. Anak kami jauh lebih percaya diri sekarang."</blockquote><div class="tcard-auth"><div class="tav" style="background:#EEF4FC;color:#4A90D9">LH</div><div><div class="tname">Lina H.</div><div class="tdate">Orang Tua Klien</div></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Psikolognya ngevalidasi banget dan membantu membuka sudut pandang baru yang bikin saya bisa melihat masalah lebih positif."</blockquote><div class="tcard-auth"><div class="tav" style="background:#F0EBF8;color:#7B5EA7">MF</div><div><div class="tname">M. Fauzan</div><div class="tdate">Klien Online</div></div></div></div>
-      <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Very helpful. Psikolog dengan telaten dan sabar mendengarkan, dan memberikan insight yang benar-benar berguna."</blockquote><div class="tcard-auth"><div class="tav" style="background:#FCE8FB;color:#C850C0">YP</div><div><div class="tname">Yuli P.</div><div class="tdate">Klien Individu</div></div></div></div>
+    <div class="tslider-wrap">
+      <div class="tslider-track" id="tslider">
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Psikolognya sangat sabar dan membuat saya merasa didengar sepenuhnya. Saya merasa lebih ringan setelah sesi pertama."</blockquote><div class="tcard-auth"><div class="tav" style="background:#EEF4FC;color:#4A90D9">AN</div><div><div class="tname">Anita N.</div><div class="tdate">Klien Individu</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Tempatnya nyaman sekali, suasananya hangat dan tidak terasa seperti klinik. Psikolognya profesional tapi tetap ramah."</blockquote><div class="tcard-auth"><div class="tav" style="background:#F0EBF8;color:#7B5EA7">RD</div><div><div class="tname">Rudi D.</div><div class="tdate">Klien Pasangan</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sudah merasakan perubahan yang signifikan. Psikolog membantu saya melihat masalah dari sudut pandang yang lebih positif."</blockquote><div class="tcard-auth"><div class="tav" style="background:#FCE8FB;color:#C850C0">SR</div><div><div class="tname">Sinta R.</div><div class="tdate">Klien Individu</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sangat membantu anak saya yang bermasalah di sekolah. Anak kami jauh lebih percaya diri sekarang."</blockquote><div class="tcard-auth"><div class="tav" style="background:#EEF4FC;color:#4A90D9">LH</div><div><div class="tname">Lina H.</div><div class="tdate">Orang Tua Klien</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Psikolognya ngevalidasi banget dan membantu membuka sudut pandang baru yang bikin saya bisa melihat masalah lebih positif."</blockquote><div class="tcard-auth"><div class="tav" style="background:#F0EBF8;color:#7B5EA7">MF</div><div><div class="tname">M. Fauzan</div><div class="tdate">Klien Online</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Very helpful. Psikolog dengan telaten dan sabar mendengarkan, dan memberikan insight yang benar-benar berguna."</blockquote><div class="tcard-auth"><div class="tav" style="background:#FCE8FB;color:#C850C0">YP</div><div><div class="tname">Yuli P.</div><div class="tdate">Klien Individu</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Pelayanannya sangat profesional. Psikolog menjelaskan semuanya dengan jelas dan saya jadi lebih paham kondisi saya."</blockquote><div class="tcard-auth"><div class="tav" style="background:#EEF4FC;color:#4A90D9">DP</div><div><div class="tname">Dian P.</div><div class="tdate">Klien Individu</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Anak saya yang awalnya susah bergaul sekarang jauh lebih terbuka. Terima kasih Psikologi Ceria!"</blockquote><div class="tcard-auth"><div class="tav" style="background:#F0EBF8;color:#7B5EA7">WS</div><div><div class="tname">Winda S.</div><div class="tdate">Orang Tua Klien</div></div></div></div>
+        <!-- Duplikat untuk infinite scroll -->
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Psikolognya sangat sabar dan membuat saya merasa didengar sepenuhnya. Saya merasa lebih ringan setelah sesi pertama."</blockquote><div class="tcard-auth"><div class="tav" style="background:#EEF4FC;color:#4A90D9">AN</div><div><div class="tname">Anita N.</div><div class="tdate">Klien Individu</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Tempatnya nyaman sekali, suasananya hangat dan tidak terasa seperti klinik. Psikolognya profesional tapi tetap ramah."</blockquote><div class="tcard-auth"><div class="tav" style="background:#F0EBF8;color:#7B5EA7">RD</div><div><div class="tname">Rudi D.</div><div class="tdate">Klien Pasangan</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sudah merasakan perubahan yang signifikan. Psikolog membantu saya melihat masalah dari sudut pandang yang lebih positif."</blockquote><div class="tcard-auth"><div class="tav" style="background:#FCE8FB;color:#C850C0">SR</div><div><div class="tname">Sinta R.</div><div class="tdate">Klien Individu</div></div></div></div>
+        <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sangat membantu anak saya yang bermasalah di sekolah. Anak kami jauh lebih percaya diri sekarang."</blockquote><div class="tcard-auth"><div class="tav" style="background:#EEF4FC;color:#4A90D9">LH</div><div><div class="tname">Lina H.</div><div class="tdate">Orang Tua Klien</div></div></div></div>
+      </div>
     </div>
+    <div class="tslider-dots" id="tslider-dots"></div>
   </section>
 
 
@@ -758,10 +812,10 @@
   </div>
 
   <footer>
-    <span>© 2025 CV. Psikologi Ceria, Bengkulu. <em style="font-style:italic;color:var(--text-faint)">"Empower People to Be Their Best"</em></span>
+    <span>© 2026 CV. Psikologi Ceria, Bengkulu. <em style="font-style:italic;color:var(--text-faint)">"Empower People to Be Their Best"</em></span>
     <div class="ft-links"><a onclick="showPage('home')">Beranda</a><a onclick="showPage('psikolog')">Psikolog</a><a onclick="showPage('harga')">Harga</a><a onclick="showPage('blog')">Artikel</a><a onclick="showPage('contact')">Kontak</a></div>
     <div class="ft-soc">
-      <a href="https://www.instagram.com/psikologicceria" target="_blank" title="Instagram">
+      <a href="https://www.instagram.com/psikologiceria" target="_blank" title="Instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </a>
       <a href="https://wa.me/6285384847854" target="_blank" title="WhatsApp">
@@ -769,6 +823,290 @@
       </a>
     </div>
   </footer>
+</div>
+
+<!-- ===== LAYANAN PAGE ===== -->
+<div id="page-layanan" class="page" style="background:var(--cream);min-height:100vh">
+  <div class="phdr">
+    <h1>Layanan Kami</h1>
+    <p>Layanan psikologi profesional untuk semua kalangan — individu, anak, pasangan, dan keluarga.</p>
+  </div>
+
+  <!-- Tab Navigasi Layanan -->
+  <div style="background:var(--white);border-bottom:1px solid var(--border);padding:.75rem 2rem;display:flex;gap:8px;flex-wrap:wrap;overflow-x:auto">
+    <button onclick="showLayanan('konseling')" class="ltab-btn active" id="ltab-konseling">Konseling &amp; Konsultasi</button>
+    <button onclick="showLayanan('psikotes')" class="ltab-btn" id="ltab-psikotes">Tes Psikologi</button>
+    <button onclick="showLayanan('seminar')" class="ltab-btn" id="ltab-seminar">Seminar &amp; Outbound</button>
+  </div>
+
+  <div style="max-width:980px;margin:0 auto;padding:2.5rem 2rem 5rem">
+
+    <!-- ===== KONSELING ===== -->
+    <div id="lsec-konseling" class="lsec">
+
+      <!-- KONSELING INDIVIDU -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7)">
+          <div class="lcard-icon">👤</div>
+          <div><h2>Konseling Individu</h2><p>Untuk Anak, Remaja &amp; Dewasa</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc">
+            <p>Konseling individu adalah proses terapeutik di mana seorang klien berinteraksi secara pribadi dengan psikolog untuk membahas masalah pribadi, emosional, atau psikologis. Psikolog akan membantu klien mengeksplorasi perasaan, pikiran, dan perilaku dalam lingkungan yang aman dan mendukung.</p>
+            <p style="margin-top:.75rem">Dilengkapi dengan <strong>asesmen awal</strong>. Cocok untuk: stres, depresi, kecemasan, masalah hubungan, trauma, masalah identitas diri, karir, asmara, dll.</p>
+          </div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7)">🏢 On-site / Tatap Muka</div>
+              <div class="lrate-row"><span>Asesmen Awal</span><strong>Rp 50.000</strong></div>
+              <div class="lrate-row hl"><span>Konseling 60 menit</span><strong>Rp 275.000</strong></div>
+              <div class="lrate-row"><span>Konseling 90 menit</span><strong>Rp 405.000</strong></div>
+              <div class="lrate-row hl"><span>Paket 3 Sesi (60 mnt)</span><strong>Rp 775.000</strong></div>
+            </div>
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#7B5EA7,#C850C0)">💻 Online</div>
+              <div class="lrate-row"><span>Asesmen Awal</span><strong>Rp 50.000</strong></div>
+              <div class="lrate-row hl"><span>Konseling 60 menit</span><strong>Rp 250.000</strong></div>
+              <div class="lrate-row"><span>Konseling 90 menit</span><strong>Rp 375.000</strong></div>
+              <div class="lrate-row hl"><span>Paket 3 Sesi (60 mnt)</span><strong>Rp 700.000</strong></div>
+            </div>
+          </div>
+          <div class="lcard-note">⊙ Konseling online dilakukan via Video Call Google Meet</div>
+        </div>
+      </div>
+
+      <!-- KONSELING ANAK -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#C850C0,#7B5EA7)">
+          <div class="lcard-icon">🧒</div>
+          <div><h2>Konseling Anak</h2><p>Pendampingan Tumbuh Kembang Anak</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc">
+            <p>Konseling anak berfokus pada membantu anak menghadapi masalah emosional, perilaku, perkembangan, atau sosial. Sesi dilengkapi dengan <strong>asesmen awal dan observasi anak</strong>.</p>
+            <p style="margin-top:.75rem">Cocok untuk: masalah emosional, perilaku, perkembangan, sosial, dan masalah belajar.</p>
+          </div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#C850C0,#7B5EA7)">🏢 On-site / Tatap Muka</div>
+              <div class="lrate-row"><span>Asesmen Awal</span><strong>Rp 50.000</strong></div>
+              <div class="lrate-row hl"><span>Konseling 60 menit</span><strong>Rp 275.000</strong></div>
+              <div class="lrate-row"><span>Konseling 90 menit</span><strong>Rp 405.000</strong></div>
+              <div class="lrate-row hl"><span>Paket 3 Sesi (60 mnt)</span><strong>Rp 775.000</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KONSELING PASANGAN -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#7B5EA7,#C850C0)">
+          <div class="lcard-icon">💑</div>
+          <div><h2>Konseling Pasangan</h2><p>Pranikah, Pernikahan &amp; Keluarga</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc">
+            <p>Konseling pasangan dirancang untuk membantu pasangan yang mengalami masalah dalam hubungan, baik pasangan yang sudah menikah maupun yang sedang persiapan menikah. Tujuannya memperbaiki komunikasi, memantapkan visi misi, menyelesaikan konflik, dan memperkuat ikatan emosional.</p>
+            <p style="margin-top:.75rem">Dilengkapi dengan <strong>asesmen awal</strong>. Cocok untuk: pasangan pranikah, kurangnya komunikasi, hubungan yang tidak sehat, dll.</p>
+          </div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#7B5EA7,#C850C0)">🏢 On-site / Tatap Muka</div>
+              <div class="lrate-row"><span>Asesmen Awal</span><strong>Rp 75.000</strong></div>
+              <div class="lrate-row hl"><span>Konseling 120 menit</span><strong>Rp 500.000</strong></div>
+              <div class="lrate-row"><span>Paket 3 Sesi (120 mnt)</span><strong>Rp 1.450.000</strong></div>
+            </div>
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#C850C0,#4A90D9)">💻 Online</div>
+              <div class="lrate-row"><span>Asesmen Awal</span><strong>Rp 75.000</strong></div>
+              <div class="lrate-row hl"><span>Konseling 120 menit</span><strong>Rp 400.000</strong></div>
+              <div class="lrate-row"><span>Paket 3 Sesi (120 mnt)</span><strong>Rp 1.150.000</strong></div>
+            </div>
+          </div>
+          <div class="lcard-note">⊙ Konseling online dilakukan via Video Call Google Meet</div>
+        </div>
+      </div>
+
+      <!-- PSIKOTERAPI -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#4A90D9,#C850C0)">
+          <div class="lcard-icon">🧠</div>
+          <div><h2>Psikoterapi</h2><p>Terapi Lanjutan Berbasis Klinis</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc">
+            <p>Psikoterapi adalah bentuk terapi psikologi yang dirancang khusus oleh psikolog untuk membantu individu mengatasi masalah emosional, perilaku, trauma, kecemasan, depresi, stres, dan hubungan. Biasanya diberikan setelah psikolog melakukan asesmen dan konseling awal.</p>
+          </div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#4A90D9,#C850C0)">🏢 On-site / Tatap Muka</div>
+              <div class="lrate-row"><span>Psikoterapi 60 menit</span><strong>Rp 350.000</strong></div>
+              <div class="lrate-row hl"><span>Psikoterapi 90 menit</span><strong>Rp 510.000</strong></div>
+              <div class="lrate-row"><span>Paket 3 Sesi (60 mnt)</span><strong>Rp 1.000.000</strong></div>
+            </div>
+          </div>
+          <div class="lcard-note">⊙ Psikoterapi online via Video Call Google Meet &nbsp;|&nbsp; ⊙ Psikoterapi anak hanya On-site / Tatap Muka</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TES PSIKOLOGI ===== -->
+    <div id="lsec-psikotes" class="lsec" style="display:none">
+
+      <!-- TES IQ DEWASA -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7)">
+          <div class="lcard-icon">🎓</div>
+          <div><h2>Tes IQ Dewasa</h2><p>Durasi ± 60 menit</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc"><p>Alat pengukuran untuk menilai tingkat kecerdasan seseorang menggunakan 2 skala pengukuran. Digunakan untuk seleksi pekerjaan, masuk sekolah, dll.</p></div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col" style="max-width:400px">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7)">📋 Paket</div>
+              <div class="lrate-row hl"><span>Tes IQ Dewasa + Hardcopy Hasil Tes</span><strong>Rp 200.000 – 250.000</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TES IQ ANAK -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#C850C0,#7B5EA7)">
+          <div class="lcard-icon">🧒</div>
+          <div><h2>Tes IQ Anak Lengkap</h2><p>Durasi 60 – 90 menit</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc"><p>Mengukur kemampuan kognitif anak secara menyeluruh — verbal, performance, spasial, konsentrasi, emosi, motivasi, sosial, serta kelebihan dan kekurangan anak untuk menemukan minat bakatnya.</p></div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#C850C0,#7B5EA7)">📋 Paket Lengkap</div>
+              <div class="lrate-row hl"><span>Tes IQ + Hardcopy + Konsultasi Psikolog (30 mnt)</span><strong>Rp 450.000</strong></div>
+              <div class="lrate-row"><span>Tes IQ + Hardcopy Hasil Tes</span><strong>Rp 350.000</strong></div>
+            </div>
+          </div>
+          <div class="lcard-note">⊙ Semua psikotes dilakukan secara On-site / Tatap Muka</div>
+        </div>
+      </div>
+
+      <!-- TES MINAT BAKAT -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#7B5EA7,#4A90D9)">
+          <div class="lcard-icon">🌟</div>
+          <div><h2>Tes Minat Bakat</h2><p>Durasi 120 – 150 menit | Usia &gt;14 tahun</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc"><p>Mengukur kemampuan kognitif, kepribadian, gaya belajar, dan potensi minat bakat. Ideal untuk menentukan jurusan kuliah yang sesuai.</p></div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#7B5EA7,#4A90D9)">📋 Paket</div>
+              <div class="lrate-row hl"><span>Tes Minat Bakat + Hardcopy + Konsultasi (30 mnt)</span><strong>Rp 500.000</strong></div>
+              <div class="lrate-row"><span>Tes Minat Bakat + Hardcopy Hasil Tes</span><strong>Rp 400.000</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TES KESIAPAN SEKOLAH -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#4A90D9,#C850C0)">
+          <div class="lcard-icon">🏫</div>
+          <div><h2>Tes Kesiapan Masuk Sekolah</h2><p>Durasi 60 – 90 menit</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc"><p>Mengukur kesiapan anak masuk SD dari segi kognitif, motorik, emosional, dan sosial untuk memastikan anak memiliki kemampuan dasar mengikuti kegiatan belajar mengajar.</p></div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#4A90D9,#C850C0)">📋 Paket</div>
+              <div class="lrate-row hl"><span>Tes + Hardcopy + Surat Rekomendasi + Konsultasi (30 mnt)</span><strong>Rp 400.000</strong></div>
+              <div class="lrate-row"><span>Tes + Hardcopy + Surat Rekomendasi</span><strong>Rp 275.000</strong></div>
+            </div>
+          </div>
+          <div class="lcard-note">⊙ Surat Rekomendasi hanya diberikan apabila hasil tes dinyatakan siap sekolah</div>
+        </div>
+      </div>
+
+      <!-- SCREENING ABK & TUMBUH KEMBANG -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#C850C0,#4A90D9)">
+          <div class="lcard-icon">🔍</div>
+          <div><h2>Screening ABK &amp; Tumbuh Kembang</h2><p>2 – 3 pertemuan asesmen</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc"><p><strong>Screening ABK</strong> mendeteksi tanda-tanda kebutuhan khusus seperti autisme, ADHD, atau gangguan sensorik. <strong>Screening Tumbuh Kembang</strong> memantau perkembangan fisik, motorik, kognitif, bahasa, dan sosial-emosional anak.</p></div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col" style="max-width:420px">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#C850C0,#4A90D9)">📋 Paket (masing-masing)</div>
+              <div class="lrate-row hl"><span>Screening + Hardcopy + Konsultasi Psikolog (40 mnt)</span><strong>Rp 750.000</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSIKOTES INDIVIDU/KARYAWAN -->
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#7B5EA7,#C850C0)">
+          <div class="lcard-icon">📝</div>
+          <div><h2>Psikotes Individu / Karyawan</h2><p>Durasi 150 – 180 menit</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc"><p>Rangkaian tes psikologi yang mengukur kemampuan kognitif, kepribadian, sikap kerja, dan karakteristik lainnya. Digunakan untuk seleksi pekerjaan, penilaian pendidikan, kenaikan jabatan, dan evaluasi klinis. Bisa dilakukan secara individu maupun klasikal.</p></div>
+          <div class="lcard-rates-wrap">
+            <div class="lrate-col" style="max-width:400px">
+              <div class="lrate-title" style="background:linear-gradient(135deg,#7B5EA7,#C850C0)">📋 Paket</div>
+              <div class="lrate-row hl"><span>Psikotes Individu/Karyawan + Hardcopy</span><strong>Rp 500.000</strong></div>
+              <div class="lrate-row"><span>Psikotes TNI/Polri + Hardcopy</span><strong>Rp 500.000</strong></div>
+              <div class="lrate-row hl"><span>Evaluasi Kepribadian + Hardcopy</span><strong>Rp 500.000</strong></div>
+              <div class="lrate-row"><span>Screening Kesehatan Mental</span><strong>Rp 250.000</strong></div>
+            </div>
+          </div>
+          <div class="lcard-note">⊙ Psikotes klasikal (&gt;2 orang) mendapatkan harga khusus — hubungi admin</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== SEMINAR & OUTBOUND ===== -->
+    <div id="lsec-seminar" class="lsec" style="display:none">
+
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7)">
+          <div class="lcard-icon">🎤</div>
+          <div><h2>Seminar &amp; Training</h2><p>Edukasi Kesehatan Mental &amp; Pengembangan Diri</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc">
+            <p>Tim psikolog kami memberikan layanan profesional dalam bentuk seminar dan training — edukasi atau pelatihan tentang kesehatan mental, psikologi, atau pengembangan diri kepada audiens yang lebih luas. Bersifat interaktif, informatif, dan disesuaikan kebutuhan peserta.</p>
+            <p style="margin-top:.75rem"><strong>Siapa yang bisa menggunakan layanan ini?</strong></p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:.5rem">
+              <span class="ptag">Perusahaan</span><span class="ptag">Organisasi</span><span class="ptag">Instansi Pemerintah</span>
+              <span class="ptag">Komunitas</span><span class="ptag">Institusi Pendidikan</span><span class="ptag">Tim Profesional</span>
+            </div>
+          </div>
+          <div class="lcard-note" style="margin-top:1rem">⊙ Harga menyesuaikan topik, durasi, dan jumlah peserta — hubungi admin untuk penawaran</div>
+          <button onclick="openWA('Halo Psikologi Ceria, saya ingin bertanya tentang layanan seminar/training.')" class="btn-hero" style="margin-top:1rem;font-size:14px;padding:10px 22px">Hubungi Admin →</button>
+        </div>
+      </div>
+
+      <div class="lcard-detail">
+        <div class="lcard-header" style="background:linear-gradient(135deg,#C850C0,#4A90D9)">
+          <div class="lcard-icon">🏕️</div>
+          <div><h2>Outbound</h2><p>Team Building Berbasis Psikologi</p></div>
+        </div>
+        <div class="lcard-content">
+          <div class="lcard-desc">
+            <p>Aktivitas pelatihan outdoor yang dirancang untuk mengembangkan keterampilan individu maupun tim. Pendekatan terstruktur dan berbasis ilmiah — tidak hanya fisik, tetapi juga aspek psikologis peserta.</p>
+            <p style="margin-top:.75rem">Meningkatkan kerjasama, komunikasi, kepemimpinan, dan problem-solving. Cocok untuk perusahaan, institusi pendidikan, dan komunitas sebagai bagian dari pengembangan SDM atau team building.</p>
+          </div>
+          <div class="lcard-note" style="margin-top:1rem">⊙ Untuk informasi harga dapat menghubungi admin</div>
+          <button onclick="openWA('Halo Psikologi Ceria, saya ingin bertanya tentang layanan outbound.')" class="btn-hero" style="margin-top:1rem;font-size:14px;padding:10px 22px">Hubungi Admin →</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <footer><span>© 2026 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a><a onclick="showPage('harga')">Lihat Semua Harga</a></div></footer>
 </div>
 
 <!-- ===== BOOKING ===== -->
@@ -795,19 +1133,19 @@
         <div class="psi-picks">
           <div class="ppick" onclick="pickP(this,'DN')">
             <div class="ppick-av"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&q=80&fit=crop" alt="Deta"></div>
-            <div><h4>Deta Nurfianti, M.Psi.</h4><p>Kecemasan &amp; Depresi</p></div>
+            <div><h4>Deta Nurfianti, M.Psi.</h4><p>Depresi, Anxiety &amp; Parenting</p></div>
           </div>
           <div class="ppick" onclick="pickP(this,'AK')">
             <div class="ppick-av"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&q=80&fit=crop" alt="Asti"></div>
-            <div><h4>Asti Kusuma, M.Psi.</h4><p>Hubungan &amp; Keluarga</p></div>
+            <div><h4>Asti Kusuma W, M.Psi.</h4><p>Stres, Depresi &amp; Anxiety</p></div>
           </div>
           <div class="ppick" onclick="pickP(this,'AO')">
             <div class="ppick-av"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80&fit=crop" alt="Atina"></div>
-            <div><h4>Atina Okta F, M.Psi.</h4><p>Remaja &amp; Tumbuh Kembang</p></div>
+            <div><h4>Atina Okta F, M.Psi.</h4><p>Anxiety, Anak &amp; Remaja</p></div>
           </div>
           <div class="ppick" onclick="pickP(this,'DL')">
             <div class="ppick-av"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&q=80&fit=crop" alt="Dita"></div>
-            <div><h4>Dita Lestari, M.Psi.</h4><p>Stres &amp; Self-development</p></div>
+            <div><h4>Dita Lestari, M.Psi.</h4><p>Spesialis Anak &amp; Terapi Bermain</p></div>
           </div>
         </div>
       </div>
@@ -837,7 +1175,7 @@
       <button class="btn-hero" style="margin-top:1.75rem" onclick="resetBk()">Buat Janji Lain</button>
     </div>
   </div>
-  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
+  <footer><span>© 2026 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
 </div>
 
 <!-- ===== BLOG ===== -->
@@ -860,7 +1198,7 @@
       <div class="bcard" data-cat="hubungan"><div class="bcard-img"><img src="https://images.unsplash.com/photo-1516589091380-5d8e87df6999?w=700&q=80&fit=crop" alt="" loading="lazy"></div><div class="bcard-body"><div class="btag">Hubungan</div><h3>Mengenal Love Language dan Manfaatnya</h3><p>Memahami bahasa cinta pasangan bisa mengubah cara mengekspresikan kasih sayang secara tepat.</p><div class="bmeta"><span>Deta Nurfianti</span><span>8 menit baca</span></div></div></div>
     </div>
   </div>
-  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
+  <footer><span>© 2026 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
 </div>
 
 <!-- ===== KONTAK ===== -->
@@ -879,14 +1217,14 @@
           <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Chat via WhatsApp
         </button>
-        <a class="ig-lnk" href="https://www.instagram.com/psikologicceria" target="_blank">
+        <a class="ig-lnk" href="https://www.instagram.com/psikologiceria" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          @psikologicceria di Instagram
+          @psikologiceria di Instagram
         </a>
       </div>
     </div>
   </div>
-  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
+  <footer><span>© 2026 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
 </div>
 
 <!-- WA FLOAT -->
@@ -915,7 +1253,7 @@
   function submitBk(){
     const n=document.getElementById('fn').value.trim(),w=document.getElementById('fw').value.trim(),t=document.getElementById('ft').value,m=document.getElementById('fm').value;
     if(!n||!w||!t||!m||!sP||!sS){alert('Mohon lengkapi semua data: nama, nomor WA, tanggal, metode, pilih psikolog, dan jam sesi.');return}
-    const names={DN:'Deta Nurfianti, M.Psi.',AK:'Asti Kusuma, M.Psi.',AO:'Atina Okta F, M.Psi.',DL:'Dita Lestari, M.Psi.'};
+    const names={DN:'Deta Nurfianti, M.Psi.',AK:'Asti Kusuma W, M.Psi.',AO:'Atina Okta F, M.Psi.',DL:'Dita Lestari, M.Psi.'};
     const tgl=new Date(t).toLocaleDateString('id-ID',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
     document.getElementById('smsg').textContent='Terima kasih, '+n+'! Janji Anda dengan '+names[sP]+' pada '+tgl+' pukul '+sS+' ('+m+') telah tercatat. Kami akan menghubungi '+w+' via WhatsApp dalam 1×24 jam.';
     document.getElementById('bk-form').style.display='none';document.getElementById('bk-ok').style.display='block';
@@ -934,6 +1272,50 @@
   function openWA(msg){window.open('https://wa.me/6285384847854?text='+encodeURIComponent(msg),'_blank')}
   function toggleWap(){const p=document.getElementById('wap');p.style.display=p.style.display==='block'?'none':'block'}
   document.addEventListener('click',function(e){const p=document.getElementById('wap'),f=document.querySelector('.waf');if(!p.contains(e.target)&&!f.contains(e.target))p.style.display='none'});
+
+  // ===== COUNTER ANIMATION =====
+  function animateCounter(el, target, suffix, duration) {
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { start = target; clearInterval(timer); }
+      const num = Math.floor(start);
+      el.textContent = (target >= 1000 ? num.toLocaleString('id-ID') : num) + suffix;
+    }, 16);
+  }
+  function startCounters() {
+    const k = document.getElementById('stat-klien');
+    const p = document.getElementById('stat-psikolog');
+    const s = document.getElementById('stat-kepuasan');
+    if (k && k.textContent === '0') {
+      animateCounter(k, 2000, '+', 2200);
+      animateCounter(p, 5, '+', 1200);
+      animateCounter(s, 98, '%', 1600);
+    }
+  }
+  const heroStat = document.querySelector('.hero-stats');
+  if (heroStat) {
+    const obs = new IntersectionObserver(e => { if(e[0].isIntersecting) startCounters(); }, {threshold:0.3});
+    obs.observe(heroStat);
+  }
+  // Also trigger on page show
+  const origShow = showPage;
+  showPage = function(n) {
+    origShow(n);
+    if (n === 'home') setTimeout(startCounters, 600);
+  };
+
+  // ===== LAYANAN TAB =====
+  function showLayanan(tab) {
+    ['konseling','psikotes','seminar'].forEach(t => {
+      const sec = document.getElementById('lsec-' + t);
+      const btn = document.getElementById('ltab-' + t);
+      if (sec) sec.style.display = t === tab ? 'flex' : 'none';
+      if (btn) btn.classList.toggle('active', t === tab);
+    });
+  }
+
   document.getElementById('ft').setAttribute('min',new Date().toISOString().split('T')[0]);
 </script>
 
@@ -951,6 +1333,7 @@
     <button onclick="document.getElementById('asti').scrollIntoView({behavior:'smooth'})" class="qnav-btn">Asti Kusuma</button>
     <button onclick="document.getElementById('atina').scrollIntoView({behavior:'smooth'})" class="qnav-btn">Atina Okta F</button>
     <button onclick="document.getElementById('dita').scrollIntoView({behavior:'smooth'})" class="qnav-btn">Dita Lestari</button>
+    <button onclick="document.getElementById('moerli').scrollIntoView({behavior:'smooth'})" class="qnav-btn">Moerli Anggia</button>
     <button onclick="showPage('booking')" style="font-size:13px;padding:6px 18px;border-radius:99px;background:var(--grad);color:#fff;border:none;cursor:pointer;font-family:var(--font-sans);font-weight:600;margin-left:auto">Buat Janji →</button>
   </div>
 
@@ -975,22 +1358,17 @@
         <div class="pcf-center">
           <h2 class="pcf-name">Deta Nurfianti, M.Psi., Psikolog</h2>
           <p class="pcf-title">Clinical Psychologist</p>
+          <p class="pcf-sipp">SIPP: 20170793-2020-02-0322</p>
           <div class="pcf-divider"></div>
           <p class="pcf-desc">Berfokus pada pendampingan individu dengan permasalahan kecemasan, depresi, dan trauma. Menggunakan pendekatan berbasis bukti ilmiah untuk membantu klien memahami diri, mengelola emosi, dan membangun kembali kualitas hidup yang lebih baik.</p>
         </div>
         <div class="pcf-right">
-          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7);color:#fff">Pendekatan :</div>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7);color:#fff">Spesialisasi :</div>
           <ul class="pcf-ul">
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Cognitive Behavior Therapy (CBT)</li>
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Attachment-based Approach</li>
-            <li><span class="ul-dot" style="background:#C850C0"></span>Mindfulness-based Intervention</li>
-          </ul>
-          <div class="pcf-label" style="background:linear-gradient(135deg,#7B5EA7,#C850C0);color:#fff;margin-top:.85rem">Lingkup Sesi :</div>
-          <ul class="pcf-ul">
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Klien usia remaja dan dewasa</li>
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Kecemasan, depresi, dan stres</li>
-            <li><span class="ul-dot" style="background:#C850C0"></span>Trauma dan pengalaman masa lalu</li>
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Regulasi emosi dan pengembangan diri</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Depresi &amp; Anxiety</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Parenting &amp; Pola Asuh</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Gratitude &amp; Spiritual Journey</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Permasalahan Psikologis Remaja &amp; Dewasa</li>
           </ul>
         </div>
       </div>
@@ -1029,24 +1407,19 @@
           </div>
         </div>
         <div class="pcf-center">
-          <h2 class="pcf-name">Asti Kusuma, M.Psi., Psikolog</h2>
+          <h2 class="pcf-name">Asti Kusuma W, M.Psi., Psikolog</h2>
           <p class="pcf-title">Clinical Psychologist</p>
+          <p class="pcf-sipp">SIPP: 20230942-2023-01-2494</p>
           <div class="pcf-divider"></div>
           <p class="pcf-desc">Spesialis dalam dinamika hubungan — pasangan, pernikahan, dan keluarga. Membantu klien membangun komunikasi yang sehat, menyelesaikan konflik, dan memperkuat ikatan emosional dalam hubungan yang bermakna.</p>
         </div>
         <div class="pcf-right">
-          <div class="pcf-label" style="background:linear-gradient(135deg,#7B5EA7,#C850C0);color:#fff">Pendekatan :</div>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#7B5EA7,#C850C0);color:#fff">Spesialisasi :</div>
           <ul class="pcf-ul">
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Cognitive Behavior Therapy (CBT)</li>
-            <li><span class="ul-dot" style="background:#C850C0"></span>Family Systems Therapy</li>
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Emotionally Focused Approach</li>
-          </ul>
-          <div class="pcf-label" style="background:linear-gradient(135deg,#C850C0,#7B5EA7);color:#fff;margin-top:.85rem">Lingkup Sesi :</div>
-          <ul class="pcf-ul">
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Konseling pasangan dan pranikah</li>
-            <li><span class="ul-dot" style="background:#C850C0"></span>Isu keluarga dan dinamika rumah tangga</li>
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Konflik relasi dan komunikasi</li>
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Kecemasan dan regulasi emosi</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Stres &amp; Depresi</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Anxiety</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Hubungan Interpersonal</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Permasalahan Psikologis Remaja &amp; Dewasa</li>
           </ul>
         </div>
       </div>
@@ -1089,22 +1462,17 @@
         <div class="pcf-center">
           <h2 class="pcf-name">Atina Okta F, M.Psi., Psikolog</h2>
           <p class="pcf-title">Clinical Psychologist</p>
+          <p class="pcf-sipp">SIPP: 20231146-2024-1391</p>
           <div class="pcf-divider"></div>
           <p class="pcf-desc">Berpengalaman mendampingi anak, remaja, dan keluarga. Fokus pada tumbuh kembang anak, permasalahan remaja, dan pola pengasuhan yang positif. Menciptakan ruang aman bagi klien muda untuk mengekspresikan diri dan berkembang secara optimal.</p>
         </div>
         <div class="pcf-right">
-          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#C850C0);color:#fff">Pendekatan :</div>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#C850C0);color:#fff">Spesialisasi :</div>
           <ul class="pcf-ul">
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Play Therapy &amp; Art Therapy</li>
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Positive Discipline Approach</li>
-            <li><span class="ul-dot" style="background:#C850C0"></span>Attachment-based Approach</li>
-          </ul>
-          <div class="pcf-label" style="background:linear-gradient(135deg,#C850C0,#4A90D9);color:#fff;margin-top:.85rem">Lingkup Sesi :</div>
-          <ul class="pcf-ul">
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Tumbuh kembang anak dan remaja</li>
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Parenting dan relasi orang tua-anak</li>
-            <li><span class="ul-dot" style="background:#C850C0"></span>Masalah akademik dan bullying</li>
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Screening tumbuh kembang / ABK</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Anxiety &amp; Depresi</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Anak &amp; Remaja</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Permasalahan Psikologis Dewasa</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Group Therapy</li>
           </ul>
         </div>
       </div>
@@ -1147,22 +1515,17 @@
         <div class="pcf-center">
           <h2 class="pcf-name">Dita Lestari, M.Psi., Psikolog</h2>
           <p class="pcf-title">Clinical Psychologist</p>
+          <p class="pcf-sipp">SIPP: 20190323-2022-02-2261</p>
           <div class="pcf-divider"></div>
-          <p class="pcf-desc">Membantu individu mengenali potensi diri, mengatasi stres dan burnout, serta membuat keputusan karir yang tepat. Dengan pendekatan terstruktur dan suportif, mendampingi klien membangun kepercayaan diri dan strategi hidup yang lebih adaptif.</p>
+          <p class="pcf-desc">Spesialis Anak &amp; Remaja dengan keahlian dalam Terapi Bermain. Berpengalaman mendampingi anak dan remaja yang menghadapi kenakalan, masalah perilaku, serta tantangan perkembangan. Menciptakan ruang terapeutik yang aman dan menyenangkan agar klien muda dapat tumbuh secara optimal.</p>
         </div>
         <div class="pcf-right">
-          <div class="pcf-label" style="background:linear-gradient(135deg,#C850C0,#4A90D9);color:#fff">Pendekatan :</div>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#C850C0,#4A90D9);color:#fff">Spesialisasi :</div>
           <ul class="pcf-ul">
-            <li><span class="ul-dot" style="background:#C850C0"></span>Cognitive Behavior Therapy (CBT)</li>
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Mindfulness-based Intervention</li>
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Solution-Focused Brief Therapy</li>
-          </ul>
-          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#C850C0);color:#fff;margin-top:.85rem">Lingkup Sesi :</div>
-          <ul class="pcf-ul">
-            <li><span class="ul-dot" style="background:#C850C0"></span>Stres, burnout, dan produktivitas</li>
-            <li><span class="ul-dot" style="background:#7B5EA7"></span>Pengembangan diri dan karir</li>
-            <li><span class="ul-dot" style="background:#4A90D9"></span>Pemetaan minat-bakat dan penjurusan</li>
-            <li><span class="ul-dot" style="background:#C850C0"></span>Kecemasan dan kepercayaan diri</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Spesialis Anak &amp; Remaja</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Terapi Bermain</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Kenakalan Anak &amp; Remaja</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Permasalahan Perilaku &amp; Perkembangan</li>
           </ul>
         </div>
       </div>
@@ -1186,8 +1549,46 @@
       </div>
     </div>
 
+    <!-- ── MOERLI ANGGIA ── -->
+    <div class="pcard-full" id="moerli">
+      <div class="pcf-badge-bar" style="background:linear-gradient(135deg,#7B5EA7,#4A90D9)">
+        <span>Administrator &amp; Psychological Test Tester</span>
+      </div>
+      <div class="pcf-body">
+        <div class="pcf-left">
+          <div class="pcf-photo" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0ebf8,#fce8fb)">
+            <div style="width:80px;height:80px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff">MA</div>
+            <!-- ⚠️ Ganti dengan foto asli Moerli -->
+          </div>
+          <div class="pcf-edu">
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#7B5EA7"></span>S1 Psikologi</div>
+          </div>
+        </div>
+        <div class="pcf-center">
+          <h2 class="pcf-name">Moerli Anggia, S.Psi.</h2>
+          <p class="pcf-title">Administrator &amp; Psychological Test Tester, Creative Team</p>
+          <div class="pcf-divider"></div>
+          <p class="pcf-desc">Moerli berperan sebagai tulang punggung operasional Psikologi Ceria — memastikan setiap klien mendapat pengalaman layanan yang lancar, ramah, dan profesional sejak pertama kali menghubungi klinik hingga selesai sesi. Selain mengelola administrasi, Moerli juga aktif sebagai tester dalam layanan tes psikologi dan bagian dari tim kreatif.</p>
+        </div>
+        <div class="pcf-right">
+          <div class="pcf-label" style="background:linear-gradient(135deg,#7B5EA7,#4A90D9);color:#fff">Peran :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Administrasi &amp; Layanan Klien</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Psychological Test Tester</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Tim Kreatif &amp; Komunikasi</li>
+          </ul>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7);color:#fff;margin-top:.85rem">Tanggung Jawab :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Koordinasi jadwal &amp; booking klien</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Pelaksanaan tes psikologi</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Konten &amp; media sosial klinik</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a><a onclick="showPage('harga')">Lihat Semua Harga</a></div></footer>
+  <footer><span>© 2026 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a><a onclick="showPage('harga')">Lihat Semua Harga</a></div></footer>
 </div>
 
 <!-- ===== HARGA PAGE ===== -->
@@ -1265,7 +1666,7 @@
     </div>
 
   </div>
-  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
+  <footer><span>© 2026 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
 </div>
 
 
