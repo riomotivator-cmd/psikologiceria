@@ -546,6 +546,45 @@
     .lcard-note{font-size:12px;color:var(--text-faint);font-style:italic;padding-top:.75rem;border-top:1px dashed var(--border)}
     @media(max-width:680px){.lcard-rates-wrap{grid-template-columns:1fr}.lcard-header{padding:1rem 1.25rem}.lcard-content{padding:1.25rem}}
 
+
+    /* ===== HAMBURGER & MOBILE NAV ===== */
+    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:transparent;border:none;cursor:pointer;padding:4px;border-radius:var(--radius-sm)}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+    .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+    .mobile-nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:299;display:none;backdrop-filter:blur(2px)}
+    .mobile-nav-overlay.open{display:block}
+
+    .mobile-nav{
+      position:fixed;top:0;right:0;height:100vh;width:min(320px,88vw);
+      background:var(--white);z-index:300;
+      transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);
+      display:flex;flex-direction:column;
+      box-shadow:-8px 0 32px rgba(0,0,0,.15);
+    }
+    .mobile-nav.open{transform:translateX(0)}
+
+    .mobile-nav-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid var(--border)}
+    .mob-close{width:34px;height:34px;border-radius:50%;background:var(--cream);border:none;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted)}
+
+    .mobile-nav-links{flex:1;overflow-y:auto;padding:.75rem 0}
+    .mobile-nav-links a{display:flex;align-items:center;gap:.85rem;padding:.9rem 1.5rem;font-size:15px;font-weight:500;color:var(--text);cursor:pointer;transition:background .15s;border-left:3px solid transparent}
+    .mobile-nav-links a:hover{background:var(--cream);border-left-color:var(--purple)}
+    .mob-icon{font-size:18px;width:24px;text-align:center;flex-shrink:0}
+
+    .mobile-nav-footer{padding:1.25rem 1.25rem 2rem;border-top:1px solid var(--border)}
+
+    @media(max-width:960px){
+      .hamburger{display:flex}
+      .nav-cta{display:none}
+    }
+    @media(min-width:961px){
+      .hamburger{display:none}
+      .mobile-nav,.mobile-nav-overlay{display:none!important}
+    }
+
   </style>
 </head>
 <body>
@@ -572,7 +611,60 @@
     <a onclick="showPage('contact')">Lokasi</a>
   </div>
   <button class="nav-cta" onclick="showPage('booking')">Buat Janji</button>
+  <!-- Hamburger for mobile -->
+  <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav-overlay" id="mob-overlay" onclick="closeMobileNav()"></div>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-header">
+    <div class="logo" onclick="closeMobileNav();showPage('home')" style="cursor:pointer">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <span class="logo-name">Psikologi <span>Ceria</span></span>
+    </div>
+    <button class="mob-close" onclick="closeMobileNav()">✕</button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a onclick="closeMobileNav();showPage('home')">
+      <span class="mob-icon">🏠</span> Beranda
+    </a>
+    <a onclick="closeMobileNav();showPage('layanan')">
+      <span class="mob-icon">📋</span> Layanan
+    </a>
+    <a onclick="closeMobileNav();showPage('psikolog')">
+      <span class="mob-icon">👩‍⚕️</span> Psikolog
+    </a>
+    <a onclick="closeMobileNav();showPage('harga')">
+      <span class="mob-icon">💰</span> Harga
+    </a>
+    <a onclick="closeMobileNav();showPage('blog')">
+      <span class="mob-icon">📝</span> Artikel
+    </a>
+    <a onclick="closeMobileNav();showPage('contact')">
+      <span class="mob-icon">📍</span> Lokasi &amp; Kontak
+    </a>
+  </nav>
+  <div class="mobile-nav-footer">
+    <button class="btn-hero" style="width:100%;padding:14px;font-size:15px" onclick="closeMobileNav();showPage('booking')">
+      Buat Janji Sekarang →
+    </button>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:1rem">
+      <a href="https://wa.me/6285384847854" target="_blank" style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        0853-8484-7854
+      </a>
+      <a href="https://www.instagram.com/psikologiceria" target="_blank" style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @psikologiceria
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- ===== HOME ===== -->
 <div id="page-home" class="page active">
@@ -1272,6 +1364,31 @@
   function openWA(msg){window.open('https://wa.me/6285384847854?text='+encodeURIComponent(msg),'_blank')}
   function toggleWap(){const p=document.getElementById('wap');p.style.display=p.style.display==='block'?'none':'block'}
   document.addEventListener('click',function(e){const p=document.getElementById('wap'),f=document.querySelector('.waf');if(!p.contains(e.target)&&!f.contains(e.target))p.style.display='none'});
+
+
+  // ===== HAMBURGER MOBILE NAV =====
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobile-nav');
+    const overlay = document.getElementById('mob-overlay');
+    const btn = document.getElementById('hamburger');
+    const isOpen = nav.classList.contains('open');
+    if (isOpen) {
+      closeMobileNav();
+    } else {
+      nav.classList.add('open');
+      overlay.classList.add('open');
+      btn.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeMobileNav() {
+    document.getElementById('mobile-nav').classList.remove('open');
+    document.getElementById('mob-overlay').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Close on resize to desktop
+  window.addEventListener('resize', () => { if(window.innerWidth > 960) closeMobileNav(); });
 
   // ===== COUNTER ANIMATION =====
   function animateCounter(el, target, suffix, duration) {
