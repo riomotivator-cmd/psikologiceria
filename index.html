@@ -464,6 +464,55 @@
       .price-grid { grid-template-columns:1fr; }
     }
 
+
+    /* ===== COLORFUL PSIKOLOG CARDS ===== */
+    .qnav-btn{font-size:13px;padding:6px 16px;border-radius:99px;border:1px solid var(--border-mid);background:transparent;color:var(--text-muted);cursor:pointer;font-family:var(--font-sans);transition:all .2s}
+    .qnav-btn:hover{border-color:var(--purple);color:var(--purple)}
+
+    .pcard-full{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .2s}
+    .pcard-full:hover{box-shadow:var(--shadow-md)}
+
+    .pcf-badge-bar{padding:.6rem 1.5rem;display:flex;align-items:center;gap:.5rem}
+    .pcf-badge-bar span{color:#fff;font-size:13px;font-weight:600;letter-spacing:.03em}
+
+    .pcf-body{display:grid;grid-template-columns:180px 1fr 220px;gap:1.75rem;padding:1.75rem}
+    .pcf-left{display:flex;flex-direction:column;gap:1rem}
+    .pcf-photo{width:100%;aspect-ratio:1;border-radius:var(--radius);overflow:hidden;border:2px solid var(--border-mid)}
+    .pcf-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .pcf-edu{display:flex;flex-direction:column;gap:5px}
+    .pcf-edu-item{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text-muted);font-weight:300}
+    .edu-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+    .pcf-center{display:flex;flex-direction:column}
+    .pcf-name{font-family:var(--font-serif);font-size:20px;font-weight:600;margin-bottom:.25rem;line-height:1.3}
+    .pcf-title{font-size:13px;color:var(--text-muted);font-style:italic;font-weight:300}
+    .pcf-divider{border:none;border-top:2px dashed var(--border-mid);margin:.85rem 0}
+    .pcf-desc{font-size:13.5px;color:var(--text-muted);line-height:1.8;font-weight:300}
+
+    .pcf-right{display:flex;flex-direction:column}
+    .pcf-label{font-size:12px;font-weight:700;padding:5px 12px;border-radius:var(--radius-sm);margin-bottom:.5rem;display:inline-block}
+    .pcf-ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+    .pcf-ul li{display:flex;align-items:flex-start;gap:7px;font-size:12.5px;color:var(--text-muted);font-weight:300;line-height:1.5}
+    .ul-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+
+    .pcf-rates{background:linear-gradient(135deg,#f8f6ff 0%,#fef0fe 100%);padding:1.35rem 1.75rem}
+    .pcf-rates-header{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}
+    .pcf-rates-title{font-size:13.5px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-transform:uppercase;letter-spacing:.05em}
+    .pcf-rates-star{font-size:16px}
+    .pcf-rates-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:.85rem}
+    .pcf-rate-row{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.75);border-radius:var(--radius-sm);padding:8px 12px;border:1px solid rgba(123,94,167,.12)}
+    .rr-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .rr-label{font-size:12.5px;color:var(--text-muted);font-weight:300;flex:1}
+    .rr-price{font-size:13px;font-weight:700;color:var(--purple);white-space:nowrap}
+    .pcf-notes{display:flex;flex-direction:column;gap:3px;padding-top:.75rem;border-top:1px dashed var(--border-mid)}
+    .pcf-notes div{font-size:12px;color:var(--text-faint);font-weight:300}
+
+    @media(max-width:768px){
+      .pcf-body{grid-template-columns:1fr;gap:1.25rem}
+      .pcf-photo{height:200px;aspect-ratio:unset}
+      .pcf-rates-grid{grid-template-columns:1fr}
+    }
+
   </style>
 </head>
 <body>
@@ -896,183 +945,249 @@
     <p>Kenali psikolog kami — tersertifikasi, berpengalaman, dan siap mendampingi perjalanan Anda.</p>
   </div>
 
-  <!-- Quick nav psikolog -->
-  <div style="background:var(--white);border-bottom:1px solid var(--border);padding:.75rem 2rem;display:flex;gap:8px;flex-wrap:wrap;max-width:100%">
-    <button onclick="document.getElementById('deta').scrollIntoView({behavior:'smooth'})" style="font-size:13px;padding:6px 16px;border-radius:99px;border:1px solid var(--border-mid);background:transparent;color:var(--text-muted);cursor:pointer;font-family:var(--font-sans)">Deta Nurfianti</button>
-    <button onclick="document.getElementById('asti').scrollIntoView({behavior:'smooth'})" style="font-size:13px;padding:6px 16px;border-radius:99px;border:1px solid var(--border-mid);background:transparent;color:var(--text-muted);cursor:pointer;font-family:var(--font-sans)">Asti Kusuma</button>
-    <button onclick="document.getElementById('atina').scrollIntoView({behavior:'smooth'})" style="font-size:13px;padding:6px 16px;border-radius:99px;border:1px solid var(--border-mid);background:transparent;color:var(--text-muted);cursor:pointer;font-family:var(--font-sans)">Atina Okta F</button>
-    <button onclick="document.getElementById('dita').scrollIntoView({behavior:'smooth'})" style="font-size:13px;padding:6px 16px;border-radius:99px;border:1px solid var(--border-mid);background:transparent;color:var(--text-muted);cursor:pointer;font-family:var(--font-sans)">Dita Lestari</button>
-    <button onclick="showPage('booking')" style="font-size:13px;padding:6px 16px;border-radius:99px;background:var(--grad);color:#fff;border:none;cursor:pointer;font-family:var(--font-sans);font-weight:600;margin-left:auto">Buat Janji →</button>
+  <!-- Quick nav -->
+  <div style="background:var(--white);border-bottom:1px solid var(--border);padding:.75rem 2rem;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <button onclick="document.getElementById('deta').scrollIntoView({behavior:'smooth'})" class="qnav-btn">Deta Nurfianti</button>
+    <button onclick="document.getElementById('asti').scrollIntoView({behavior:'smooth'})" class="qnav-btn">Asti Kusuma</button>
+    <button onclick="document.getElementById('atina').scrollIntoView({behavior:'smooth'})" class="qnav-btn">Atina Okta F</button>
+    <button onclick="document.getElementById('dita').scrollIntoView({behavior:'smooth'})" class="qnav-btn">Dita Lestari</button>
+    <button onclick="showPage('booking')" style="font-size:13px;padding:6px 18px;border-radius:99px;background:var(--grad);color:#fff;border:none;cursor:pointer;font-family:var(--font-sans);font-weight:600;margin-left:auto">Buat Janji →</button>
   </div>
 
-  <div style="max-width:960px;margin:0 auto;padding:3rem 2rem 5rem">
+  <div style="max-width:980px;margin:0 auto;padding:3rem 2rem 5rem;display:flex;flex-direction:column;gap:2.5rem">
 
-    <!-- DETA NURFIANTI -->
-    <div class="psi-profile" id="deta">
-      <div class="psi-profile-top">
-        <div class="psi-photo">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&fit=crop" alt="Deta Nurfianti">
-          <!-- ⚠️ Ganti dengan foto asli Deta Nurfianti -->
+    <!-- ── DETA NURFIANTI ── -->
+    <div class="pcard-full" id="deta">
+      <div class="pcf-badge-bar" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7)">
+        <span>Psikolog Klinis</span>
+      </div>
+      <div class="pcf-body">
+        <div class="pcf-left">
+          <div class="pcf-photo">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&fit=crop&h=400" alt="Deta Nurfianti">
+            <!-- ⚠️ Ganti dengan foto asli -->
+          </div>
+          <div class="pcf-edu">
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#4A90D9"></span>S1 Psikologi</div>
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#7B5EA7"></span>S2 Psikologi Klinis (M.Psi.)</div>
+          </div>
         </div>
-        <div class="psi-bio">
-          <div class="psi-badge">Psikolog Klinis</div>
-          <h2 class="psi-name">Deta Nurfianti, M.Psi., Psikolog</h2>
-          <p class="psi-desc">Berfokus pada pendampingan individu dewasa dengan permasalahan kecemasan, depresi, dan trauma. Menggunakan pendekatan berbasis bukti ilmiah untuk membantu klien memahami diri, mengelola emosi, dan membangun kembali kualitas hidup yang lebih baik.</p>
-          <div class="psi-section-title">Pendekatan</div>
-          <ul class="psi-list">
-            <li>Cognitive Behavior Therapy (CBT)</li>
-            <li>Pendekatan berbasis Attachment</li>
-            <li>Mindfulness-based Intervention</li>
+        <div class="pcf-center">
+          <h2 class="pcf-name">Deta Nurfianti, M.Psi., Psikolog</h2>
+          <p class="pcf-title">Clinical Psychologist</p>
+          <div class="pcf-divider"></div>
+          <p class="pcf-desc">Berfokus pada pendampingan individu dengan permasalahan kecemasan, depresi, dan trauma. Menggunakan pendekatan berbasis bukti ilmiah untuk membantu klien memahami diri, mengelola emosi, dan membangun kembali kualitas hidup yang lebih baik.</p>
+        </div>
+        <div class="pcf-right">
+          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#7B5EA7);color:#fff">Pendekatan :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Cognitive Behavior Therapy (CBT)</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Attachment-based Approach</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Mindfulness-based Intervention</li>
           </ul>
-          <div class="psi-section-title">Lingkup Sesi</div>
-          <ul class="psi-list">
-            <li>Klien usia remaja dan dewasa</li>
-            <li>Kecemasan, depresi, dan stres</li>
-            <li>Trauma dan pengalaman masa lalu</li>
-            <li>Pengembangan diri dan regulasi emosi</li>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#7B5EA7,#C850C0);color:#fff;margin-top:.85rem">Lingkup Sesi :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Klien usia remaja dan dewasa</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Kecemasan, depresi, dan stres</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Trauma dan pengalaman masa lalu</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Regulasi emosi dan pengembangan diri</li>
           </ul>
         </div>
       </div>
-      <div class="psi-rates">
-        <div class="psi-rates-title">Biaya Sesi Konseling</div>
-        <div class="rates-grid">
-          <div class="rate-item"><span class="rate-label">Konseling Individu On-site</span><span class="rate-price">Rp 275.000 / 1 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi On-site</span><span class="rate-price">Rp 775.000</span></div>
-          <div class="rate-item"><span class="rate-label">Konseling Individu Online</span><span class="rate-price">Rp 250.000 / 1 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi Online</span><span class="rate-price">Rp 700.000</span></div>
+      <div class="pcf-rates" style="border-top:3px solid;border-image:linear-gradient(135deg,#4A90D9,#7B5EA7,#C850C0) 1">
+        <div class="pcf-rates-header">
+          <span class="pcf-rates-title">Biaya Sesi Konseling &amp; Terapi</span>
+          <span class="pcf-rates-star">⭐</span>
         </div>
-        <p class="rate-note">* Sesi bisa dilakukan secara tatap muka di klinik atau online via video call.</p>
-      </div>
-    </div>
-
-    <div class="psi-divider"></div>
-
-    <!-- ASTI KUSUMA -->
-    <div class="psi-profile" id="asti">
-      <div class="psi-profile-top">
-        <div class="psi-photo">
-          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80&fit=crop" alt="Asti Kusuma">
-          <!-- ⚠️ Ganti dengan foto asli Asti Kusuma -->
+        <div class="pcf-rates-grid">
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#4A90D9"></span><span class="rr-label">Konseling Individu On-site</span><span class="rr-price">Rp 275.000 / 1 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#7B5EA7"></span><span class="rr-label">Paket 3 Sesi On-site</span><span class="rr-price">Rp 775.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#C850C0"></span><span class="rr-label">Konseling Individu Online</span><span class="rr-price">Rp 250.000 / 1 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#4A90D9"></span><span class="rr-label">Paket 3 Sesi Online</span><span class="rr-price">Rp 700.000</span></div>
         </div>
-        <div class="psi-bio">
-          <div class="psi-badge">Psikolog Klinis</div>
-          <h2 class="psi-name">Asti Kusuma, M.Psi., Psikolog</h2>
-          <p class="psi-desc">Spesialis dalam dinamika hubungan — pasangan, pernikahan, dan keluarga. Membantu klien membangun komunikasi yang sehat, menyelesaikan konflik, dan memperkuat ikatan emosional dalam hubungan yang bermakna.</p>
-          <div class="psi-section-title">Pendekatan</div>
-          <ul class="psi-list">
-            <li>Cognitive Behavior Therapy (CBT)</li>
-            <li>Family Systems Therapy</li>
-            <li>Emotionally Focused Approach</li>
-          </ul>
-          <div class="psi-section-title">Lingkup Sesi</div>
-          <ul class="psi-list">
-            <li>Konseling pasangan dan pranikah</li>
-            <li>Isu keluarga dan dinamika rumah tangga</li>
-            <li>Konflik relasi dan komunikasi</li>
-            <li>Kecemasan dan regulasi emosi</li>
-          </ul>
+        <div class="pcf-notes">
+          <div>⊙ Sesi bisa dilakukan secara tatap muka atau online (video call).</div>
+          <div>⊙ Asesmen Awal: Rp 50.000 – 75.000</div>
         </div>
-      </div>
-      <div class="psi-rates">
-        <div class="psi-rates-title">Biaya Sesi Konseling</div>
-        <div class="rates-grid">
-          <div class="rate-item"><span class="rate-label">Konseling Individu On-site</span><span class="rate-price">Rp 275.000 / 1 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi On-site</span><span class="rate-price">Rp 775.000</span></div>
-          <div class="rate-item"><span class="rate-label">Konseling Pasangan On-site</span><span class="rate-price">Rp 500.000 / 2 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi Pasangan On-site</span><span class="rate-price">Rp 1.450.000</span></div>
-          <div class="rate-item"><span class="rate-label">Konseling Pasangan Online</span><span class="rate-price">Rp 400.000 / 2 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi Pasangan Online</span><span class="rate-price">Rp 1.150.000</span></div>
-        </div>
-        <p class="rate-note">* Sesi bisa dilakukan secara tatap muka di klinik atau online via video call.</p>
       </div>
     </div>
 
-    <div class="psi-divider"></div>
-
-    <!-- ATINA OKTA F -->
-    <div class="psi-profile" id="atina">
-      <div class="psi-profile-top">
-        <div class="psi-photo">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&fit=crop" alt="Atina Okta F">
-          <!-- ⚠️ Ganti dengan foto asli Atina Okta F -->
+    <!-- ── ASTI KUSUMA ── -->
+    <div class="pcard-full" id="asti">
+      <div class="pcf-badge-bar" style="background:linear-gradient(135deg,#7B5EA7,#C850C0)">
+        <span>Psikolog Klinis</span>
+      </div>
+      <div class="pcf-body">
+        <div class="pcf-left">
+          <div class="pcf-photo">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80&fit=crop&h=400" alt="Asti Kusuma">
+            <!-- ⚠️ Ganti dengan foto asli -->
+          </div>
+          <div class="pcf-edu">
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#7B5EA7"></span>S1 Psikologi</div>
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#C850C0"></span>S2 Psikologi Klinis (M.Psi.)</div>
+          </div>
         </div>
-        <div class="psi-bio">
-          <div class="psi-badge">Psikolog Klinis</div>
-          <h2 class="psi-name">Atina Okta F, M.Psi., Psikolog</h2>
-          <p class="psi-desc">Berpengalaman mendampingi anak, remaja, dan keluarga. Fokus pada tumbuh kembang anak, permasalahan remaja, dan pola pengasuhan yang positif. Menciptakan ruang aman bagi klien muda untuk mengekspresikan diri dan berkembang secara optimal.</p>
-          <div class="psi-section-title">Pendekatan</div>
-          <ul class="psi-list">
-            <li>Play Therapy &amp; Art Therapy</li>
-            <li>Positive Discipline Approach</li>
-            <li>Attachment-based Approach</li>
+        <div class="pcf-center">
+          <h2 class="pcf-name">Asti Kusuma, M.Psi., Psikolog</h2>
+          <p class="pcf-title">Clinical Psychologist</p>
+          <div class="pcf-divider"></div>
+          <p class="pcf-desc">Spesialis dalam dinamika hubungan — pasangan, pernikahan, dan keluarga. Membantu klien membangun komunikasi yang sehat, menyelesaikan konflik, dan memperkuat ikatan emosional dalam hubungan yang bermakna.</p>
+        </div>
+        <div class="pcf-right">
+          <div class="pcf-label" style="background:linear-gradient(135deg,#7B5EA7,#C850C0);color:#fff">Pendekatan :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Cognitive Behavior Therapy (CBT)</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Family Systems Therapy</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Emotionally Focused Approach</li>
           </ul>
-          <div class="psi-section-title">Lingkup Sesi</div>
-          <ul class="psi-list">
-            <li>Tumbuh kembang anak dan remaja</li>
-            <li>Parenting dan relasi orang tua-anak</li>
-            <li>Masalah akademik dan bullying</li>
-            <li>Screening tumbuh kembang / ABK</li>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#C850C0,#7B5EA7);color:#fff;margin-top:.85rem">Lingkup Sesi :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Konseling pasangan dan pranikah</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Isu keluarga dan dinamika rumah tangga</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Konflik relasi dan komunikasi</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Kecemasan dan regulasi emosi</li>
           </ul>
         </div>
       </div>
-      <div class="psi-rates">
-        <div class="psi-rates-title">Biaya Sesi Konseling</div>
-        <div class="rates-grid">
-          <div class="rate-item"><span class="rate-label">Konseling Anak On-site</span><span class="rate-price">Rp 275.000 / 1 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi Anak On-site</span><span class="rate-price">Rp 775.000</span></div>
-          <div class="rate-item"><span class="rate-label">Konseling Individu Online</span><span class="rate-price">Rp 250.000 / 1 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi Online</span><span class="rate-price">Rp 700.000</span></div>
-          <div class="rate-item"><span class="rate-label">Screening Tumbuh Kembang / ABK</span><span class="rate-price">Rp 750.000</span></div>
-          <div class="rate-item"><span class="rate-label">Asesmen Awal</span><span class="rate-price">Rp 50.000 – 75.000</span></div>
+      <div class="pcf-rates" style="border-top:3px solid;border-image:linear-gradient(135deg,#7B5EA7,#C850C0) 1">
+        <div class="pcf-rates-header">
+          <span class="pcf-rates-title">Biaya Sesi Konseling &amp; Terapi</span>
+          <span class="pcf-rates-star">⭐</span>
         </div>
-        <p class="rate-note">* Sesi bisa dilakukan secara tatap muka di klinik atau online via video call.</p>
+        <div class="pcf-rates-grid">
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#4A90D9"></span><span class="rr-label">Konseling Individu On-site</span><span class="rr-price">Rp 275.000 / 1 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#7B5EA7"></span><span class="rr-label">Paket 3 Sesi On-site</span><span class="rr-price">Rp 775.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#C850C0"></span><span class="rr-label">Konseling Pasangan On-site</span><span class="rr-price">Rp 500.000 / 2 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#4A90D9"></span><span class="rr-label">Paket 3 Sesi Pasangan On-site</span><span class="rr-price">Rp 1.450.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#7B5EA7"></span><span class="rr-label">Konseling Pasangan Online</span><span class="rr-price">Rp 400.000 / 2 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#C850C0"></span><span class="rr-label">Paket 3 Sesi Pasangan Online</span><span class="rr-price">Rp 1.150.000</span></div>
+        </div>
+        <div class="pcf-notes">
+          <div>⊙ Sesi bisa dilakukan secara tatap muka atau online (video call).</div>
+          <div>⊙ Asesmen Awal: Rp 50.000 – 75.000</div>
+        </div>
       </div>
     </div>
 
-    <div class="psi-divider"></div>
-
-    <!-- DITA LESTARI -->
-    <div class="psi-profile" id="dita">
-      <div class="psi-profile-top">
-        <div class="psi-photo">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&fit=crop" alt="Dita Lestari">
-          <!-- ⚠️ Ganti dengan foto asli Dita Lestari -->
+    <!-- ── ATINA OKTA F ── -->
+    <div class="pcard-full" id="atina">
+      <div class="pcf-badge-bar" style="background:linear-gradient(135deg,#4A90D9,#C850C0)">
+        <span>Psikolog Klinis</span>
+      </div>
+      <div class="pcf-body">
+        <div class="pcf-left">
+          <div class="pcf-photo">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&fit=crop&h=400" alt="Atina Okta F">
+            <!-- ⚠️ Ganti dengan foto asli -->
+          </div>
+          <div class="pcf-edu">
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#4A90D9"></span>S1 Psikologi</div>
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#C850C0"></span>S2 Psikologi Klinis (M.Psi.)</div>
+          </div>
         </div>
-        <div class="psi-bio">
-          <div class="psi-badge">Psikolog Klinis</div>
-          <h2 class="psi-name">Dita Lestari, M.Psi., Psikolog</h2>
-          <p class="psi-desc">Membantu individu mengenali potensi diri, mengatasi stres dan burnout, serta membuat keputusan karir yang tepat. Dengan pendekatan yang terstruktur dan suportif, mendampingi klien membangun kepercayaan diri dan strategi hidup yang lebih adaptif.</p>
-          <div class="psi-section-title">Pendekatan</div>
-          <ul class="psi-list">
-            <li>Cognitive Behavior Therapy (CBT)</li>
-            <li>Mindfulness-based Intervention</li>
-            <li>Solution-Focused Brief Therapy</li>
+        <div class="pcf-center">
+          <h2 class="pcf-name">Atina Okta F, M.Psi., Psikolog</h2>
+          <p class="pcf-title">Clinical Psychologist</p>
+          <div class="pcf-divider"></div>
+          <p class="pcf-desc">Berpengalaman mendampingi anak, remaja, dan keluarga. Fokus pada tumbuh kembang anak, permasalahan remaja, dan pola pengasuhan yang positif. Menciptakan ruang aman bagi klien muda untuk mengekspresikan diri dan berkembang secara optimal.</p>
+        </div>
+        <div class="pcf-right">
+          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#C850C0);color:#fff">Pendekatan :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Play Therapy &amp; Art Therapy</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Positive Discipline Approach</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Attachment-based Approach</li>
           </ul>
-          <div class="psi-section-title">Lingkup Sesi</div>
-          <ul class="psi-list">
-            <li>Stres, burnout, dan produktivitas</li>
-            <li>Pengembangan diri dan karir</li>
-            <li>Pemetaan minat-bakat dan penjurusan</li>
-            <li>Kecemasan dan kepercayaan diri</li>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#C850C0,#4A90D9);color:#fff;margin-top:.85rem">Lingkup Sesi :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Tumbuh kembang anak dan remaja</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Parenting dan relasi orang tua-anak</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Masalah akademik dan bullying</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Screening tumbuh kembang / ABK</li>
           </ul>
         </div>
       </div>
-      <div class="psi-rates">
-        <div class="psi-rates-title">Biaya Sesi Konseling &amp; Tes</div>
-        <div class="rates-grid">
-          <div class="rate-item"><span class="rate-label">Konseling Individu On-site</span><span class="rate-price">Rp 275.000 / 1 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi On-site</span><span class="rate-price">Rp 775.000</span></div>
-          <div class="rate-item"><span class="rate-label">Psikoterapi On-site</span><span class="rate-price">Rp 350.000 / 1 jam</span></div>
-          <div class="rate-item"><span class="rate-label">Paket 3 Sesi Psikoterapi</span><span class="rate-price">Rp 1.000.000</span></div>
-          <div class="rate-item"><span class="rate-label">Tes Minat Bakat</span><span class="rate-price">Rp 400.000 – 500.000</span></div>
-          <div class="rate-item"><span class="rate-label">Evaluasi Kepribadian</span><span class="rate-price">Rp 500.000</span></div>
+      <div class="pcf-rates" style="border-top:3px solid;border-image:linear-gradient(135deg,#4A90D9,#C850C0) 1">
+        <div class="pcf-rates-header">
+          <span class="pcf-rates-title">Biaya Sesi Konseling &amp; Asesmen</span>
+          <span class="pcf-rates-star">⭐</span>
         </div>
-        <p class="rate-note">* Sesi bisa dilakukan secara tatap muka di klinik atau online via video call.</p>
+        <div class="pcf-rates-grid">
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#4A90D9"></span><span class="rr-label">Konseling Anak On-site</span><span class="rr-price">Rp 275.000 / 1 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#7B5EA7"></span><span class="rr-label">Paket 3 Sesi On-site</span><span class="rr-price">Rp 775.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#C850C0"></span><span class="rr-label">Konseling Individu Online</span><span class="rr-price">Rp 250.000 / 1 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#4A90D9"></span><span class="rr-label">Paket 3 Sesi Online</span><span class="rr-price">Rp 700.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#7B5EA7"></span><span class="rr-label">Screening Tumbuh Kembang / ABK</span><span class="rr-price">Rp 750.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#C850C0"></span><span class="rr-label">Tes Kesiapan Masuk Sekolah</span><span class="rr-price">Rp 275.000 – 400.000</span></div>
+        </div>
+        <div class="pcf-notes">
+          <div>⊙ Sesi bisa dilakukan secara tatap muka atau online (video call).</div>
+          <div>⊙ Asesmen Awal: Rp 50.000 – 75.000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── DITA LESTARI ── -->
+    <div class="pcard-full" id="dita">
+      <div class="pcf-badge-bar" style="background:linear-gradient(135deg,#C850C0,#4A90D9)">
+        <span>Psikolog Klinis</span>
+      </div>
+      <div class="pcf-body">
+        <div class="pcf-left">
+          <div class="pcf-photo">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&fit=crop&h=400" alt="Dita Lestari">
+            <!-- ⚠️ Ganti dengan foto asli -->
+          </div>
+          <div class="pcf-edu">
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#C850C0"></span>S1 Psikologi</div>
+            <div class="pcf-edu-item"><span class="edu-dot" style="background:#4A90D9"></span>S2 Psikologi Klinis (M.Psi.)</div>
+          </div>
+        </div>
+        <div class="pcf-center">
+          <h2 class="pcf-name">Dita Lestari, M.Psi., Psikolog</h2>
+          <p class="pcf-title">Clinical Psychologist</p>
+          <div class="pcf-divider"></div>
+          <p class="pcf-desc">Membantu individu mengenali potensi diri, mengatasi stres dan burnout, serta membuat keputusan karir yang tepat. Dengan pendekatan terstruktur dan suportif, mendampingi klien membangun kepercayaan diri dan strategi hidup yang lebih adaptif.</p>
+        </div>
+        <div class="pcf-right">
+          <div class="pcf-label" style="background:linear-gradient(135deg,#C850C0,#4A90D9);color:#fff">Pendekatan :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#C850C0"></span>Cognitive Behavior Therapy (CBT)</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Mindfulness-based Intervention</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Solution-Focused Brief Therapy</li>
+          </ul>
+          <div class="pcf-label" style="background:linear-gradient(135deg,#4A90D9,#C850C0);color:#fff;margin-top:.85rem">Lingkup Sesi :</div>
+          <ul class="pcf-ul">
+            <li><span class="ul-dot" style="background:#C850C0"></span>Stres, burnout, dan produktivitas</li>
+            <li><span class="ul-dot" style="background:#7B5EA7"></span>Pengembangan diri dan karir</li>
+            <li><span class="ul-dot" style="background:#4A90D9"></span>Pemetaan minat-bakat dan penjurusan</li>
+            <li><span class="ul-dot" style="background:#C850C0"></span>Kecemasan dan kepercayaan diri</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pcf-rates" style="border-top:3px solid;border-image:linear-gradient(135deg,#C850C0,#4A90D9) 1">
+        <div class="pcf-rates-header">
+          <span class="pcf-rates-title">Biaya Sesi Konseling &amp; Psikotes</span>
+          <span class="pcf-rates-star">⭐</span>
+        </div>
+        <div class="pcf-rates-grid">
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#C850C0"></span><span class="rr-label">Konseling Individu On-site</span><span class="rr-price">Rp 275.000 / 1 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#7B5EA7"></span><span class="rr-label">Paket 3 Sesi On-site</span><span class="rr-price">Rp 775.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#4A90D9"></span><span class="rr-label">Psikoterapi On-site</span><span class="rr-price">Rp 350.000 / 1 jam</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#C850C0"></span><span class="rr-label">Paket 3 Sesi Psikoterapi</span><span class="rr-price">Rp 1.000.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#7B5EA7"></span><span class="rr-label">Tes Minat Bakat</span><span class="rr-price">Rp 400.000 – 500.000</span></div>
+          <div class="pcf-rate-row"><span class="rr-dot" style="background:#4A90D9"></span><span class="rr-label">Evaluasi Kepribadian</span><span class="rr-price">Rp 500.000</span></div>
+        </div>
+        <div class="pcf-notes">
+          <div>⊙ Sesi bisa dilakukan secara tatap muka atau online (video call).</div>
+          <div>⊙ Asesmen Awal: Rp 50.000 – 75.000</div>
+        </div>
       </div>
     </div>
 
   </div>
-  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a></div></footer>
+  <footer><span>© 2025 CV. Psikologi Ceria.</span><div class="ft-links"><a onclick="showPage('home')">Beranda</a><a onclick="showPage('harga')">Lihat Semua Harga</a></div></footer>
 </div>
 
 <!-- ===== HARGA PAGE ===== -->
