@@ -652,7 +652,32 @@
     }
     .logo-chip:hover{box-shadow:var(--shadow-sm)}
 
-  </style>
+  
+/* Sophie/staff profile layout fix: keep every profile card inside the same max-width layout */
+#page-psikolog > div[style*="max-width:980px"] > .pcard-full {
+  width: 100%;
+}
+#sophie .pcf-body {
+  grid-template-columns: 180px 1fr 220px;
+  gap: 1.75rem;
+  padding: 1.75rem;
+}
+#sophie .pcf-photo {
+  width: 100%;
+  aspect-ratio: 1;
+}
+@media (max-width: 820px) {
+  #sophie .pcf-body {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  #sophie .pcf-photo {
+    height: 200px;
+    aspect-ratio: unset;
+  }
+}
+
+</style>
 <style>
 /* ===== GLOBAL INTERACTION PATCH — fixes page stacking, overlays, and clickability ===== */
 html, body { min-height: 100%; }
@@ -1724,7 +1749,7 @@ input, select, textarea, label { pointer-events: auto !important; }
 </ul>
 </div>
 </div>
-</div></div>
+</div>
 <div class="pcard-full" id="sophie">
   <div class="pcf-badge-bar" style="background:linear-gradient(135deg,#C850C0,#4A90D9)">
     <span>Administrator &amp; Psychological Test Tester</span>
@@ -1760,7 +1785,7 @@ input, select, textarea, label { pointer-events: auto !important; }
       </ul>
     </div>
   </div>
-</div><footer><span>© 2026 CV. Psikologi Ceria.</span><div class="ft-links"><a data-page="home" href="#page-home" onclick="showPage('home')" style="cursor:pointer">Beranda</a><a data-page="harga" href="#page-harga" onclick="showPage('harga')" style="cursor:pointer">Lihat Semua Harga</a></div></footer>
+</div></div><footer><span>© 2026 CV. Psikologi Ceria.</span><div class="ft-links"><a data-page="home" href="#page-home" onclick="showPage('home')" style="cursor:pointer">Beranda</a><a data-page="harga" href="#page-harga" onclick="showPage('harga')" style="cursor:pointer">Lihat Semua Harga</a></div></footer>
 </div><div class="page" id="page-harga" style="background:var(--cream);min-height:100vh">
 <div class="phdr">
 <h1>Harga Layanan 2026</h1>
