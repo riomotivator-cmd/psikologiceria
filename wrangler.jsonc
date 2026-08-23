@@ -2,6 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "psikologiceria",
   "compatibility_date": "2026-05-05",
+
+  "workers_dev": false,
+  "preview_urls": false,
+
   "observability": {
     "enabled": true
   },
