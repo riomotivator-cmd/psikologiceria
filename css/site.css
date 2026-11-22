@@ -393,7 +393,7 @@
 
     /* ======= FOOTER ======= */
     footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--text-muted);flex-wrap:wrap;gap:12px}
-    .ft-links{display:flex;gap:1.5rem}
+    .ft-links{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
     .ft-links a{color:var(--text-muted);cursor:pointer;transition:color .2s}
     .ft-links a:hover{color:var(--purple)}
     .ft-soc{display:flex;gap:10px}
@@ -804,3 +804,4 @@ input, select, textarea, label { pointer-events: auto !important; }
 .hfaq details p{margin:12px 0 0;font-size:14.5px;line-height:1.75;color:var(--text-muted)}
 .hfaq-note{max-width:820px;margin:1.5rem auto 0;padding:16px 20px;border-radius:14px;background:var(--grad-soft);border:1px solid var(--border-mid);font-size:14px;line-height:1.7;color:var(--text-muted)}
 .hfaq .eyebrow,.hfaq h2{text-align:center}
+.ft-links a{display:inline-block;padding:8px 2px}
