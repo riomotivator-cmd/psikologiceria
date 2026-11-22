@@ -1,10 +1,12 @@
 /* Pelacakan peristiwa GA4 (tanpa data pribadi: tidak ada isi formulir, nama, atau nomor telepon) */
 (function(){
   'use strict';
+  var posisi = '';
   function ev(name, params){
     if (typeof window.gtag !== 'function') return;
     params = params || {};
     params.lokasi = location.pathname;
+    if (posisi) params.posisi = posisi;
     params.transport_type = 'beacon';
     try { window.gtag('event', name, params); } catch(e) {}
   }
@@ -13,7 +15,10 @@
   document.addEventListener('click', function(e){
     var el = e.target && e.target.closest ? e.target.closest('a,button,[onclick],[data-booking-mode]') : null;
     if (!el) return;
+    posisi = (el.closest && el.closest('.cta-dock')) ? 'dock' : '';
     var href = el.getAttribute('href') || '';
+    if (el.classList && el.classList.contains('share-wa')) return ev('bagikan_artikel', { metode: 'whatsapp' });
+    if (el.classList && el.classList.contains('share-copy')) return ev('bagikan_artikel', { metode: 'salin_tautan' });
     if (el.closest && el.closest('.jalur')) return ev('klik_jalur_cepat', { teks: label(el), tujuan: href });
     if (el.classList && el.classList.contains('mtag')) return ev('klik_masalah', { teks: label(el), tujuan: href });
     var oc = el.getAttribute('onclick') || '';
