@@ -680,8 +680,8 @@
       mask:linear-gradient(to right,transparent,black 8%,black 92%,transparent);
     }
     .logo-ticker{
-      display:flex;gap:12px;width:max-content;
-      animation:tickerLeft 40s linear infinite;
+      display:flex;gap:16px;width:max-content;
+      animation:tickerLeft 50s linear infinite;
     }
     .logo-ticker:hover{animation-play-state:paused}
     .logo-ticker-rev{animation:tickerRight 45s linear infinite}
@@ -708,8 +708,9 @@
       flex-shrink:0;
       transition:box-shadow .2s;
     }
-    .logo-chip-img{background:#fff;padding:8px 22px;border-radius:14px}
-    .logo-chip-img img{height:38px;width:auto;max-width:150px;object-fit:contain;display:block}
+    .logo-chip-img{background:#fff;padding:12px 28px;border-radius:16px}
+    .logo-chip-img img{height:60px;width:auto;max-width:230px;object-fit:contain;display:block}
+    @media(max-width:600px){.logo-chip-img{padding:10px 20px}.logo-chip-img img{height:46px;max-width:170px}}
     .logo-chip:hover{box-shadow:var(--shadow-sm)}
 
   
@@ -1172,14 +1173,12 @@ input, select, textarea, label { pointer-events: auto !important; }
 </div>
 <!-- Logo Ticker Row 1 -->
 <div class="logo-ticker-wrap">
+<!-- Belum ada logo (tambahkan bila tersedia): SMP N Bengkulu, SMF Negeri Bengkulu, SMP Negeri 18, Pondok Pesantren, Yuri, Alam Bersemi Manira -->
 <div class="logo-ticker" id="ticker1">
 <!-- Row 1: institusi baris pertama & kedua -->
 <div class="logo-chip logo-chip-img"><img src="/img/klien/ptun-bengkulu.webp" alt="Pengadilan Tata Usaha Negara Bengkulu" width="95" height="120"/></div><div class="logo-chip logo-chip-img"><img src="/img/klien/pengayoman.webp" alt="Pengayoman" width="118" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/himpsi.webp" alt="HIMPSI (mitra)" width="101" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/polres-bengkulu.webp" alt="Polres Bengkulu" width="88" height="120"/></div>
-<div class="logo-chip">🏫 SMP N Bengkulu</div>
-<div class="logo-chip">🏫 SMF Negeri Bengkulu</div>
-<div class="logo-chip">🏫 SMP Negeri 18</div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/lam-ptkes.webp" alt="LAM-PTKes" width="420" height="112"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/aep.webp" alt="Anglo-Eastern Plantations" width="196" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/prodia.webp" alt="Laboratorium Klinik Prodia" width="316" height="120"/></div>
@@ -1191,18 +1190,12 @@ input, select, textarea, label { pointer-events: auto !important; }
 <div class="logo-chip logo-chip-img"><img src="/img/klien/akara-dental.webp" alt="Akara Dental" width="90" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/yukita-waterpark.webp" alt="Yukita Waterpark" width="158" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/smkn1-bengkulu.webp" alt="SMKN 1 Kota Bengkulu" width="200" height="120"/></div>
-<div class="logo-chip">🕌 Pondok Pesantren</div>
-<div class="logo-chip">📚 Yuri</div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/unib.webp" alt="Universitas Bengkulu" width="118" height="120"/></div><div class="logo-chip logo-chip-img"><img src="/img/klien/um-bengkulu.webp" alt="Universitas Muhammadiyah Bengkulu" width="120" height="120"/></div>
-<div class="logo-chip">🌿 Alam Bersemi Manira</div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/pharos.webp" alt="Pharos" width="97" height="120"/></div><div class="logo-chip logo-chip-img"><img src="/img/klien/man1-model-bengkulu.webp" alt="MAN 1 Model Bengkulu" width="107" height="120"/></div>
 <!-- Duplikat untuk infinite scroll -->
 <div class="logo-chip logo-chip-img"><img src="/img/klien/ptun-bengkulu.webp" alt="Pengadilan Tata Usaha Negara Bengkulu" width="95" height="120"/></div><div class="logo-chip logo-chip-img"><img src="/img/klien/pengayoman.webp" alt="Pengayoman" width="118" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/himpsi.webp" alt="HIMPSI (mitra)" width="101" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/polres-bengkulu.webp" alt="Polres Bengkulu" width="88" height="120"/></div>
-<div class="logo-chip">🏫 SMP N Bengkulu</div>
-<div class="logo-chip">🏫 SMF Negeri Bengkulu</div>
-<div class="logo-chip">🏫 SMP Negeri 18</div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/lam-ptkes.webp" alt="LAM-PTKes" width="420" height="112"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/aep.webp" alt="Anglo-Eastern Plantations" width="196" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/prodia.webp" alt="Laboratorium Klinik Prodia" width="316" height="120"/></div>
@@ -1214,41 +1207,8 @@ input, select, textarea, label { pointer-events: auto !important; }
 <div class="logo-chip logo-chip-img"><img src="/img/klien/akara-dental.webp" alt="Akara Dental" width="90" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/yukita-waterpark.webp" alt="Yukita Waterpark" width="158" height="120"/></div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/smkn1-bengkulu.webp" alt="SMKN 1 Kota Bengkulu" width="200" height="120"/></div>
-<div class="logo-chip">🕌 Pondok Pesantren</div>
-<div class="logo-chip">📚 Yuri</div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/unib.webp" alt="Universitas Bengkulu" width="118" height="120"/></div><div class="logo-chip logo-chip-img"><img src="/img/klien/um-bengkulu.webp" alt="Universitas Muhammadiyah Bengkulu" width="120" height="120"/></div>
-<div class="logo-chip">🌿 Alam Bersemi Manira</div>
 <div class="logo-chip logo-chip-img"><img src="/img/klien/pharos.webp" alt="Pharos" width="97" height="120"/></div><div class="logo-chip logo-chip-img"><img src="/img/klien/man1-model-bengkulu.webp" alt="MAN 1 Model Bengkulu" width="107" height="120"/></div>
-</div>
-</div>
-<!-- Logo Ticker Row 2 (arah berlawanan) -->
-<div class="logo-ticker-wrap" style="margin-top:12px">
-<div class="logo-ticker logo-ticker-rev" id="ticker2">
-<div class="logo-chip" style="background:linear-gradient(135deg,#EEF4FC,#F0EBF8)">🏥 Klinik Kesehatan</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#F0EBF8,#FCE8FB)">🏢 Perusahaan Swasta</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#FCE8FB,#EEF4FC)">🏫 Institusi Pendidikan</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#EEF4FC,#FCE8FB)">👮 TNI / Polri</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#F0EBF8,#EEF4FC)">🏛️ Instansi Pemerintah</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#FCE8FB,#F0EBF8)">👨‍👩‍👧 Komunitas Keluarga</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#EEF4FC,#F0EBF8)">💼 Organisasi Profesi</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#F0EBF8,#FCE8FB)">🌿 Yayasan Sosial</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#FCE8FB,#EEF4FC)">📊 Lembaga Riset</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#EEF4FC,#FCE8FB)">🎓 Perguruan Tinggi</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#F0EBF8,#EEF4FC)">🏗️ Perusahaan Konstruksi</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#FCE8FB,#F0EBF8)">🌱 NGO / LSM</div>
-<!-- Duplikat -->
-<div class="logo-chip" style="background:linear-gradient(135deg,#EEF4FC,#F0EBF8)">🏥 Klinik Kesehatan</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#F0EBF8,#FCE8FB)">🏢 Perusahaan Swasta</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#FCE8FB,#EEF4FC)">🏫 Institusi Pendidikan</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#EEF4FC,#FCE8FB)">👮 TNI / Polri</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#F0EBF8,#EEF4FC)">🏛️ Instansi Pemerintah</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#FCE8FB,#F0EBF8)">👨‍👩‍👧 Komunitas Keluarga</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#EEF4FC,#F0EBF8)">💼 Organisasi Profesi</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#F0EBF8,#FCE8FB)">🌿 Yayasan Sosial</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#FCE8FB,#EEF4FC)">📊 Lembaga Riset</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#EEF4FC,#FCE8FB)">🎓 Perguruan Tinggi</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#F0EBF8,#EEF4FC)">🏗️ Perusahaan Konstruksi</div>
-<div class="logo-chip" style="background:linear-gradient(135deg,#FCE8FB,#F0EBF8)">🌱 NGO / LSM</div>
 </div>
 </div>
 <!-- Gambar asli sebagai referensi visual di bawah -->
