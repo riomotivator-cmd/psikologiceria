@@ -850,3 +850,5 @@ input, select, textarea, label { pointer-events: auto !important; }
 .jalur-more a:hover{color:#6a4d99;text-decoration:underline}
 @media(max-width:960px){.jalur{padding:1.25rem 1.5rem 1.4rem}.jalur-in{grid-template-columns:1fr}.jalur-chips{grid-row:auto;grid-column:auto}}
 @media (prefers-reduced-motion:reduce){.jalur-chips a,.jalur-chips a:hover{transition:none;transform:none}}
+.hero-trust a{color:inherit;text-decoration:none;border-bottom:1.5px dotted rgba(123,94,167,.45)}
+.hero-trust a:hover{color:#6a4d99;border-bottom-style:solid}
