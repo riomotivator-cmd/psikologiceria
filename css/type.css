@@ -86,3 +86,31 @@ body .cta p{color:#5a5670}
 .share-wa{background:#0F7D41;color:#fff;border:1px solid #0F7D41}
 .share-copy{background:#fff;color:#6a4d99;border:1.5px solid rgba(123,94,167,.35)}
 .share-copy:hover{background:#F0EBF8}
+/* ===== Halaman profil psikolog ===== */
+.crumbs{font-size:14px;color:#6b6880}
+.crumbs a{color:#6a4d99;text-decoration:none;font-weight:600}
+.crumbs a:hover{text-decoration:underline}
+.pcf-more{margin:.9rem 0 0;font-size:14.5px}
+.pcf-more a{color:#6a4d99;font-weight:700;text-decoration:none}
+.pcf-more a:hover{text-decoration:underline}
+.pextra{max-width:980px;margin:0 auto;padding:1rem 2rem 3rem}
+.pextra-box{background:linear-gradient(135deg,#EAF1FB,#F6EBF8);border-radius:22px;padding:2rem 2rem 2.1rem;text-align:center}
+.pextra h2{font-family:var(--font-serif,'Playfair Display',serif);font-size:26px;font-weight:400;margin:0 0 .8rem}
+.pextra-box p{max-width:640px;margin:.4rem auto;font-size:16px;line-height:1.75;color:#4d4966}
+.pextra-approach{font-size:15px!important}
+.pextra-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:1.3rem}
+.pextra-btns a{display:inline-block;text-decoration:none}
+.pextra-others{margin-top:2.2rem}
+.pother-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.pother{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;border:1px solid rgba(123,94,167,.18);border-radius:16px;text-decoration:none;color:inherit;transition:box-shadow .2s}
+.pother:hover{box-shadow:0 8px 22px rgba(60,40,110,.14)}
+.pother img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top;background:#EFEAF7}
+.pother span{display:flex;flex-direction:column;line-height:1.35}
+.pother strong{font-size:14.5px}
+.pother small{font-size:13px;color:#6b6880}
+@media(max-width:700px){.pextra{padding:1rem 1.25rem 3rem}.pextra-box{padding:1.5rem 1.2rem}}
+/* Tautan terkait (dipakai juga di halaman profil psikolog) */
+.related-links h2{font-size:20px;margin:0 0 12px}
+.related-links div{display:flex;flex-wrap:wrap;gap:10px}
+.related-links a{display:inline-block;padding:8px 16px;border:1px solid rgba(123,94,167,.3);border-radius:99px;color:#6a4d99;font-weight:600;font-size:14.5px;text-decoration:none;background:#fff}
+.related-links a:hover{background:#F0EBF8}
