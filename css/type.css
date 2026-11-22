@@ -1,0 +1,55 @@
+/* Tipografi: ukuran, ketebalan, dan kontras yang nyaman dibaca.
+   Font tetap Plus Jakarta Sans (teks) dan Playfair Display (judul). */
+:root{--text-faint:#716d86}
+body{font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+/* Profil psikolog */
+body .pcf-desc{font-size:15.5px;line-height:1.8}
+body .pcf-ul li{font-size:14.5px;line-height:1.6}
+body .pcf-title{font-size:14.5px}
+body .pcf-edu-item{font-size:14px}
+body .pcf-sipp{font-size:13px;color:var(--text-muted)}
+body .pcf-rates-title{font-size:14px}
+body .rr-label,body .rr-price{font-size:14px}
+body .pcf-notes{font-size:13px;line-height:1.6}
+/* Layanan dan harga */
+body .lcard-desc p{font-size:15.5px;line-height:1.8}
+body .lcard-desc a{font-size:15px}
+body .lcard-body p{font-size:15px;line-height:1.7}
+body .lcard-header p{font-size:14.5px}
+body .lcard-note{font-size:13.5px;line-height:1.6}
+body .lcard-price{font-size:14.5px}
+body .lrate-row span,body .lrate-row strong{font-size:14.5px}
+body .price-row span,body .price-row strong{font-size:15px}
+body .pstep p{font-size:15px;line-height:1.7}
+body .phdr p{font-size:16.5px}
+/* Halaman layanan (kartu, catatan, tautan terkait) */
+body .card p{font-size:15.5px;line-height:1.75}
+body .card a{font-size:15px}
+body .note{font-size:15px;line-height:1.75}
+body .related-links a{font-size:14.5px}
+/* FAQ */
+body .hfaq details p,body .faq details p{font-size:15.5px;line-height:1.8}
+body .hfaq summary,body .faq summary{font-size:16px}
+/* Label, lencana, formulir */
+body .badge,body .hero-badge{font-size:13px}
+body .ptag{font-size:12.5px}
+body .mtag{font-size:14px}
+body .hero-trust{font-size:14.5px}
+body .hero-content .hero-note{font-size:13.5px}
+body label{font-size:14.5px}
+body input,body select,body textarea,body option{font-size:16px}
+body .nav-links a{font-size:14.5px}
+body footer,body .footer{font-size:14px}
+/* Tombol WhatsApp: teks putih perlu latar lebih gelap agar terbaca */
+body .wa-btn{background:#128C4A}
+/* Penyesuaian akhir */
+body .ppick p{font-size:13px;line-height:1.5}
+body .fcard-title{font-size:13px}
+body .pcf-notes div{font-size:13px;line-height:1.6}
+body .disclaimer{font-size:13px;color:#5f5b75}
+body .acard-meta,body .meta span{color:#6b6880}
+body .badge{color:#6a4d99}
+body .hero p,body .hero-inner p{color:#5a5670}
+body .wa-btn{background:#0F7D41}
+body .hero-content .hero-note,body .hero-note{color:#6b6880}
+body .cta p{color:#5a5670}
