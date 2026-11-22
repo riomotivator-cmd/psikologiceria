@@ -1,7 +1,7 @@
 /* Skrip bersama halaman statis (psikolog, layanan, kontak) */
 (function(){
   'use strict';
-  var ROUTE={home:'/',layanan:'/layanan/',psikolog:'/psikolog/',harga:'/harga/',blog:'/artikel/',contact:'/kontak/',booking:'/#page-booking'};
+  var ROUTE={home:'/',layanan:'/layanan/',psikolog:'/psikolog/',harga:'/harga/',blog:'/artikel/',contact:'/kontak/',booking:'/janji-temu/'};
   var ALIAS={beranda:'home',artikel:'blog',kontak:'contact',lokasi:'contact',janji:'booking'};
   function safeId(id){return document.getElementById(id);}
   window.closeMobileNav = function(){
@@ -32,7 +32,7 @@
     }
   };
   window.showPage=function(n){n=String(n||'home').toLowerCase();n=ALIAS[n]||n;location.href=ROUTE[n]||'/';return false;};
-  window.openBooking=function(mode){try{sessionStorage.setItem('bkmode',mode||'konseling');}catch(e){}location.href='/#page-booking';};
+  window.openBooking=function(mode){location.href='/janji-temu/'+(mode&&mode!=='konseling'?'?layanan='+encodeURIComponent(mode):'');};
   window.openWA=function(msg){var c=msg||'Halo Psikologi Ceria, saya ingin bertanya tentang layanan.';window.open('https://wa.me/6285384847854?text='+encodeURIComponent(c),'_blank','noopener,noreferrer');};
   window.showLayanan=function(tab){['konseling','psikotes','seminar'].forEach(function(t){var s=safeId('lsec-'+t),b=safeId('ltab-'+t);if(s)s.style.display=t===tab?'flex':'none';if(b)b.classList.toggle('active',t===tab);});};
   document.addEventListener('DOMContentLoaded',function(){
