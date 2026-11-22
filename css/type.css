@@ -56,3 +56,33 @@ body .cta p{color:#5a5670}
 /* Penanda kolom opsional: lebih ringan dari judulnya */
 .opt{font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted);font-size:.95em}
 .fcard-help{font-size:14px;line-height:1.7;color:var(--text-muted);margin:-.55rem 0 1rem}
+
+/* ===== Informasi kontak di footer ===== */
+.foot-info{background:#F7F4FC;border-top:1px solid rgba(123,94,167,.16);padding:2rem 1.5rem}
+.fi-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 2rem}
+.fi-in strong{display:block;font-size:14.5px;color:#2b2540;margin-bottom:.35rem}
+.fi-in p{margin:0;font-size:14.5px;line-height:1.75;color:#5a5670}
+.fi-in a{color:#6a4d99;text-decoration:none;font-weight:600}
+.fi-in a:hover{text-decoration:underline}
+@media(max-width:760px){.fi-in{grid-template-columns:1fr}}
+/* ===== Dok tombol Buat Janji dan WhatsApp ===== */
+.cta-dock{position:fixed;right:20px;bottom:20px;z-index:150;display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.cta-dock.show{opacity:1;transform:none;pointer-events:auto}
+.cta-dock a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:700;border-radius:99px;box-shadow:0 10px 26px rgba(60,40,110,.28)}
+.cta-dock .dock-book{padding:14px 24px;font-size:15px;color:#fff;background:linear-gradient(135deg,#4A90D9,#C850C0)}
+.cta-dock .dock-wa{width:52px;height:52px;background:#0F7D41}
+.cta-dock .dock-wa svg{width:26px;height:26px;fill:#fff}
+@media(max-width:700px){
+  .cta-dock{left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(123,94,167,.18);gap:10px}
+  .cta-dock .dock-book{flex:1;border-radius:14px;padding:15px 18px;box-shadow:none}
+  .cta-dock .dock-wa{border-radius:14px;width:56px;height:52px;box-shadow:none}
+  body.has-dock{padding-bottom:78px}
+}
+@media (prefers-reduced-motion:reduce){.cta-dock{transition:none;transform:none}}
+/* ===== Bagikan artikel ===== */
+.share-bar{max-width:760px;margin:2rem auto 0;padding:1rem 1.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem;border:1px solid rgba(123,94,167,.2);border-radius:16px;background:#fff}
+.share-label{font-weight:700;font-size:15px;color:#2b2540;margin-right:auto}
+.share-bar a,.share-bar button{font:inherit;font-size:14.5px;font-weight:600;padding:10px 18px;border-radius:99px;cursor:pointer;text-decoration:none}
+.share-wa{background:#0F7D41;color:#fff;border:1px solid #0F7D41}
+.share-copy{background:#fff;color:#6a4d99;border:1.5px solid rgba(123,94,167,.35)}
+.share-copy:hover{background:#F0EBF8}
