@@ -602,7 +602,7 @@
     }
     .logo-ticker{
       display:flex;gap:16px;width:max-content;
-      animation:tickerLeft 50s linear infinite;
+      animation:tickerRight 60s linear infinite;
     }
     .logo-ticker:hover{animation-play-state:paused}
     .logo-ticker-rev{animation:tickerRight 45s linear infinite}
@@ -629,9 +629,9 @@
       flex-shrink:0;
       transition:box-shadow .2s;
     }
-    .logo-chip-img{background:#fff;padding:12px 28px;border-radius:16px}
-    .logo-chip-img img{height:60px;width:auto;max-width:230px;object-fit:contain;display:block}
-    @media(max-width:600px){.logo-chip-img{padding:10px 20px}.logo-chip-img img{height:46px;max-width:170px}}
+    .logo-chip-img{background:#fff;padding:14px 32px;border-radius:18px}
+    .logo-chip-img img{height:76px;width:auto;max-width:280px;object-fit:contain;display:block}
+    @media(max-width:600px){.logo-chip-img{padding:12px 22px}.logo-chip-img img{height:58px;max-width:210px}}
     .logo-chip:hover{box-shadow:var(--shadow-sm)}
 
   
