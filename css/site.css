@@ -800,7 +800,7 @@ input, select, textarea, label { pointer-events: auto !important; }
 .hero{min-height:0}
 .hero-grid{position:relative;z-index:2;width:100%;max-width:1240px;margin:0 auto;padding:4.5rem 2rem;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:3.5rem;align-items:center}
 .hero-content{padding:0;max-width:none}
-.hero h1{font-size:clamp(36px,3.9vw,54px)}
+.hero h1{font-size:clamp(34px,3.5vw,48px)}
 .hero h1 em{white-space:nowrap}
 .hero p{font-size:clamp(16px,1.2vw,18px);max-width:560px}
 .hero-visual{position:relative;animation:fadeInLeft .9s .15s ease both}
@@ -835,3 +835,18 @@ input, select, textarea, label { pointer-events: auto !important; }
 /* logo baru: nama sudah ada di gambar, teks pendamping disembunyikan */
 .logo .brand-lockup{display:none}
 @media(max-width:600px){.logo-img{height:46px!important}}
+
+/* ===== Jalur cepat di bawah hero ===== */
+.hero h1{text-wrap:balance}
+.hero h1 em{white-space:normal}
+.jalur{background:#fff;border-bottom:1px solid var(--border);padding:1.4rem 2rem 1.5rem}
+.jalur-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:.9rem 1.5rem}
+.jalur-label{margin:0;font-size:14px;font-weight:700;color:var(--text)}
+.jalur-chips{display:flex;flex-wrap:wrap;gap:10px;grid-column:1/-1;grid-row:2}
+.jalur-chips a{display:inline-block;padding:10px 18px;border:1.5px solid rgba(123,94,167,.28);border-radius:99px;background:#fff;color:#6a4d99;font-size:14.5px;font-weight:600;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.jalur-chips a:hover{background:#F0EBF8;border-color:rgba(123,94,167,.5);transform:translateY(-1px)}
+.jalur-more{margin:0;font-size:14px}
+.jalur-more a{color:var(--text-muted);font-weight:600;text-decoration:none}
+.jalur-more a:hover{color:#6a4d99;text-decoration:underline}
+@media(max-width:960px){.jalur{padding:1.25rem 1.5rem 1.4rem}.jalur-in{grid-template-columns:1fr}.jalur-chips{grid-row:auto;grid-column:auto}}
+@media (prefers-reduced-motion:reduce){.jalur-chips a,.jalur-chips a:hover{transition:none;transform:none}}

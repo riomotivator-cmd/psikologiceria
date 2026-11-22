@@ -14,6 +14,7 @@
     var el = e.target && e.target.closest ? e.target.closest('a,button,[onclick],[data-booking-mode]') : null;
     if (!el) return;
     var href = el.getAttribute('href') || '';
+    if (el.closest && el.closest('.jalur')) return ev('klik_jalur_cepat', { teks: label(el), tujuan: href });
     var oc = el.getAttribute('onclick') || '';
     if (/wa\.me|api\.whatsapp\.com/.test(href) || /openWA\s*\(/.test(oc)) return ev('klik_whatsapp', { teks: label(el) });
     if (/^tel:/i.test(href)) return ev('klik_telepon', { teks: label(el) });
