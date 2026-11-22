@@ -227,5 +227,10 @@
     var q = new URLSearchParams(location.search).get('layanan');
     var mode = ['konseling','psikotes','seminar'].indexOf(q) > -1 ? q : 'konseling';
     window.setBookingMode(mode);
+    var kode = new URLSearchParams(location.search).get('psikolog');
+    if (kode && mode === 'konseling') {
+      var el = qs('.ppick[data-pick-psych="' + kode.replace(/[^A-Za-z]/g, '') + '"]');
+      if (el) { window.pickP(el, kode); }
+    }
   });
 })();
