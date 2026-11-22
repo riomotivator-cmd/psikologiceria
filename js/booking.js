@@ -19,7 +19,8 @@
       showSlot: true,
       showTest: false,
       showEvent: false,
-      noteTitle: 'Ceritakan Kondisi Anda (Opsional)',
+      noteTitle: 'Ceritakan Kondisi Anda',
+      noteHelp: 'Cukup garis besar saja; cerita lebih rinci bisa Anda sampaikan saat sesi. Informasi ini membantu kami menilai kebutuhan Anda dan menentukan psikolog yang paling sesuai, termasuk bila psikolog pilihan Anda berhalangan. Kerahasiaan Anda terjaga.',
       notePlaceholder: 'Tuliskan secara singkat apa yang ingin Anda diskusikan. Semua informasi bersifat rahasia.',
       submitText: 'Konfirmasi Janji Konseling →',
       successTitle: 'Janji konseling berhasil dibuat!'
@@ -79,6 +80,7 @@
     const testCard = safeId('bk-psikotes-card');
     const eventCard = safeId('bk-seminar-card');
     const noteTitle = safeId('bk-note-title');
+    const noteHelp = safeId('bk-note-help');
     const note = safeId('fc');
     const submit = safeId('bk-submit');
     const successTitle = safeId('bk-success-title');
@@ -93,7 +95,18 @@
     if (slotCard) slotCard.hidden = !cfg.showSlot;
     if (testCard) testCard.hidden = !cfg.showTest;
     if (eventCard) eventCard.hidden = !cfg.showEvent;
-    if (noteTitle) noteTitle.textContent = cfg.noteTitle;
+    if (noteTitle) {
+      var parts = String(cfg.noteTitle).split(/\s*\((Opsional)\)/i);
+      noteTitle.textContent = parts[0];
+      if (parts.length > 1) {
+        var opt = document.createElement('span');
+        opt.className = 'opt';
+        opt.textContent = '(opsional)';
+        noteTitle.appendChild(document.createTextNode(' '));
+        noteTitle.appendChild(opt);
+      }
+    }
+    if (noteHelp) { noteHelp.textContent = cfg.noteHelp || ''; noteHelp.hidden = !cfg.noteHelp; }
     if (note) note.placeholder = cfg.notePlaceholder;
     if (submit) submit.textContent = cfg.submitText;
     if (successTitle) successTitle.textContent = cfg.successTitle;

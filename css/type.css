@@ -53,3 +53,6 @@ body .hero p,body .hero-inner p{color:#5a5670}
 body .wa-btn{background:#0F7D41}
 body .hero-content .hero-note,body .hero-note{color:#6b6880}
 body .cta p{color:#5a5670}
+/* Penanda kolom opsional: lebih ringan dari judulnya */
+.opt{font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted);font-size:.95em}
+.fcard-help{font-size:14px;line-height:1.7;color:var(--text-muted);margin:-.55rem 0 1rem}
