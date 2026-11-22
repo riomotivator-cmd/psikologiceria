@@ -93,7 +93,17 @@
     if (slotCard) slotCard.hidden = !cfg.showSlot;
     if (testCard) testCard.hidden = !cfg.showTest;
     if (eventCard) eventCard.hidden = !cfg.showEvent;
-    if (noteTitle) noteTitle.textContent = cfg.noteTitle;
+    if (noteTitle) {
+      var parts = String(cfg.noteTitle).split(/\s*\((Opsional)\)/i);
+      noteTitle.textContent = parts[0];
+      if (parts.length > 1) {
+        var opt = document.createElement('span');
+        opt.className = 'opt';
+        opt.textContent = '(opsional)';
+        noteTitle.appendChild(document.createTextNode(' '));
+        noteTitle.appendChild(opt);
+      }
+    }
     if (note) note.placeholder = cfg.notePlaceholder;
     if (submit) submit.textContent = cfg.submitText;
     if (successTitle) successTitle.textContent = cfg.successTitle;
