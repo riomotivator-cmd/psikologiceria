@@ -832,3 +832,6 @@ input, select, textarea, label { pointer-events: auto !important; }
   .hero-visual .hero-stat-label{font-size:10.5px}
 }
 @media (prefers-reduced-motion:reduce){.hero-team,.hero-team:hover{transition:none;transform:none}}
+/* logo baru: nama sudah ada di gambar, teks pendamping disembunyikan */
+.logo .brand-lockup{display:none}
+@media(max-width:600px){.logo-img{height:46px!important}}
