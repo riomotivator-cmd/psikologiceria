@@ -856,3 +856,8 @@ input, select, textarea, label { pointer-events: auto !important; }
 .jalur-chips a.jalur-inst{border-style:dashed;border-color:rgba(123,94,167,.38);color:var(--text-muted);background:transparent;font-weight:600}
 .jalur-chips a.jalur-inst:hover{color:#6a4d99;background:#F0EBF8;border-style:dashed}
 @media(max-width:700px){.jalur-sep{display:none}}
+/* Chip masalah kini tautan ke layanan yang sesuai */
+a.mtag{text-decoration:none;color:rgba(255,255,255,.9);cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+a.mtag:hover{color:#fff;background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5);transform:translateY(-1px)}
+a.mtag:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){a.mtag,a.mtag:hover{transition:none;transform:none}}
