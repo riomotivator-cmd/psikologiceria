@@ -792,3 +792,15 @@ input, select, textarea, label { pointer-events: auto !important; }
 .icard h2{font-family:inherit;font-size:11px;font-weight:700;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 .ppick h2{font-family:inherit;font-size:13px;font-weight:600;line-height:1.35}
 .sbox h2{font-family:var(--font-serif);font-size:24px;font-weight:400;margin-bottom:.75rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* beranda: kepercayaan di hero, harga kartu layanan, FAQ */
+.hero-trust{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;margin:20px 0 0;padding:0;font-size:14px;font-weight:600;color:var(--text-muted)}
+.hero-trust li::before{content:"✓";color:var(--purple);font-weight:800;margin-right:7px}
+.hero-content .hero-note{margin:12px 0 0;font-size:13px;line-height:1.6;color:var(--text-faint);max-width:520px}
+.lcard-price{font-size:13.5px;font-weight:600;color:var(--purple);margin:0 0 12px}
+.hfaq-list{max-width:820px;margin:0 auto}
+.hfaq details{background:#fff;border:1px solid var(--border-mid);border-radius:14px;padding:16px 20px;margin-bottom:12px}
+.hfaq summary{cursor:pointer;font-weight:600;font-size:15.5px}
+.hfaq details p{margin:12px 0 0;font-size:14.5px;line-height:1.75;color:var(--text-muted)}
+.hfaq-note{max-width:820px;margin:1.5rem auto 0;padding:16px 20px;border-radius:14px;background:var(--grad-soft);border:1px solid var(--border-mid);font-size:14px;line-height:1.7;color:var(--text-muted)}
+.hfaq .eyebrow,.hfaq h2{text-align:center}
