@@ -840,15 +840,19 @@ input, select, textarea, label { pointer-events: auto !important; }
 .hero h1{text-wrap:balance}
 .hero h1 em{white-space:normal}
 .jalur{background:#fff;border-bottom:1px solid var(--border);padding:1.4rem 2rem 1.5rem}
-.jalur-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:.9rem 1.5rem}
+.jalur-in{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:.8rem}
 .jalur-label{margin:0;font-size:14px;font-weight:700;color:var(--text)}
-.jalur-chips{display:flex;flex-wrap:wrap;gap:10px;grid-column:1/-1;grid-row:2}
+.jalur-chips{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .jalur-chips a{display:inline-block;padding:10px 18px;border:1.5px solid rgba(123,94,167,.28);border-radius:99px;background:#fff;color:#6a4d99;font-size:14.5px;font-weight:600;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
 .jalur-chips a:hover{background:#F0EBF8;border-color:rgba(123,94,167,.5);transform:translateY(-1px)}
 .jalur-more{margin:0;font-size:14px}
 .jalur-more a{color:var(--text-muted);font-weight:600;text-decoration:none}
 .jalur-more a:hover{color:#6a4d99;text-decoration:underline}
-@media(max-width:960px){.jalur{padding:1.25rem 1.5rem 1.4rem}.jalur-in{grid-template-columns:1fr}.jalur-chips{grid-row:auto;grid-column:auto}}
+@media(max-width:960px){.jalur{padding:1.25rem 1.5rem 1.4rem}}
 @media (prefers-reduced-motion:reduce){.jalur-chips a,.jalur-chips a:hover{transition:none;transform:none}}
 .hero-trust a{color:inherit;text-decoration:none;border-bottom:1.5px dotted rgba(123,94,167,.45)}
 .hero-trust a:hover{color:#6a4d99;border-bottom-style:solid}
+.jalur-sep{width:1px;height:26px;background:rgba(123,94,167,.28);margin:0 6px}
+.jalur-chips a.jalur-inst{border-style:dashed;border-color:rgba(123,94,167,.38);color:var(--text-muted);background:transparent;font-weight:600}
+.jalur-chips a.jalur-inst:hover{color:#6a4d99;background:#F0EBF8;border-style:dashed}
+@media(max-width:700px){.jalur-sep{display:none}}
