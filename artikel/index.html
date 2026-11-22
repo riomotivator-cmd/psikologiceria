@@ -68,6 +68,20 @@ p{margin-bottom:20px}
 .footer{border-top:1px solid var(--border);padding:32px 20px;text-align:center;color:var(--muted);font-size:13px}
 .footer a{color:var(--purple)}
 @media(max-width:700px){.nav{padding:0 20px}.brand-name{font-size:18px}.hero{padding:58px 20px}.hero h1{font-size:36px}.hero p{font-size:15px}.cards{grid-template-columns:1fr}.wrap{padding:40px 20px 60px}.price-row{flex-direction:column;gap:2px}}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.acard{background:#fff;border:1px solid rgba(123,94,167,.18);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(80,60,130,.06);transition:transform .2s,box-shadow .2s}
+.acard:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(80,60,130,.14)}
+.acard-img{display:block;aspect-ratio:16/10;overflow:hidden;background:#EFEAF7}
+.acard-img img{width:100%;height:100%;object-fit:cover;display:block}
+.acard-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.acard-cat{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#7B5EA7;background:#F0EBF8;padding:4px 12px;border-radius:99px}
+.acard h2{font-size:20px;line-height:1.3;margin:0}
+.acard h2 a{color:inherit;text-decoration:none}
+.acard h2 a:hover{color:#7B5EA7}
+.acard p{margin:0;font-size:14.5px;line-height:1.65;color:#5d5a70}
+.acard-meta{display:flex;gap:8px;font-size:13px;color:#8a87a0;margin-top:auto;padding-top:4px}
+.acard-more{font-weight:700;font-size:14px;color:#7B5EA7;text-decoration:none}
+@media (prefers-reduced-motion:reduce){.acard,.acard:hover{transition:none;transform:none}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Artikel Psikologi Ceria", "url": "https://psikologiceria.id/artikel/", "inLanguage": "id-ID", "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://psikologiceria.id/artikel/5-tanda-kecemasan-yang-sering-diabaikan/", "name": "5 Tanda Kecemasan yang Sering Diabaikan"}, {"@type": "ListItem", "position": 2, "url": "https://psikologiceria.id/artikel/cara-berkomunikasi-efektif-dengan-pasangan/", "name": "Cara Berkomunikasi Efektif dengan Pasangan"}, {"@type": "ListItem", "position": 3, "url": "https://psikologiceria.id/artikel/mengenal-love-language-dan-manfaatnya/", "name": "Mengenal Love Language dan Manfaatnya"}, {"@type": "ListItem", "position": 4, "url": "https://psikologiceria.id/artikel/mengenali-tekanan-akademik-pada-pelajar/", "name": "Mengenali Tekanan Akademik pada Pelajar"}, {"@type": "ListItem", "position": 5, "url": "https://psikologiceria.id/artikel/rutinitas-pagi-untuk-kesehatan-mental-yang-lebih-baik/", "name": "Rutinitas Pagi untuk Kesehatan Mental yang Lebih Baik"}, {"@type": "ListItem", "position": 6, "url": "https://psikologiceria.id/artikel/teknik-pernapasan-untuk-meredakan-stres/", "name": "Teknik Pernapasan untuk Meredakan Stres"}]}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://psikologiceria.id/"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://psikologiceria.id/artikel/"}]}</script>
@@ -85,14 +99,68 @@ p{margin-bottom:20px}
 </header>
 <section class="hero"><div class="hero-inner"><div class="badge">Edukasi Psikologi</div><h1>Artikel <em>Kesehatan Mental</em></h1>
 <p>Bacaan ringan dari tim psikolog Psikologi Ceria untuk memahami diri, hubungan, dan keseharian Anda.</p></div></section>
-<main class="wrap">
-<div class="cards">
-<div class="card"><h3><a href="/artikel/5-tanda-kecemasan-yang-sering-diabaikan/" style="color:inherit;text-decoration:none">5 Tanda Kecemasan yang Sering Diabaikan</a></h3><p>Kenali lima tanda kecemasan yang sering diabaikan, mulai dari sulit berhenti berpikir hingga perubahan pola tidur. Artikel edukasi dari Psikologi Ceria Bengkulu.</p><p><a href="/artikel/5-tanda-kecemasan-yang-sering-diabaikan/" style="color:#7B5EA7;font-weight:700;text-decoration:none">Baca artikel →</a></p></div>
-<div class="card"><h3><a href="/artikel/cara-berkomunikasi-efektif-dengan-pasangan/" style="color:inherit;text-decoration:none">Cara Berkomunikasi Efektif dengan Pasangan</a></h3><p>Pelajari cara membangun komunikasi yang lebih sehat dengan pasangan melalui mendengarkan aktif, menyampaikan kebutuhan dengan jelas, dan mengelola konflik secara konstruktif.</p><p><a href="/artikel/cara-berkomunikasi-efektif-dengan-pasangan/" style="color:#7B5EA7;font-weight:700;text-decoration:none">Baca artikel →</a></p></div>
-<div class="card"><h3><a href="/artikel/mengenal-love-language-dan-manfaatnya/" style="color:inherit;text-decoration:none">Mengenal Love Language dan Manfaatnya</a></h3><p>Kenali konsep love language atau bahasa kasih, lima bentuk yang populer, serta bagaimana memahami kebutuhan pasangan dapat membantu membangun komunikasi yang lebih baik.</p><p><a href="/artikel/mengenal-love-language-dan-manfaatnya/" style="color:#7B5EA7;font-weight:700;text-decoration:none">Baca artikel →</a></p></div>
-<div class="card"><h3><a href="/artikel/mengenali-tekanan-akademik-pada-pelajar/" style="color:inherit;text-decoration:none">Mengenali Tekanan Akademik pada Pelajar</a></h3><p>Kenali tanda tekanan akademik pada pelajar dan remaja, faktor yang dapat memengaruhinya, serta langkah yang dapat dilakukan untuk menjaga kesehatan psikologis.</p><p><a href="/artikel/mengenali-tekanan-akademik-pada-pelajar/" style="color:#7B5EA7;font-weight:700;text-decoration:none">Baca artikel →</a></p></div>
-<div class="card"><h3><a href="/artikel/rutinitas-pagi-untuk-kesehatan-mental-yang-lebih-baik/" style="color:inherit;text-decoration:none">Rutinitas Pagi untuk Kesehatan Mental yang Lebih Baik</a></h3><p>Temukan kebiasaan pagi sederhana yang dapat membantu menjaga kesehatan mental, mengatur energi, meningkatkan fokus, dan memulai hari dengan lebih terarah.</p><p><a href="/artikel/rutinitas-pagi-untuk-kesehatan-mental-yang-lebih-baik/" style="color:#7B5EA7;font-weight:700;text-decoration:none">Baca artikel →</a></p></div>
-<div class="card"><h3><a href="/artikel/teknik-pernapasan-untuk-meredakan-stres/" style="color:inherit;text-decoration:none">Teknik Pernapasan untuk Meredakan Stres</a></h3><p>Pelajari teknik pernapasan sederhana yang dapat membantu tubuh lebih rileks dan mengelola respons stres dalam aktivitas sehari-hari.</p><p><a href="/artikel/teknik-pernapasan-untuk-meredakan-stres/" style="color:#7B5EA7;font-weight:700;text-decoration:none">Baca artikel →</a></p></div>
+<main class="wrap" style="max-width:1160px">
+<div class="agrid">
+<article class="acard">
+<a class="acard-img" href="/artikel/5-tanda-kecemasan-yang-sering-diabaikan/" tabindex="-1" aria-hidden="true"><img src="https://images.unsplash.com/photo-1620147461831-a97b99ade1d3?w=640&amp;q=85&amp;fit=crop" alt="" width="640" height="400" loading="lazy" decoding="async"/></a>
+<div class="acard-body">
+<span class="acard-cat">Kecemasan</span>
+<h2><a href="/artikel/5-tanda-kecemasan-yang-sering-diabaikan/">5 Tanda Kecemasan yang Sering Diabaikan</a></h2>
+<p>Kenali lima tanda kecemasan yang sering diabaikan, mulai dari sulit berhenti berpikir hingga perubahan pola tidur. Artikel edukasi dari Psikologi Ceria Bengkulu.</p>
+<div class="acard-meta"><span>Deta Nurfianti</span><span aria-hidden="true">·</span><span>5 menit baca</span></div>
+<a class="acard-more" href="/artikel/5-tanda-kecemasan-yang-sering-diabaikan/" aria-label="Baca artikel: 5 Tanda Kecemasan yang Sering Diabaikan">Baca artikel →</a>
+</div>
+</article>
+<article class="acard">
+<a class="acard-img" href="/artikel/cara-berkomunikasi-efektif-dengan-pasangan/" tabindex="-1" aria-hidden="true"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=640&amp;q=85&amp;fit=crop" alt="" width="640" height="400" loading="lazy" decoding="async"/></a>
+<div class="acard-body">
+<span class="acard-cat">Hubungan</span>
+<h2><a href="/artikel/cara-berkomunikasi-efektif-dengan-pasangan/">Cara Berkomunikasi Efektif dengan Pasangan</a></h2>
+<p>Pelajari cara membangun komunikasi yang lebih sehat dengan pasangan melalui mendengarkan aktif, menyampaikan kebutuhan dengan jelas, dan mengelola konflik secara konstruktif.</p>
+<div class="acard-meta"><span>Asti Kusuma</span><span aria-hidden="true">·</span><span>7 menit baca</span></div>
+<a class="acard-more" href="/artikel/cara-berkomunikasi-efektif-dengan-pasangan/" aria-label="Baca artikel: Cara Berkomunikasi Efektif dengan Pasangan">Baca artikel →</a>
+</div>
+</article>
+<article class="acard">
+<a class="acard-img" href="/artikel/mengenal-love-language-dan-manfaatnya/" tabindex="-1" aria-hidden="true"><img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=640&amp;q=85&amp;fit=crop" alt="" width="640" height="400" loading="lazy" decoding="async"/></a>
+<div class="acard-body">
+<span class="acard-cat">Hubungan</span>
+<h2><a href="/artikel/mengenal-love-language-dan-manfaatnya/">Mengenal Love Language dan Manfaatnya</a></h2>
+<p>Kenali konsep love language atau bahasa kasih, lima bentuk yang populer, serta bagaimana memahami kebutuhan pasangan dapat membantu membangun komunikasi yang lebih baik.</p>
+<div class="acard-meta"><span>Deta Nurfianti</span><span aria-hidden="true">·</span><span>8 menit baca</span></div>
+<a class="acard-more" href="/artikel/mengenal-love-language-dan-manfaatnya/" aria-label="Baca artikel: Mengenal Love Language dan Manfaatnya">Baca artikel →</a>
+</div>
+</article>
+<article class="acard">
+<a class="acard-img" href="/artikel/mengenali-tekanan-akademik-pada-pelajar/" tabindex="-1" aria-hidden="true"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=640&amp;q=85&amp;fit=crop" alt="" width="640" height="400" loading="lazy" decoding="async"/></a>
+<div class="acard-body">
+<span class="acard-cat">Remaja</span>
+<h2><a href="/artikel/mengenali-tekanan-akademik-pada-pelajar/">Mengenali Tekanan Akademik pada Pelajar</a></h2>
+<p>Kenali tanda tekanan akademik pada pelajar dan remaja, faktor yang dapat memengaruhinya, serta langkah yang dapat dilakukan untuk menjaga kesehatan psikologis.</p>
+<div class="acard-meta"><span>Atina Okta F</span><span aria-hidden="true">·</span><span>6 menit baca</span></div>
+<a class="acard-more" href="/artikel/mengenali-tekanan-akademik-pada-pelajar/" aria-label="Baca artikel: Mengenali Tekanan Akademik pada Pelajar">Baca artikel →</a>
+</div>
+</article>
+<article class="acard">
+<a class="acard-img" href="/artikel/rutinitas-pagi-untuk-kesehatan-mental-yang-lebih-baik/" tabindex="-1" aria-hidden="true"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=640&amp;q=85&amp;fit=crop" alt="" width="640" height="400" loading="lazy" decoding="async"/></a>
+<div class="acard-body">
+<span class="acard-cat">Self-care</span>
+<h2><a href="/artikel/rutinitas-pagi-untuk-kesehatan-mental-yang-lebih-baik/">Rutinitas Pagi untuk Kesehatan Mental yang Lebih Baik</a></h2>
+<p>Temukan kebiasaan pagi sederhana yang dapat membantu menjaga kesehatan mental, mengatur energi, meningkatkan fokus, dan memulai hari dengan lebih terarah.</p>
+<div class="acard-meta"><span>Dita Lestari</span><span aria-hidden="true">·</span><span>4 menit baca</span></div>
+<a class="acard-more" href="/artikel/rutinitas-pagi-untuk-kesehatan-mental-yang-lebih-baik/" aria-label="Baca artikel: Rutinitas Pagi untuk Kesehatan Mental yang Lebih Baik">Baca artikel →</a>
+</div>
+</article>
+<article class="acard">
+<a class="acard-img" href="/artikel/teknik-pernapasan-untuk-meredakan-stres/" tabindex="-1" aria-hidden="true"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=640&amp;q=85&amp;fit=crop" alt="" width="640" height="400" loading="lazy" decoding="async"/></a>
+<div class="acard-body">
+<span class="acard-cat">Kecemasan</span>
+<h2><a href="/artikel/teknik-pernapasan-untuk-meredakan-stres/">Teknik Pernapasan untuk Meredakan Stres</a></h2>
+<p>Pelajari teknik pernapasan sederhana yang dapat membantu tubuh lebih rileks dan mengelola respons stres dalam aktivitas sehari-hari.</p>
+<div class="acard-meta"><span>Asti Kusuma</span><span aria-hidden="true">·</span><span>3 menit baca</span></div>
+<a class="acard-more" href="/artikel/teknik-pernapasan-untuk-meredakan-stres/" aria-label="Baca artikel: Teknik Pernapasan untuk Meredakan Stres">Baca artikel →</a>
+</div>
+</article>
 </div>
 <section class="cta">
 <h2>Butuh bicara langsung dengan psikolog?</h2>
